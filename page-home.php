@@ -93,4 +93,48 @@
 </div><!-- Filtros -->
 
 
+
+<!-- Contacto -->
+<div class="contact-container">
+    <div class="col">
+        <div class="title">Contáctanos</div>
+        <div class="text">Si requiere ponerse en contacto con nosotros, le ofrecemos diferentes medios para que pueda hacerlo, utilice el que más le convenga y con mucho gusto le atenderemos.</div>
+
+        <div class="form">
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="text" name="NOMBRE" id="NOMBRE" placeholder="NOMBRE">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="EMAIL" id="EMAIL" placeholder="EMAIL">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="text" name="TELÉFONO" id="TELÉFONO" placeholder="TELÉFONO">
+                </div>
+
+                <div class="form-group">
+                    <div class="select-cont">
+                        <div class="value">MOTIVO </div>
+                        <ul>
+                            <li>Información de desarrollos residenciales</li>
+                            <li>Ofrecer producto/servicio</li>
+                            <li>Otro</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <textarea name="" id="" cols="30" rows="10" placeholder="MENSAJE"></textarea>
+            </div>
+            <div class="form-row">
+                <input type="submit" value="Enviar">
+            </div>
+        </div>
+    </div>
+    <div class="col"></div>
+</div>
+<!-- Contacto -->
 <?php get_footer();?>
