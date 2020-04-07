@@ -155,120 +155,167 @@
 .contact-container {
     background-image: url(../img/contact-bg.jpg);
     padding: 60px;
-    .col {
-        .title {
-            color: white;
-            font-weight: $bold;
-            font-size: 30px;
-            text-transform: uppercase;
-        }
-        .text {
-            margin-top: 20px;
-            font-weight: 100;
-            color: white;
-            max-width: 500px;
-        }
-        .form {
-            width: 500px;
-            margin-top: 30px;
-            color: $main;
-            .form-row {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin: 10px 0;
-                // flex-wrap: wrap;
-                // flex-direction: row;
-                .form-group {
-                    width: 49%;
-                    input {
+
+    .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .col {
+            .title {
+                color: white;
+                font-weight: $bold;
+                font-size: 30px;
+                text-transform: uppercase;
+                position: relative;
+                &:before {
+                    width: 2000px;
+                    content: attr(data-text);
+                    position: absolute;
+                    font-weight: bold;
+                    font-size: 5rem;
+                    top: -30px;
+                    left: -50px;
+                    color: transparent;
+                    -moz-text-fill-color: transparent;
+                    -webkit-text-fill-color: transparent;
+                    -moz-text-stroke-color: rgba(white, 0.1);
+                    -webkit-text-stroke-color: rgba(white, 0.1);
+                    -moz-text-stroke-width: 1px;
+                    -webkit-text-stroke-width: 1px;
+                }
+            }
+            .text {
+                margin-top: 20px;
+                font-weight: 100;
+                color: white;
+                max-width: 500px;
+            }
+            .form {
+                width: 500px;
+                margin-top: 30px;
+                color: $main;
+                .form-row {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: 10px 0;
+                    // flex-wrap: wrap;
+                    // flex-direction: row;
+                    .form-group {
+                        width: 49%;
+                        input {
+                            width: 100%;
+                            border: none;
+                            padding: 10px;
+                            font-size: 14px;
+                            color: $main;
+                            font-weight: 100;
+                            &::placeholder {
+                                color: $main;
+                            }
+                        }
+
+                        .select-cont {
+                            position: relative;
+                            // max-width: 200px;
+                            .value {
+                                cursor: pointer;
+                                font-weight: 100;
+                                background-color: #fff;
+                                color: $main;
+                                width: 100%;
+                                padding: 10px;
+                                position: relative;
+                                text-transform: uppercase;
+                                font-size: 14px;
+                                &:before {
+                                    content: "";
+                                    background-image: url(../img/arrow-down-alternate.jpg);
+                                    background-position: center;
+                                    background-size: contain;
+                                    background-repeat: no-repeat;
+                                    position: absolute;
+                                    right: 8px;
+                                    top: 11px;
+                                    width: 12px;
+                                    height: 10px;
+                                }
+                            }
+                            ul {
+                                display: none;
+                                width: 100%;
+                                position: absolute;
+                                background-color: rgba($alt, 0.9);
+                                padding: 5px;
+                                border-radius: 0 0 0 10px;
+                                margin: 0;
+                                z-index: 10;
+                                li {
+                                    color: white;
+                                    font-weight: 100;
+                                    text-align: center;
+                                    text-transform: uppercase;
+                                    padding: 10px 0;
+
+                                    list-style: none;
+                                    font-size: 9px;
+                                    border-bottom: 1px solid rgba(white, 0.2);
+                                    &:last-child {
+                                        border-bottom: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    textarea {
                         width: 100%;
                         border: none;
                         padding: 10px;
                         font-size: 14px;
-                        color: $main;
                         font-weight: 100;
+                        height: 110px;
                         &::placeholder {
                             color: $main;
                         }
                     }
 
-                    .select-cont {
-                        position: relative;
-                        // max-width: 200px;
-                        .value {
-                            cursor: pointer;
+                    input[type="submit"] {
+                        width: 130px;
+                        padding: 10px;
+                        height: 30px;
+                        background-color: $alt;
+                        font-weight: 100;
+                        color: white;
+                        border: none;
+                        font-size: 14px;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .content {
+                max-width: 500px;
+                .row {
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    .column {
+                        font-size: 12px;
+                        color: white;
+                        font-weight: 100;
+                        img {
+                            width: 20px;
+                            margin: 10px;
+                            margin-right: 20px;
+                        }
+                        a {
                             font-weight: 100;
-                            background-color: #fff;
-                            color: $main;
-                            width: 100%;
-                            padding: 10px;
-                            position: relative;
-                            text-transform: uppercase;
-                            font-size: 14px;
-                            &:before {
-                                content: "";
-                                background-image: url(../img/arrow-down-alternate.jpg);
-                                background-position: center;
-                                background-size: contain;
-                                background-repeat: no-repeat;
-                                position: absolute;
-                                right: 8px;
-                                top: 11px;
-                                width: 12px;
-                                height: 10px;
-                            }
-                        }
-                        ul {
-                            display: none;
-                            width: 100%;
-                            position: absolute;
-                            background-color: rgba($alt, 0.9);
-                            padding: 5px;
-                            border-radius: 0 0 0 10px;
-                            margin: 0;
-                            z-index: 10;
-                            li {
-                                color: white;
-                                font-weight: 100;
-                                text-align: center;
-                                text-transform: uppercase;
-                                padding: 10px 0;
-
-                                list-style: none;
-                                font-size: 9px;
-                                border-bottom: 1px solid rgba(white, 0.2);
-                                &:last-child {
-                                    border-bottom: none;
-                                }
-                            }
+                            color: white;
                         }
                     }
-                }
-
-                textarea {
-                    width: 100%;
-                    border: none;
-                    padding: 10px;
-                    font-size: 14px;
-                    font-weight: 100;
-                    height: 110px;
-                    &::placeholder {
-                        color: $main;
-                    }
-                }
-
-                input[type="submit"] {
-                    width: 130px;
-                    padding: 10px;
-                    height: 30px;
-                    background-color: $alt;
-                    font-weight: 100;
-                    color: white;
-                    border: none;
-                    font-size: 14px;
-                    text-transform: uppercase;
-                    cursor: pointer;
                 }
             }
         }
