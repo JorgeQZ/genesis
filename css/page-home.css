@@ -1,5 +1,4 @@
 .hero-banner {
-  height: 90vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11,4 +10,180 @@
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 50px;
+}
+
+.filter-container {
+  background-image: url(../img/filter-search-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 60px;
+}
+
+.filter-container .filter-title {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  font-weight: 100;
+  margin-bottom: 30px;
+}
+
+.filter-container .filter-title .focus {
+  font-weight: bold;
+  font-size: 1.7em;
+}
+
+.filter-container .filters {
+  width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 0px auto;
+}
+
+.filter-container .filters .col {
+  text-align: center;
+  width: 50%;
+}
+
+.filter-container .filters .col .filter-cont {
+  margin: 5px;
+  position: relative;
+  max-width: 200px;
+}
+
+.filter-container .filters .col .filter-cont .value {
+  cursor: pointer;
+  font-weight: 100;
+  color: white;
+  border: 1px solid white;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.filter-container .filters .col .filter-cont .value:before {
+  content: "";
+  background-image: url(../img/arrow-down.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 8px;
+  top: 12px;
+  width: 10px;
+  height: 9px;
+}
+
+.filter-container .filters .col .filter-cont ul {
+  display: none;
+  width: 100%;
+  position: absolute;
+  background-color: #11647a;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  margin: 0;
+  margin-top: 5px;
+  z-index: 10;
+}
+
+.filter-container .filters .col .filter-cont ul li {
+  color: white;
+  font-weight: 100;
+  text-align: left;
+  padding: 5px;
+  margin: 2px;
+  list-style: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.filter-container .advanced-search {
+  width: 390px;
+  margin: 10px auto;
+  font-size: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.filter-container .advanced-search .title {
+  width: 190px;
+  color: white;
+  position: relative;
+  display: inline-block;
+  padding: 5px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.filter-container .advanced-search .title .little-arrow {
+  background-image: url(../img/arrow-down.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 10px;
+  margin-left: 10px;
+}
+
+.filter-container .advanced-search .title::after {
+  content: "";
+  background-color: #fff;
+  height: 1px;
+  width: 100px;
+  right: calc(100% + 0px);
+  top: calc(50% - 0.5px);
+  position: absolute;
+}
+
+.filter-container .advanced-search .title::before {
+  content: "";
+  background-color: #fff;
+  height: 1px;
+  width: 100px;
+  left: calc(100% + 0px);
+  top: calc(50% - 0.5px);
+  position: absolute;
+}
+
+.filter-container .filter-submit {
+  text-align: center;
+}
+
+.filter-container .filter-submit .submit {
+  width: 190px;
+  cursor: pointer;
+  font-weight: normal;
+  background-color: #fff;
+  color: #11647a;
+  padding: 10px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin: 0 auto;
 }

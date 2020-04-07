@@ -173,6 +173,7 @@ footer .bottom a:hover {
           box-sizing: border-box;
   font-family: halcom, sans-serif;
   font-weight: normal;
+  line-height: 1;
 }
 
 html,
