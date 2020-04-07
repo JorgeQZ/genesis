@@ -152,6 +152,192 @@
     }
 }
 
+.about-container {
+    background-image: url(../img/about-bg.jpg);
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 60vh;
+    min-height: 700px;
+    overflow: hidden;
+    .container {
+        max-width: 1280px;
+        .about-title {
+            color: $main;
+            text-transform: uppercase;
+            font-size: 20px;
+            margin-bottom: 20px;
+            .about-upper-title {
+                width: 450px;
+                overflow: hidden;
+                span {
+                    font-weight: 100;
+                    margin-left: 50px;
+                    display: inline-block;
+                    position: relative;
+                    padding: 0px 10px;
+                    &:before {
+                        content: "";
+                        height: 1px;
+                        width: 100%;
+                        background-color: $main;
+                        position: absolute;
+                        top: calc(50% - 1px);
+                        right: 100%;
+                    }
+                    &:after {
+                        content: "";
+                        height: 1px;
+                        width: 100%;
+                        background-color: $main;
+                        position: absolute;
+                        top: calc(50% - 1px);
+                        left: 100%;
+                    }
+                }
+            }
+            .focus {
+                font-weight: $bold;
+                font-size: 2em;
+                position: relative;
+                &:before {
+                    width: 740px;
+                    content: attr(data-text);
+                    position: absolute;
+                    font-weight: bold;
+                    font-size: 5.5rem;
+                    bottom: 100%;
+                    right: -50px;
+                    color: transparent;
+                    letter-spacing: -4px;
+                    -moz-text-fill-color: transparent;
+                    -webkit-text-fill-color: transparent;
+                    -moz-text-stroke-color: rgba($main, 0.1);
+                    -webkit-text-stroke-color: rgba($main, 0.1);
+                    -moz-text-stroke-width: 1px;
+                    -webkit-text-stroke-width: 1px;
+                }
+            }
+        }
+
+        .text {
+            font-weight: $book;
+            font-size: 14px;
+            max-width: 450px;
+            margin-bottom: 20px;
+        }
+
+        .vermas {
+            border-radius: 20px;
+            padding: 10px 15px;
+            display: inline-block;
+            background-color: $main;
+            color: white;
+            font-weight: 100;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    }
+}
+.video-container {
+    background-image: url(../img/video-bg.jpg);
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+    padding: 60px;
+    .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        .title {
+            font-size: 20px;
+            font-weight: $book;
+            text-align: center;
+            color: $main;
+            .focus {
+                font-weight: $bold;
+                font-size: 1.7em;
+                position: relative;
+                &:before {
+                    content: attr(data-text);
+                    position: absolute;
+                    font-weight: bold;
+                    font-size: 4.8rem;
+                    top: 0px;
+                    left: calc(50% - 320px);
+                    color: transparent;
+                    letter-spacing: -4px;
+                    -moz-text-fill-color: transparent;
+                    -webkit-text-fill-color: transparent;
+                    -moz-text-stroke-color: rgba($main, 0.1);
+                    -webkit-text-stroke-color: rgba($main, 0.1);
+                    -moz-text-stroke-width: 1px;
+                    -webkit-text-stroke-width: 1px;
+                }
+            }
+        }
+
+        .video {
+            width: 700px;
+            margin: 0 auto;
+            margin-top: 40px;
+            box-shadow: -10px -10px 0 -1px $main;
+            iframe {
+                width: 100%;
+                height: 350px;
+            }
+        }
+
+        .grid {
+            max-width: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 50px auto;
+
+            .item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 40%;
+                padding: 10px;
+                padding-left: 15px;
+                border-right: 2px solid $main;
+                &:first-child,
+                &:last-child {
+                    width: 35%;
+                }
+
+                &:last-child {
+                    border: none;
+                }
+                img {
+                    width: 55px;
+                    margin-right: 10px;
+                }
+
+                .content {
+                    color: $main;
+                    text-transform: uppercase;
+
+                    .min-title {
+                        font-size: 10px;
+                        font-weight: bold;
+                        margin-bottom: 10px;
+                    }
+
+                    .text {
+                        font-weight: 100;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
 .contact-container {
     background-image: url(../img/contact-bg.jpg);
     padding: 60px;
@@ -170,7 +356,6 @@
                 text-transform: uppercase;
                 position: relative;
                 &:before {
-                    width: 2000px;
                     content: attr(data-text);
                     position: absolute;
                     font-weight: bold;

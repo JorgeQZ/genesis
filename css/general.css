@@ -182,10 +182,6 @@ body {
   padding: 0;
 }
 
-body {
-  background-color: darkgrey;
-}
-
 a {
   text-decoration: none;
   -webkit-transition: all 0.2s ease;

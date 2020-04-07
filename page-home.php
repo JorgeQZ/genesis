@@ -92,7 +92,80 @@
 
 </div><!-- Filtros -->
 
+<!-- Quienes somos -->
+<div class="about-container">
+    <div class="container">
+        <div class="about-title">
+            <div class="about-upper-title">
+                <span>
+                    quiénes somos
+                </span>
+            </div>
+            <div class="focus" data-text="GÉNESIS CAPITAL">GÉNESIS CAPITAL</div>
+        </div>
+        <div class="text">
+            Somos una desarrolladora que nace bajo la premisa de dar solidez a proyectos residenciales, corporativos y comerciales que se rigen bajo los más estrictos estándares de calidad. Por ello nuestro equipo está conformado por expertos del sector que cuentan con más de 15 años de experiencia, generando propuestas de vanguardia y reafirmando nuestro compromiso con la calidad, el diseño y la exclusividad.
+        </div>
+        <div class="vermas">
+            Ver más
+        </div>
+    </div>
+</div>
+<!-- Quienes somos -->
+<!-- Video -->
+<div class="video-container">
+    <div class="container">
+        <div class="title">
+            INIGUALABLE
+            <div class="focus" data-text="GÉNESIS CAPITAL">ESTILO PARA DISFRUTAR</div>
+        </div>
 
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/1WTqnmMNKE8?start=0&modestbranding=1&showinfo=0&rel=0&cc_load_policy=1&iv_load_policy=3&theme=light&fs=0&color=white&autohide=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="grid">
+            <div class="item">
+                <img src="<?php echo get_template_directory_uri().'/img/icon-residencias.png' ?>" alt="">
+                <div class="content">
+                    <div class="min-title">
+                        Espacios <br> Residenciales
+                    </div>
+                    <div class="text">
+                        los mejores acabados
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="<?php echo get_template_directory_uri().'/img/icon-comer.png' ?>" alt="">
+                <div class="content">
+                    <div class="min-title">
+                        Espacios <br> Comerciales
+
+                    </div>
+                    <div class="text">
+                        la mejor ubicación y distribución
+                    </div>
+                </div>
+
+            </div>
+            <div class="item">
+                <img src="<?php echo get_template_directory_uri().'/img/icon-corpo.png' ?>" alt="">
+                <div class="content">
+                    <div class="min-title">
+                        Espacios <br> Corporativos
+
+                    </div>
+                    <div class="text">
+                        una excelente organización
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div><!-- Video -->
 
 <!-- Contacto -->
 <div class="contact-container">
