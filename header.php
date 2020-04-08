@@ -23,8 +23,14 @@
                 <li><a href="#">contacto</a></li>
             </ul>
             <div class="social-links">
-                <a href="" class="item"><img src="<?php  echo get_template_directory_uri().'/img/phone.png'?>" alt=""></a>
-                <a href="" class="item"><img src="<?php  echo get_template_directory_uri().'/img/mail.png'?>" alt=""></a>
+                <a href="" class="item">
+                    <img src="<?php  echo get_template_directory_uri().'/img/phone.png'?>" alt="">
+                    <!-- <img class="img-alt" src="<?php  echo get_template_directory_uri().'/img/phone-alternate.png'?>" alt=""> -->
+                </a>
+                <a href="" class="item">
+                    <img src="<?php  echo get_template_directory_uri().'/img/mail.png'?>" alt="">
+                    <!-- <img class="img-alt" src="<?php  echo get_template_directory_uri().'/img/mail-alternate.png'?>" alt=""> -->
+                </a>
             </div>
         </div>
     </header>

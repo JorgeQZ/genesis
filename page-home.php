@@ -87,7 +87,9 @@
 
     <!-- Boton buscar -->
     <div class="filter-submit">
-        <div class="submit">Buscar</div>
+        <div class="submit-cont">
+            <input type="submit" value="Buscar">
+        </div>
     </div><!-- Boton buscar -->
 
 </div><!-- Filtros -->
@@ -95,19 +97,21 @@
 <!-- Quienes somos -->
 <div class="about-container">
     <div class="container">
-        <div class="about-title">
-            <div class="about-upper-title">
-                <span>
-                    quiénes somos
-                </span>
+        <div class="content">
+            <div class="about-title">
+                <div class="about-upper-title">
+                    <span>
+                        quiénes somos
+                    </span>
+                </div>
+                <div class="focus" data-text="GÉNESIS CAPITAL">GÉNESIS CAPITAL</div>
             </div>
-            <div class="focus" data-text="GÉNESIS CAPITAL">GÉNESIS CAPITAL</div>
-        </div>
-        <div class="text">
-            Somos una desarrolladora que nace bajo la premisa de dar solidez a proyectos residenciales, corporativos y comerciales que se rigen bajo los más estrictos estándares de calidad. Por ello nuestro equipo está conformado por expertos del sector que cuentan con más de 15 años de experiencia, generando propuestas de vanguardia y reafirmando nuestro compromiso con la calidad, el diseño y la exclusividad.
-        </div>
-        <div class="vermas">
-            Ver más
+            <div class="text">
+                Somos una desarrolladora que nace bajo la premisa de dar solidez a proyectos residenciales, corporativos y comerciales que se rigen bajo los más estrictos estándares de calidad. Por ello nuestro equipo está conformado por expertos del sector que cuentan con más de 15 años de experiencia, generando propuestas de vanguardia y reafirmando nuestro compromiso con la calidad, el diseño y la exclusividad.
+            </div>
+            <div class="vermas">
+                Ver más
+            </div>
         </div>
     </div>
 </div>
@@ -204,7 +208,9 @@
                     <textarea name="" id="" cols="30" rows="10" placeholder="MENSAJE"></textarea>
                 </div>
                 <div class="form-row">
-                    <input type="submit" value="Enviar">
+                    <div class="submit-cont">
+                        <input type="submit" value="Enviar">
+                    </div>
                 </div>
             </div>
         </div>
