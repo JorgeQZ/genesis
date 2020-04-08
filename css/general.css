@@ -6,22 +6,29 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 10px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 13px 23px;
+  padding-right: 35px;
   width: 100%;
-  z-index: 110;
+  z-index: 1001;
   -webkit-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
 }
 
 header.scrolled {
+  padding-top: 5px;
+  padding-bottom: 5px;
   background-color: #11647a;
 }
 
+header.scrolled .menu {
+  padding-top: 12px;
+}
+
 header a.brand-logo {
-  max-width: 150px;
+  max-width: 175px;
 }
 
 header a.brand-logo img {
@@ -35,6 +42,9 @@ header .menu {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 8px;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 header .menu ul {
@@ -49,11 +59,12 @@ header .menu ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-right: 10px;
 }
 
 header .menu ul li {
   list-style: none;
-  margin: 5px;
+  margin: 0 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -68,7 +79,7 @@ header .menu ul li a {
   display: inline-block;
   font-weight: 100;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 13px;
   color: white;
   position: relative;
   overflow: hidden;
@@ -112,7 +123,7 @@ header .menu .social-links {
 }
 
 header .menu .social-links a.item {
-  margin: 0 5px;
+  margin: 0px;
   width: 30px;
   height: 30px;
   display: -webkit-box;
@@ -127,6 +138,10 @@ header .menu .social-links a.item {
   border-radius: 50%;
   position: relative;
   overflow: hidden;
+}
+
+header .menu .social-links a.item:first-child {
+  margin-right: -3px;
 }
 
 header .menu .social-links a.item:before {
@@ -162,7 +177,7 @@ header .menu .social-links a.item:after {
 }
 
 header .menu .social-links a.item img {
-  width: 60%;
+  width: 55%;
   margin: 0;
   position: relative;
   z-index: 1;
