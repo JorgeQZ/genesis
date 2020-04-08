@@ -792,8 +792,8 @@
   height: 1px;
   background-color: white;
   position: absolute;
-  -webkit-transition: left 0.3s ease-in-out;
-  transition: left 0.3s ease-in-out;
+  -webkit-transition: left 0.2s ease-in-out;
+  transition: left 0.2s ease-in-out;
   -webkit-transition-delay: 0.2s;
           transition-delay: 0.2s;
 }
