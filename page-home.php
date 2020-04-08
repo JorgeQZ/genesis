@@ -27,13 +27,13 @@
             </div>
         </div>
         <div class="cont-edificios">
-            <img src="<?php echo get_template_directory_uri().'/img/e0.png' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/img/edi0.png' ?>" alt="">
             <div class="hovers">
-                <img src="<?php echo get_template_directory_uri().'/img/e1.png' ?>" alt="">
-                <img src="<?php echo get_template_directory_uri().'/img/e2.png' ?>" alt="">
-                <img src="<?php echo get_template_directory_uri().'/img/e3.png' ?>" alt="">
-                <img src="<?php echo get_template_directory_uri().'/img/e4.png' ?>" alt="">
-                <img src="<?php echo get_template_directory_uri().'/img/e5.png' ?>" alt="">
+                <img src="<?php echo get_template_directory_uri().'/img/edi1.png' ?>" alt="">
+                <img src="<?php echo get_template_directory_uri().'/img/edi2.png' ?>" alt="">
+                <img src="<?php echo get_template_directory_uri().'/img/edi3.png' ?>" alt="">
+                <img src="<?php echo get_template_directory_uri().'/img/edi4.png' ?>" alt="">
+                <img src="<?php echo get_template_directory_uri().'/img/edi5.png' ?>" alt="">
             </div>
             <div class="items">
                 <div class="col col1"></div>

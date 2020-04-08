@@ -14,25 +14,42 @@
 
 .contenedor-general-banner {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 715px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url(../img/fondo.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  /*background-image: url(../img/fondo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;*/
   display: flex;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  position: relative;
+}
+
+.contenedor-general-banner::after {
+  content: "";
+  background: url(../img/fondo.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
 }
 
 .contenedor-general-banner .cont-contenido {
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -61,13 +78,27 @@
 .contenedor-general-banner .cont-contenido .cont-logo .logo {
   position: absolute;
   opacity: 0;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all .5s;
+  transition: all .5s;
   background-image: url(../img/dec-logos.png);
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   padding: 15px 30px;
+  -webkit-transform: translate3d(0, 40px, 0);
+          transform: translate3d(0, 40px, 0);
+}
+
+.contenedor-general-banner .cont-contenido .cont-logo .logo:nth-child(1) {
+  left: 0;
+}
+
+.contenedor-general-banner .cont-contenido .cont-logo .logo:nth-child(2) {
+  left: 15%;
+}
+
+.contenedor-general-banner .cont-contenido .cont-logo .logo:nth-child(4) {
+  right: 17%;
 }
 
 .contenedor-general-banner .cont-contenido .cont-logo .logo img {
@@ -77,6 +108,8 @@
 
 .contenedor-general-banner .cont-contenido .cont-logo .logo.active {
   opacity: 1;
+  -webkit-transform: translate3d(0, 0px, 0);
+          transform: translate3d(0, 0px, 0);
 }
 
 .contenedor-general-banner .cont-contenido .cont-edificios {
@@ -116,39 +149,44 @@
 .contenedor-general-banner .cont-contenido .cont-edificios .items {
   position: absolute;
   top: 0;
-  left: 4%;
-  width: 92%;
+  left: 2%;
+  width: 96%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
+.contenedor-general-banner .cont-contenido .cont-edificios .items .col {
+  background: transparent !important;
+}
+
+.contenedor-general-banner .cont-contenido .cont-edificios .items .col::after {
+  background: transparent !important;
+}
+
 .contenedor-general-banner .cont-contenido .cont-edificios .items .col.col1 {
   background: rgba(250, 50, 50, 0.5);
   width: 15%;
-  height: 62%;
+  height: 66%;
   position: relative;
-  top: 12%;
-  background: transparent;
+  top: 15%;
 }
 
 .contenedor-general-banner .cont-contenido .cont-edificios .items .col.col2 {
   background: rgba(50, 50, 250, 0.5);
-  width: 21.5%;
-  height: 30%;
+  width: 22%;
+  height: 35%;
   position: relative;
-  top: 44%;
-  background: transparent;
+  top: 49%;
 }
 
 .contenedor-general-banner .cont-contenido .cont-edificios .items .col.col3 {
   background: rgba(50, 250, 50, 0.5);
   width: 26%;
-  height: 62%;
+  height: 64%;
   position: relative;
-  top: 12%;
-  background: transparent;
+  top: 20%;
 }
 
 .contenedor-general-banner .cont-contenido .cont-edificios .items .col.col3::after {
@@ -157,28 +195,61 @@
   width: 27%;
   height: 30%;
   position: absolute;
-  top: 20%;
-  right: -14%;
+  top: 14%;
+  right: -15%;
   z-index: 9;
-  background: transparent;
 }
 
 .contenedor-general-banner .cont-contenido .cont-edificios .items .col.col4 {
   background: rgba(250, 250, 50, 0.5);
-  width: 20.5%;
-  height: 40%;
+  width: 21%;
+  height: 47%;
   position: relative;
-  top: 34%;
-  background: transparent;
+  top: 37%;
 }
 
 .contenedor-general-banner .cont-contenido .cont-edificios .items .col.col5 {
   background: rgba(50, 250, 250, 0.5);
-  width: 17%;
-  height: 71%;
+  width: 16%;
+  height: 75%;
   position: relative;
-  top: 3%;
-  background: transparent;
+  top: 6%;
+}
+
+@media screen and (min-width: 1500px) {
+  .contenedor-general-banner .cont-contenido .cont-logo .logo:nth-child(1) {
+    left: 1%;
+  }
+  .contenedor-general-banner .cont-contenido .cont-logo .logo:nth-child(2) {
+    left: 17%;
+  }
+  .contenedor-general-banner .cont-contenido .cont-logo .logo:nth-child(4) {
+    right: 19%;
+  }
+}
+
+@media screen and (min-width: 1870px) {
+  .contenedor-general-banner .cont-contenido .cont-logo .logo:nth-child(1) {
+    left: 3%;
+  }
+  .contenedor-general-banner .cont-contenido .cont-logo .logo:nth-child(2) {
+    left: 20%;
+  }
+  .contenedor-general-banner .cont-contenido .cont-logo .logo:nth-child(4) {
+    right: 22%;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .contenedor-general-banner .cont-contenido .cont-logo .logo:nth-child(1) {
+    left: initial;
+  }
+  .contenedor-general-banner .cont-contenido .cont-logo .logo:nth-child(2) {
+    left: initial;
+  }
+  .contenedor-general-banner .cont-contenido .cont-logo .logo:nth-child(4) {
+    left: initial;
+  }
 }
 
 @-webkit-keyframes LiOption {
