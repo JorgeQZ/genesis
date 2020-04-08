@@ -240,6 +240,12 @@
       -ms-flex-align: start;
           align-items: flex-start;
   margin: 0px auto;
+  position: relative;
+  z-index: 1000;
+}
+
+.filter-container .filters:nth-child(3) {
+  z-index: 999;
 }
 
 .filter-container .filters .col {
