@@ -7,10 +7,46 @@
 ?>
 
 <?php get_header();?>
+
 <!-- Banner -->
-<div class="hero-banner">
-    HERO BANNER
-</div><!-- Banner -->
+<div class="contenedor-general-banner">
+
+    <div class="cont-contenido">
+        <div class="cont-logo">
+            <div class="logo">
+                <img src="<?php echo get_template_directory_uri().'/img/logo-01.png' ?>" alt="">
+            </div>
+            <div class="logo">
+                <img src="<?php echo get_template_directory_uri().'/img/logo-02.png' ?>" alt="">
+            </div>
+            <div class="logo">
+                <img src="<?php echo get_template_directory_uri().'/img/logo-03.png' ?>" alt="">
+            </div>
+            <div class="logo">
+                <img src="<?php echo get_template_directory_uri().'/img/logo-04.png' ?>" alt="">
+            </div>
+        </div>
+        <div class="cont-edificios">
+            <img src="<?php echo get_template_directory_uri().'/img/e0.png' ?>" alt="">
+            <div class="hovers">
+                <img src="<?php echo get_template_directory_uri().'/img/e1.png' ?>" alt="">
+                <img src="<?php echo get_template_directory_uri().'/img/e2.png' ?>" alt="">
+                <img src="<?php echo get_template_directory_uri().'/img/e3.png' ?>" alt="">
+                <img src="<?php echo get_template_directory_uri().'/img/e4.png' ?>" alt="">
+                <img src="<?php echo get_template_directory_uri().'/img/e5.png' ?>" alt="">
+            </div>
+            <div class="items">
+                <div class="col col1"></div>
+                <div class="col col2"></div>
+                <div class="col col3"></div>
+                <div class="col col4"></div>
+                <div class="col col5"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- Banner -->
 
 <!-- Filtros -->
 <div class="filter-container">
@@ -250,3 +286,70 @@
 </div>
 <!-- Contacto -->
 <?php get_footer();?>
+
+<script>
+    $(document).ready(function(){
+
+
+        $(".contenedor-general-banner .cont-contenido .cont-edificios .items .col").each(function(index){
+        
+            $(this).hover(function(){
+                $(".contenedor-general-banner .cont-contenido .cont-edificios .hovers img").eq(index).addClass("active");
+                $(".contenedor-general-banner .cont-contenido .cont-logo .logo").eq(index).addClass("active");
+                }, function(){
+                $(".contenedor-general-banner .cont-contenido .cont-edificios .hovers img").eq(index).removeClass("active");
+                $(".contenedor-general-banner .cont-contenido .cont-logo .logo").eq(index).removeClass("active");
+            });
+
+        });
+
+    });
+</script>
+
+
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+
+<style>
+.contenedor-general-banner .cont-contenido .cont-edificios,
+.filter-container > div,
+.about-container .container .content,
+.video-container .container > div,
+.contact-container .container .col > div{
+    opacity: 0;
+}
+
+</style>
+
+<script>
+var $j = jQuery.noConflict();
+
+jQuery(function($j) {
+/*
+    $j('.bascule-container .content-front .options .option, .bascule-container .content-behinde .text .title, .bascule-container .content-behinde .text .desc').waypoint(function() {
+        $j(this).toggleClass('fadeInUp animated');
+    }, {
+        offset: '75%',
+        triggerOnce: true
+    });
+*/
+    $j('.contenedor-general-banner .cont-contenido .cont-edificios, .filter-container > div, .about-container .container .content, .video-container .container > div, .contact-container .container .col > div').waypoint(function() {
+        $j(this).toggleClass('fadeIn animated');
+    }, {
+        offset: '75%',
+        triggerOnce: true
+    });
+/*
+    $j('.hero-banner .hero-title').waypoint(function() {
+        $j(this).toggleClass('fadeIn animated');
+    }, {
+        offset: '100%',
+        triggerOnce: true
+    });
+*/
+
+});
+</script>
