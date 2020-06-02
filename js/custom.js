@@ -12,7 +12,7 @@ $(document).ready(function (e) {
     $('.filter-cont li').click(function (e) {
         e.preventDefault();
         let text_value = $(this).text();
-        $(this).parent().removeClass('active').siblings('.value').html(text_value);
+        $(this).parent().removeClass('active').siblings('.value').val(text_value);
     });
 
 
@@ -33,5 +33,5 @@ $(document).ready(function (e) {
 $(window).on('scroll', function () {
     let top = $(window).scrollTop();
     (top >= 100) ? $('header').addClass('scrolled') : $('header').removeClass('scrolled');
-    console.info(top);
+
 });

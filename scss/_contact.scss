@@ -1,0 +1,290 @@
+.contact-container {
+    background-image: url(../img/contact-bg.jpg);
+    padding: 60px;
+
+    .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .col {
+            .title {
+                color: white;
+                font-weight: $bold;
+                font-size: 30px;
+                text-transform: uppercase;
+                position: relative;
+                &:before {
+                    content: attr(data-text);
+                    position: absolute;
+                    font-weight: bold;
+                    font-size: 5rem;
+                    top: -30px;
+                    left: -50px;
+                    color: transparent;
+                    -moz-text-fill-color: transparent;
+                    -webkit-text-fill-color: transparent;
+                    -moz-text-stroke-color: rgba(white, 0.1);
+                    -webkit-text-stroke-color: rgba(white, 0.1);
+                    -moz-text-stroke-width: 1px;
+                    -webkit-text-stroke-width: 1px;
+                }
+            }
+            .text {
+                margin-top: 20px;
+                font-weight: 100;
+                color: white;
+                max-width: 500px;
+            }
+            .form {
+                width: 600px;
+                margin-top: 30px;
+                color: $main;
+                .form-row {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: 10px 0;
+
+                    .form-group {
+                        width: 49%;
+                        input {
+                            width: 100%;
+                            border: none;
+                            padding: 10px;
+                            font-size: 14px;
+                            color: $main;
+                            font-weight: 100;
+                            height: 40px;
+                            &::placeholder {
+                                color: $main;
+                            }
+                        }
+
+                        .select-cont {
+                            position: relative;
+                            // max-width: 200px;
+                            .value {
+                                cursor: pointer;
+                                font-weight: 100;
+                                background-color: #fff;
+                                color: $main;
+                                width: 100%;
+                                padding: 10px;
+                                height: 40px;
+                                position: relative;
+                                text-transform: uppercase;
+                                font-size: 14px;
+                                display: flex;
+                                align-items: center;
+                                &:before {
+                                    content: "";
+                                    background-image: url(../img/arrow-down-alternate.png);
+                                    background-position: center;
+                                    background-size: contain;
+                                    background-repeat: no-repeat;
+                                    position: absolute;
+                                    right: 8px;
+                                    top: 11px;
+                                    width: 12px;
+                                    height: 10px;
+                                }
+                            }
+                            ul {
+                                width: 100%;
+                                position: absolute;
+                                background-color: rgba($alt, 0.9);
+                                padding: 5px;
+                                border-radius: 0 0 0 10px;
+                                margin: 0;
+                                opacity: 0;
+                                max-height: 0;
+                                overflow: hidden;
+                                transition: opacity 0.1s linear, max-height 0.35s ease-in;
+                                z-index: 10;
+                                li {
+                                    color: white;
+                                    font-weight: 100;
+                                    text-align: center;
+                                    text-transform: uppercase;
+                                    list-style: none;
+                                    font-size: 9px;
+                                    border-bottom: 1px solid rgba(white, 0.2);
+                                    transform: translateX(-10px);
+                                    margin: 2px;
+                                    padding: 10px 0;
+                                    height: 0;
+                                    opacity: 0;
+
+                                    overflow: hidden;
+                                    transition: background-color 0.2s ease, color 0.2s linear;
+                                    cursor: pointer;
+                                    &:after,
+                                    &:before {
+                                        content: "";
+                                        width: 100%;
+                                        height: 1px;
+                                        background-color: white;
+                                        position: absolute;
+                                        transition: left 0.2s ease-in-out;
+                                        transition-delay: 0.2s;
+                                    }
+
+                                    &:after {
+                                        top: 0;
+                                        left: 100%;
+                                    }
+                                    &:before {
+                                        bottom: 0;
+                                        left: -100%;
+                                    }
+
+                                    &:hover {
+                                        &:after,
+                                        &:before {
+                                            left: 0;
+                                        }
+                                    }
+
+                                    &:last-child {
+                                        border-bottom: none;
+                                    }
+                                }
+                                &.active {
+                                    opacity: 1;
+                                    max-height: 200px;
+                                    li {
+                                        height: auto;
+                                        animation-name: LiOption;
+                                        animation-duration: 0.4s;
+                                        animation-iteration-count: 1;
+                                        animation-direction: normal;
+                                        animation-timing-function: ease-in;
+                                        animation-fill-mode: forwards;
+                                        @for $i from 1 through 5 {
+                                            &:nth-child(#{$i}n) {
+                                                animation-delay: #{$i * 0.15}s;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    textarea {
+                        width: 100%;
+                        border: none;
+                        padding: 10px;
+                        font-size: 14px;
+                        font-weight: 100;
+                        height: 110px;
+                        &::placeholder {
+                            color: $main;
+                        }
+                    }
+                    .submit-cont {
+                        position: relative;
+                        transition: background-color 0.3s linear;
+                        overflow: hidden;
+                        &:after,
+                        &:before {
+                            content: "";
+                            width: 100%;
+                            height: 1px;
+                            background-color: white;
+                            position: absolute;
+                            transition: left 0.3s ease-in-out;
+                            transition-delay: 0.2s;
+                        }
+
+                        &:after {
+                            top: 0;
+                            left: 100%;
+                        }
+                        &:before {
+                            bottom: 0;
+                            left: -100%;
+                        }
+
+                        input[type="submit"] {
+                            width: 130px;
+                            padding: 10px;
+                            height: 40px;
+                            background-color: $alt;
+                            font-weight: 100;
+                            color: white;
+                            border: none;
+                            font-size: 14px;
+                            text-transform: uppercase;
+                            transition: background-color 0.3s linear;
+                            cursor: pointer;
+                        }
+
+                        &:hover {
+                            input[type="submit"] {
+                                background-color: transparent;
+                            }
+                            &:after,
+                            &:before {
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .content {
+                max-width: 500px;
+                .row {
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    .column {
+                        font-size: 12px;
+                        color: white;
+                        font-weight: 100;
+                        img {
+                            width: 20px;
+                            margin: 10px;
+                            margin-right: 20px;
+                        }
+                        a {
+                            display: inline-block;
+                            overflow: hidden;
+                            font-weight: 100;
+                            padding: 5px 0;
+                            color: white;
+                            position: relative;
+
+                            &:before,
+                            &:after {
+                                content: "";
+                                width: 100%;
+                                height: 1px;
+                                background-color: #fff;
+                                position: absolute;
+                                transition: left 0.3s ease-in-out;
+                            }
+                            &::before {
+                                top: 0;
+                                left: 100%;
+                            }
+                            &:after {
+                                bottom: 0;
+                                left: -100%;
+                            }
+
+                            &:hover {
+                                &:after,
+                                &:before {
+                                    left: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,330 @@
+@import "variables";
+@keyframes LiOption {
+    0% {
+        opacity: 0;
+        transform: translateX(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+.advanced-search-container {
+    background-image: url(../img/search-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    min-height: 600px;
+    padding-top: 120px;
+    max-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .filter-container {
+        padding: 60px;
+
+        .filter-title {
+            font-size: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            color: $main;
+            font-weight: 100;
+            margin-bottom: 30px;
+            .focus {
+                font-weight: $bold;
+                font-size: 1.7em;
+            }
+        }
+
+        .filters {
+            width: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 0px auto;
+            position: relative;
+
+            &:nth-child(1) {
+                z-index: 1000;
+            }
+            .col {
+                text-align: center;
+                width: 50%;
+                .filter-cont {
+                    margin: 5px;
+                    position: relative;
+                    max-width: 200px;
+
+                    .value {
+                        cursor: pointer;
+                        font-weight: 100;
+                        color: white;
+                        border: 1px solid white;
+                        background-color: $main;
+                        width: 100%;
+                        padding: 10px;
+                        border-radius: 8px;
+                        position: relative;
+                        text-transform: uppercase;
+                        transition: background-color 0.3s linear;
+                        font-size: 12px;
+                        &::placeholder {
+                            color: #fff;
+                        }
+                        &:hover {
+                            background-color: $alt;
+                        }
+                        &:before {
+                            content: "";
+                            background-image: url(../img/arrow-down.png);
+                            background-position: center;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            position: absolute;
+                            right: 8px;
+                            top: 12px;
+                            width: 10px;
+                            height: 9px;
+                        }
+                    }
+                    ul {
+                        width: 100%;
+                        position: absolute;
+                        background-color: rgba($alt, 1);
+                        // padding: 10px;
+                        border-radius: 0 0 0 10px;
+                        margin: 0;
+
+                        opacity: 0;
+                        max-height: 0;
+                        overflow: hidden;
+
+                        transition: opacity 0.1s linear, max-height 0.35s ease-in;
+                        li {
+                            color: white;
+                            font-weight: 100;
+                            text-align: left;
+                            opacity: 0;
+                            transform: translateX(-10px);
+                            margin: 2px;
+                            list-style: none;
+                            font-size: 9px;
+                            text-align: center;
+                            text-transform: uppercase;
+                            border-bottom: 1px solid rgba(white, 0.1);
+                            height: 0;
+                            opacity: 0;
+                            transition: background-color 0.2s ease, color 0.2s linear;
+                            cursor: pointer;
+                            overflow: hidden;
+                            &:after,
+                            &:before {
+                                content: "";
+                                width: 100%;
+                                height: 1px;
+                                background-color: rgba(white, 0.8);
+                                position: absolute;
+                                transition: left 0.3s ease-in-out;
+                            }
+
+                            &:after {
+                                top: 0;
+                                left: 100%;
+                            }
+                            &:before {
+                                bottom: 0;
+                                left: -100%;
+                            }
+
+                            &:hover {
+                                &:after,
+                                &:before {
+                                    left: 0;
+                                }
+                            }
+                            &:last-child {
+                                border: none;
+                            }
+                        }
+
+                        &.active {
+                            z-index: 100;
+                            opacity: 1;
+                            padding: 10px;
+                            max-height: 200px;
+                            li {
+                                height: auto;
+                                padding: 10px 5px;
+                                animation-name: LiOption;
+                                animation-duration: 0.4s;
+                                animation-iteration-count: 1;
+                                animation-direction: normal;
+                                animation-timing-function: ease-in;
+                                animation-fill-mode: forwards;
+                                @for $i from 1 through 5 {
+                                    &:nth-child(#{$i}n) {
+                                        animation-delay: #{$i * 0.15}s;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .advanced-search {
+            width: 390px;
+            margin: 10px auto;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .title {
+                width: 190px;
+                color: $main;
+                position: relative;
+                display: inline-block;
+                padding: 5px 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-transform: uppercase;
+                font-weight: $bold;
+                .little-arrow {
+                    background-image: url(../img/arrow-down-alternate.png);
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    width: 10px;
+                    height: 10px;
+                    margin-left: 10px;
+                }
+                &::after {
+                    content: "";
+                    background-color: $main;
+                    height: 1px;
+                    width: 100px;
+                    right: calc(100% + 0px);
+                    top: calc(50% - 0.5px);
+                    position: absolute;
+                }
+                &::before {
+                    content: "";
+                    background-color: $main;
+                    height: 1px;
+                    width: 100px;
+                    left: calc(100% + 0px);
+                    top: calc(50% - 0.5px);
+                    position: absolute;
+                }
+            }
+        }
+
+        .advanced-search-options {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 0;
+            margin-bottom: 20px;
+            .form-checkbox {
+                width: 150px;
+                margin-left: 30px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                &:first-child {
+                    margin-left: 60px;
+                    width: 100px;
+                }
+                label {
+                    text-transform: uppercase;
+                    font-size: 12px;
+                    color: $main;
+                }
+                input {
+                    height: 15px;
+                    width: 15px;
+                    border-radius: 50%;
+                    background: transparent;
+                    appearance: none;
+                    border: 1px solid $main;
+                    &:focus {
+                        outline: transparent;
+                    }
+                    &:checked {
+                        background-color: $main;
+                    }
+                }
+            }
+        }
+
+        .filter-submit {
+            text-align: center;
+
+            .submit-cont {
+                display: inline-block;
+                position: relative;
+                overflow: hidden;
+                &:after,
+                &:before {
+                    content: "";
+                    width: calc(100% - 10px);
+                    height: 1px;
+                    background-color: $main;
+                    position: absolute;
+                    transition: left 0.3s ease-in-out;
+                    transition-delay: 0.2s;
+                }
+
+                &:after {
+                    top: 0;
+                    left: 100%;
+                }
+                &:before {
+                    bottom: 0;
+                    left: -100%;
+                }
+                input[type="submit"] {
+                    width: 190px;
+                    cursor: pointer;
+                    font-weight: normal;
+                    background-color: $main;
+                    border: none;
+                    color: #fff;
+                    padding: 12px 10px;
+                    border-radius: 8px;
+                    text-transform: uppercase;
+                    font-size: 12px;
+                    margin: 0 auto;
+                    transition: background-color 0.2s linear;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                &:hover {
+                    &:after,
+                    &:before {
+                        left: 0;
+                        left: calc(0% + 5px);
+                    }
+                    input[type="submit"] {
+                        color: $main;
+
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 990px) {
+    header {
+        background-color: rgba($main, 0.95);
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}

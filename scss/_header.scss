@@ -7,7 +7,7 @@ header {
     padding-right: 35px;
     width: 100%;
     z-index: 1001;
-    transition: background-color 0.2s linear;
+    transition: all 0.2s linear;
     &.scrolled {
         padding-top: 5px;
         padding-bottom: 5px;

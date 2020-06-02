@@ -46,8 +46,11 @@ function add_theme_scripts() {
     wp_enqueue_script('custom', get_template_directory_uri().'/js/custom.js', array('jquery'),filemtime( get_stylesheet_directory() . '/js/custom.js' ), false);
 
     if(is_page_template('page-home.php')):
-    wp_enqueue_style( 'page-home', get_template_directory_uri() . '/css/page-home.css', array(), filemtime( get_stylesheet_directory() . '/css/page-home.css' ), 'all');
+        wp_enqueue_style( 'page-home', get_template_directory_uri() . '/css/page-home.css', array(), filemtime( get_stylesheet_directory() . '/css/page-home.css' ), 'all');
+    endif;
 
+    if(is_page_template('page-comparacion.php')):
+        wp_enqueue_style( 'page-comparacion', get_template_directory_uri() . '/css/page-comparacion.css', array(), filemtime( get_stylesheet_directory() . '/css/page-comparacion.css' ), 'all');
     endif;
   }
   add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
