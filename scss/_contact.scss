@@ -57,6 +57,9 @@
                             color: $main;
                             font-weight: 100;
                             height: 40px;
+                            &:focus {
+                                outline: none;
+                            }
                             &::placeholder {
                                 color: $main;
                             }
@@ -180,6 +183,9 @@
                         font-size: 14px;
                         font-weight: 100;
                         height: 110px;
+                        &:focus {
+                            outline: none;
+                        }
                         &::placeholder {
                             color: $main;
                         }
@@ -220,6 +226,9 @@
                             text-transform: uppercase;
                             transition: background-color 0.3s linear;
                             cursor: pointer;
+                            &:focus {
+                                outline: none;
+                            }
                         }
 
                         &:hover {

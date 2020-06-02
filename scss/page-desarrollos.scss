@@ -1,0 +1,53 @@
+@import "variables";
+
+.hero-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/desarrollos-angora.jpg);
+    background-position: center;
+    background-size: cover;
+    background-clip: border-box;
+    background-origin: border-box;
+
+    img {
+        max-width: 400px;
+    }
+}
+
+.menu-navigation {
+    background-color: $purple;
+    ul {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: row;
+        li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            color: white;
+            font-weight: 100;
+            font-family: $font;
+            font-size: 12px;
+            padding: 15px 12px;
+            cursor: pointer;
+            transition: all 0.3s linear;
+            &:hover {
+                background-color: $purple-alt;
+            }
+        }
+    }
+}
+
+.video-cont {
+    img {
+        width: 100%;
+        margin: 0;
+    }
+}

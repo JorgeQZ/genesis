@@ -388,6 +388,10 @@ a {
   height: 40px;
 }
 
+.contact-container .container .col .form .form-row .form-group input:focus {
+  outline: none;
+}
+
 .contact-container .container .col .form .form-row .form-group input::-webkit-input-placeholder {
   color: #11647a;
 }
@@ -560,6 +564,10 @@ a {
   height: 110px;
 }
 
+.contact-container .container .col .form .form-row textarea:focus {
+  outline: none;
+}
+
 .contact-container .container .col .form .form-row textarea::-webkit-input-placeholder {
   color: #11647a;
 }
@@ -618,6 +626,10 @@ a {
   -webkit-transition: background-color 0.3s linear;
   transition: background-color 0.3s linear;
   cursor: pointer;
+}
+
+.contact-container .container .col .form .form-row .submit-cont input[type="submit"]:focus {
+  outline: none;
 }
 
 .contact-container .container .col .form .form-row .submit-cont:hover input[type="submit"] {

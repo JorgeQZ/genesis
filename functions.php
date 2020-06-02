@@ -52,6 +52,10 @@ function add_theme_scripts() {
     if(is_page_template('page-comparacion.php')):
         wp_enqueue_style( 'page-comparacion', get_template_directory_uri() . '/css/page-comparacion.css', array(), filemtime( get_stylesheet_directory() . '/css/page-comparacion.css' ), 'all');
     endif;
+
+    if(is_page_template('page-desarrollos.php')):
+        wp_enqueue_style( 'page-desarrollos', get_template_directory_uri() . '/css/page-desarrollos.css', array(), filemtime( get_stylesheet_directory() . '/css/page-desarrollos.css' ), 'all');
+    endif;
   }
   add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 

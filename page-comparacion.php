@@ -15,7 +15,7 @@ get_header(); ?>
         </div>
 
         <!-- FORM -->
-        <form action="">
+        <form method="post">
             <!-- Filters -->
             <div class="filters">
                 <!-- col -->
@@ -81,7 +81,7 @@ get_header(); ?>
             <!-- Busqueda avanzada -->
             <div class="advanced-search">
                 <div class="title">
-                    Busqueda avanzada
+                    Búsqueda avanzada
                     <div class="little-arrow"></div>
                 </div>
             </div>
