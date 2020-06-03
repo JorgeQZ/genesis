@@ -55,6 +55,13 @@ function add_theme_scripts() {
 
     if(is_page_template('page-desarrollos.php')):
         wp_enqueue_style( 'page-desarrollos', get_template_directory_uri() . '/css/page-desarrollos.css', array(), filemtime( get_stylesheet_directory() . '/css/page-desarrollos.css' ), 'all');
+
+        wp_enqueue_script('owl.carousel.min', get_template_directory_uri().'/js/owl.carousel.min.js', array('jquery'),filemtime( get_stylesheet_directory() . '/js/owl.carousel.min.js' ), false);
+
+        wp_enqueue_style( 'owl.carousel.min', get_template_directory_uri() . '/css/owl.carousel.min.css', array(), filemtime( get_stylesheet_directory() . '/css/owl.carousel.min.css' ), 'all');
+
+        wp_enqueue_style( 'owl.theme.default.min', get_template_directory_uri() . '/css/owl.theme.default.min.css', array(), filemtime( get_stylesheet_directory() . '/css/owl.theme.default.min.css' ), 'all');
+
     endif;
   }
   add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );

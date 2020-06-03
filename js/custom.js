@@ -27,6 +27,20 @@ $(document).ready(function (e) {
         $(this).parent().removeClass('active').siblings('.value').html(text_value);
     });
 
+
+    // Slider Range Owl Carousel Desarrollos
+    var owl = $(".departments-carousel"), inputType = $("#departments-slider");
+    inputType.on('change', function (e) {
+        e.preventDefault();
+        console.log(inputType.val());
+        $('.departments-carousel').trigger('to.owl.carousel', [inputType.val()]);
+    });
+
+    owl.on('changed.owl.carousel', function (event) {
+        console.log(event.item.index);
+        inputType.val(event.item.index);
+    });
+
 });
 
 
