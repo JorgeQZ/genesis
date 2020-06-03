@@ -243,6 +243,28 @@ get_header(); ?>
     </div>
 </div><!-- Departamentos  -->
 
+
+<!-- Ubicación -->
+<div class="location-container">
+    <div class="col"></div>
+    <div class="col">
+        <div class="title" data-text="áncora">
+            ubicación
+        </div>
+        <div class="desc">
+            <ul>
+                <li>5 min. Plaza Sátelite</li>
+                <li>5 min. Periférico</li>
+                <li>1 min. Gustavo Baz</li>
+                <li>15 min. Nuevo Polanco</li>
+                <li>20 min. Polanco</li>
+            </ul>
+            Av. Del Cristo 101, Xocoyahualco 54080, Tlalnepantla.
+        </div>
+    </div>
+</div>
+<!-- Ubicación -->
+
 <!-- Contacto -->
 <?php get_template_part('template-parts/contact'); ?>
 <!-- Contacto -->

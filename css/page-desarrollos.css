@@ -428,3 +428,47 @@
   -webkit-box-shadow: 0 0 0 1px #852c5b;
           box-shadow: 0 0 0 1px #852c5b;
 }
+
+.location-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.location-container .col {
+  padding: 60px 0;
+}
+
+.location-container .col:first-child {
+  width: 55%;
+}
+
+.location-container .col:last-child {
+  width: 45%;
+  background-color: #242424;
+}
+
+.location-container .col .title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 40px;
+  color: white;
+  position: relative;
+}
+
+.location-container .col .title:before {
+  content: attr(data-text);
+  position: absolute;
+  font-size: 60px;
+  font-weight: bold;
+  top: -15px;
+  left: 25%;
+  color: transparent;
+  -moz-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  -moz-text-stroke-color: rgba(255, 255, 255, 0.1);
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.1);
+  -moz-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 1px;
+}

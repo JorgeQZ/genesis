@@ -360,3 +360,45 @@
         }
     }
 }
+
+.location-container {
+    display: flex;
+    .col {
+        padding: 60px 0;
+        &:first-child {
+            width: 55%;
+        }
+
+        &:last-child {
+            width: 45%;
+            background-color: #242424;
+        }
+
+        .title {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: $bold;
+            font-size: 40px;
+            color: white;
+            position: relative;
+            &:before {
+                content: attr(data-text);
+
+                position: absolute;
+                font-size: 60px;
+                font-weight: bold;
+                top: -15px;
+                left: 25%;
+
+                color: transparent;
+
+                -moz-text-fill-color: transparent;
+                -webkit-text-fill-color: transparent;
+                -moz-text-stroke-color: rgba(white, 0.1);
+                -webkit-text-stroke-color: rgba(white, 0.1);
+                -moz-text-stroke-width: 1px;
+                -webkit-text-stroke-width: 1px;
+            }
+        }
+    }
+}
