@@ -407,6 +407,8 @@
           appearance: none;
   border-radius: 20px;
   background-color: #e5e5e5;
+  cursor: -webkit-grab;
+  cursor: grab;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -427,6 +429,11 @@
   outline: none;
   -webkit-box-shadow: 0 0 0 1px #852c5b;
           box-shadow: 0 0 0 1px #852c5b;
+}
+
+.departments-container .slider-range #departments-slider:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
 }
 
 .location-container {

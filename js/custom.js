@@ -29,16 +29,26 @@ $(document).ready(function (e) {
 
 
     // Slider Range Owl Carousel Desarrollos
-    var owl = $(".departments-carousel"), inputType = $("#departments-slider");
-    inputType.on('change', function (e) {
+
+
+    let slider_width = $('.departments-carousel .owl-stage').width(),
+        total_items = $('.departments-carousel .owl-stage .owl-item').length,
+        slide_width = (slider_width / total_items),
+        max_slider_range = Math.floor((slide_width) * (total_items - 4));
+
+    const owl = $(".departments-carousel"), inputType = $("#departments-slider");
+
+    inputType.attr({ "max": max_slider_range });
+
+    inputType.on('input', function (e) {
         e.preventDefault();
-        console.log(inputType.val());
-        $('.departments-carousel').trigger('to.owl.carousel', [inputType.val()]);
+        $('.departments-carousel .owl-stage').css({
+            'transform': 'translate3d(-' + parseInt($(this).val()) + 'px, 0px, 0px)',
+        });
     });
 
-    owl.on('changed.owl.carousel', function (event) {
-        console.log(event.item.index);
-        inputType.val(event.item.index);
+    owl.on('changed.owl.carousel', function (e) {
+        inputType.val(slide_width * e.item.index);
     });
 
 });

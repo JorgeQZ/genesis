@@ -239,7 +239,7 @@ get_header(); ?>
     </div>
 
     <div class="slider-range">
-        <input type="range" name="" id="departments-slider" value="0" min="0" max="2" step="1">
+        <input type="range" name="" id="departments-slider" value="0" min="0" step="1">
     </div>
 </div><!-- Departamentos  -->
 

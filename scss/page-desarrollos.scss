@@ -335,12 +335,12 @@
         width: 90%;
         max-width: 1200px;
         margin: 20px auto;
-
         #departments-slider {
             width: 100%;
             appearance: none;
             border-radius: 20px;
             background-color: #e5e5e5;
+            cursor: grab;
             transition: all 0.3s ease;
             &::-webkit-slider-thumb {
                 -webkit-appearance: none;
@@ -356,6 +356,9 @@
             &:focus {
                 outline: none;
                 box-shadow: 0 0 0 1px $purple;
+            }
+            &:active {
+                cursor: grabbing;
             }
         }
     }
