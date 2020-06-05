@@ -83,35 +83,30 @@ get_header(); ?>
     </div>
     <div class="owl-carousel owl-theme gallery-carousel">
         <div class="item">
+            <div class="icon">
+                <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
+            </div>
             <div class="img-item">
                 <img src="<?php echo get_template_directory_uri().'/img/img-1.jpg';?>" alt="">
             </div>
         </div>
         <div class="item">
+            <div class="icon">
+                <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
+            </div>
             <div class="img-item">
                 <img src="<?php echo get_template_directory_uri().'/img/img-2.jpg';?>" alt="">
             </div>
         </div>
         <div class="item">
+            <div class="icon">
+                <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
+            </div>
             <div class="img-item">
                 <img src="<?php echo get_template_directory_uri().'/img/img-3.jpg';?>" alt="">
             </div>
         </div>
-        <div class="item">
-            <div class="img-item">
-                <img src="<?php echo get_template_directory_uri().'/img/img-1.jpg';?>" alt="">
-            </div>
-        </div>
-        <div class="item">
-            <div class="img-item">
-                <img src="<?php echo get_template_directory_uri().'/img/img-2.jpg';?>" alt="">
-            </div>
-        </div>
-        <div class="item">
-            <div class="img-item">
-                <img src="<?php echo get_template_directory_uri().'/img/img-3.jpg';?>" alt="">
-            </div>
-        </div>
+
     </div>
 
 </div><!-- Gallery -->
@@ -243,23 +238,70 @@ get_header(); ?>
     </div>
 </div><!-- Departamentos  -->
 
+<!-- AMENIDADES -->
+<!-- Gallery -->
+<div class="amenidades-container">
+    <div class="owl-carousel owl-theme amenidades-carousel">
+        <div class="item">
+            <div class="text">
+                amenidades
+            </div>
+            <div class="icon">
+                <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
+            </div>
+            <div class="img-item">
+                <img src="<?php echo get_template_directory_uri().'/img/amen-1.jpg';?>" alt="">
+            </div>
+        </div>
+        <div class="item">
+            <div class="text">
+                amenidades
+            </div>
+            <div class="icon">
+                <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
+            </div>
+            <div class="img-item">
+                <img src="<?php echo get_template_directory_uri().'/img/amen-1.jpg';?>" alt="">
+            </div>
+        </div>
+        <div class="item">
+            <div class="text">
+                amenidades
+            </div>
+            <div class="icon">
+                <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
+            </div>
+            <div class="img-item">
+                <img src="<?php echo get_template_directory_uri().'/img/amen-1.jpg';?>" alt="">
+            </div>
+        </div>
+
+    </div>
+
+</div><!-- Gallery -->
+
+<!-- AMENIDADES -->
 
 <!-- Ubicación -->
 <div class="location-container">
     <div class="col"></div>
     <div class="col">
-        <div class="title" data-text="áncora">
-            ubicación
-        </div>
-        <div class="desc">
-            <ul>
-                <li>5 min. Plaza Sátelite</li>
-                <li>5 min. Periférico</li>
-                <li>1 min. Gustavo Baz</li>
-                <li>15 min. Nuevo Polanco</li>
-                <li>20 min. Polanco</li>
-            </ul>
-            Av. Del Cristo 101, Xocoyahualco 54080, Tlalnepantla.
+        <div class="content">
+            <div class="title-cont">
+                <div class="title" data-text="áncora">
+                    ubicación
+                </div>
+            </div>
+            <div class="desc">
+                <ul>
+                    <li>5 min. Plaza Sátelite</li>
+                    <li>5 min. Periférico</li>
+                    <li>1 min. Gustavo Baz</li>
+                    <li>15 min. Nuevo Polanco</li>
+                    <li>20 min. Polanco</li>
+                </ul>
+                Av. Del Cristo 101, Xocoyahualco 54080, Tlalnepantla.
+            </div>
         </div>
     </div>
 </div>
@@ -271,16 +313,40 @@ get_header(); ?>
 <script>
 $('.gallery-carousel').owlCarousel({
     loop: true,
-    margin: 40,
+    autoplay: false,
+    autoplayHoverPause: true,
+    autoplayTimeout: 3000,
+    autoplaySpeed: 1000,
+    margin: 15,
     center: true,
+    nav: false,
+    dots: true,
+    items: 1.4,
+    stagePadding: 15,
     responsive: {
         0: {
             items: 1
         },
         600: {
-            items: 3
+
+            items: 2.3,
         }
     }
+});
+
+
+$('.amenidades-carousel').owlCarousel({
+    loop: true,
+    autoplay: false,
+    autoplayHoverPause: true,
+    autoplayTimeout: 3000,
+    autoplaySpeed: 1000,
+    margin: 0,
+    center: true,
+    nav: false,
+    dots: true,
+    items: 1,
+    stagePadding: 0,
 });
 
 $('.departments-carousel').owlCarousel({
