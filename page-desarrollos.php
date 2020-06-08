@@ -4,26 +4,32 @@
  */
 
 get_header(); ?>
+<div class="light-box">
+    <div class="cont">
+        <img src="" alt="" id="img_light-box">
+    </div>
+</div>
+
 <div class="hero-container">
     <img src="<?php echo get_template_directory_uri().'/img/logo-03.png'?>" alt="">
 </div>
 
 <div class="menu-navigation">
     <ul>
-        <li>master plan</li>
-        <li>departamentos</li>
-        <li>amenidades</li>
-        <li>recorridos 360º y videos</li>
-        <li>galería</li>
-        <li>ubicación</li>
-        <li>vistas panorámicas</li>
+        <li><a href="#master-plan">master plan</a></li>
+        <li><a href="#departamentos">departamentos<a></li>
+        <li><a href="#amenidades">amenidades<a></li>
+        <li><a href="#recorridos">recorridos 360º y videos<a></li>
+        <li><a href="#galeria">galería<a></li>
+        <li><a href="#ubicacion">ubicación<a></li>
+        <li><a href="#vistas-panoramicas">vistas panorámicas<a></li>
         <li>brochure <span><img src="" alt=""></span></li>
-        <li>solicitar información</li>
+        <li><a href="#contacto">solicitar información<a></li>
 
     </ul>
 </div>
 
-<div class="video-cont">
+<div class="video-cont" id="master-plan">
     <img src="<?php echo get_template_directory_uri().'/img/VIDEO.jpg'; ?>" alt="">
 </div>
 
@@ -77,7 +83,7 @@ get_header(); ?>
 </div><!-- Description -->
 
 <!-- Gallery -->
-<div class="gallery-container">
+<div class="gallery-container" id="galeria">
     <div class="title">
         Galería
     </div>
@@ -112,7 +118,7 @@ get_header(); ?>
 </div><!-- Gallery -->
 
 <!-- Departamentos  -->
-<div class="departments-container">
+<div class="departments-container" id="departamentos">
     <div class="title" data-text="ángora">
         departamentos
     </div>
@@ -239,8 +245,7 @@ get_header(); ?>
 </div><!-- Departamentos  -->
 
 <!-- AMENIDADES -->
-<!-- Gallery -->
-<div class="amenidades-container">
+<div class="amenidades-container" id="amenidades">
     <div class="owl-carousel owl-theme amenidades-carousel">
         <div class="item">
             <div class="text">
@@ -278,12 +283,15 @@ get_header(); ?>
 
     </div>
 
-</div><!-- Gallery -->
-
+</div>
 <!-- AMENIDADES -->
 
+<div class="virtual-cont" id="recorridos">
+    <img src="<?php echo get_template_directory_uri().'/img/paseo-virtual.jpg'; ?>" alt="">
+</div>
+
 <!-- Ubicación -->
-<div class="location-container">
+<div class="location-container" id="ubicacion">
     <div class="col"></div>
     <div class="col">
         <div class="content">
@@ -307,8 +315,16 @@ get_header(); ?>
 </div>
 <!-- Ubicación -->
 
+<!-- mapa -->
+<div class="map-cont">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.5756024438138!2d-99.2097670850933!3d19.430734586885393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2021e115fac13%3A0x72caaf470b3b9912!2sPiso%204%2C%20Torre%20Quadro%2C%20Ferrocarril%20de%20Cuernavaca%2076%2C%20Lomas%20-%20Virreyes%2C%20Lomas%20de%20Chapultepec%20III%20Secc%2C%2001180%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1591650287848!5m2!1ses-419!2smx" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</div>
+<!-- mapa -->
+
 <!-- Contacto -->
-<?php get_template_part('template-parts/contact'); ?>
+<div class="contact" id="contacto">
+    <?php get_template_part('template-parts/contact'); ?>
+</div>
 <!-- Contacto -->
 <script>
 $('.gallery-carousel').owlCarousel({

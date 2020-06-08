@@ -1,3 +1,32 @@
+.light-box {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: none;
+}
+
+.light-box .cont {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.light-box .cont img {
+  margin: auto;
+  width: 80%;
+  max-width: 1440px;
+}
+
 .hero-container {
   height: 100vh;
   display: -webkit-box;
@@ -65,6 +94,10 @@
 
 .menu-navigation ul li:hover {
   background-color: #630b39;
+}
+
+.menu-navigation ul li a {
+  color: white;
 }
 
 .video-cont img {
@@ -275,15 +308,35 @@
           transform: scale(1);
 }
 
+.gallery-container .gallery-carousel .owl-stage-outer .owl-stage .owl-item.center .item {
+  cursor: pointer;
+}
+
+.gallery-container .gallery-carousel .owl-stage-outer .owl-stage .owl-item.center .item .icon {
+  opacity: 0;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
 .gallery-container .gallery-carousel .owl-stage-outer .owl-stage .owl-item.center .item .img-item:before {
   content: "";
   width: 100%;
   height: 100%;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.4);
   top: 0;
   left: 0;
   z-index: 1;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.gallery-container .gallery-carousel .owl-stage-outer .owl-stage .owl-item.center .item:hover .icon {
+  opacity: 1;
+}
+
+.gallery-container .gallery-carousel .owl-stage-outer .owl-stage .owl-item.center .item:hover .img-item:before {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .gallery-container .gallery-carousel .owl-stage-outer .owl-stage .owl-item:not(.center) .item .icon {
@@ -327,7 +380,7 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   top: 0;
   left: 0;
   z-index: 1;
@@ -581,6 +634,11 @@
   background-color: #fff;
 }
 
+.virtual-cont img {
+  width: 100%;
+  margin-bottom: -5px;
+}
+
 .location-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -659,4 +717,12 @@
 .location-container .col .desc ul li {
   padding: 5px 0;
   font-weight: 100;
+}
+
+.map-cont {
+  display: block;
+}
+
+.map-cont iframe {
+  margin-bottom: -5px;
 }

@@ -1,4 +1,5 @@
 $(document).ready(function (e) {
+    // Custom Li's
     $('.filter-cont .value').click(function (e) {
         e.preventDefault();
         if ($(this).siblings('ul.active').length == 0) {
@@ -29,8 +30,6 @@ $(document).ready(function (e) {
 
 
     // Slider Range Owl Carousel Desarrollos
-
-
     let slider_width = $('.departments-carousel .owl-stage').width(),
         total_items = $('.departments-carousel .owl-stage .owl-item').length,
         slide_width = (slider_width / total_items),
@@ -51,11 +50,32 @@ $(document).ready(function (e) {
         inputType.val(slide_width * e.item.index);
     });
 
-});
 
+    // LightBox
+
+    $('.gallery-carousel .item').on('click', function (e) {
+        e.preventDefault();
+        let slide = $(this), obj = slide.parent('div'),
+            classList = obj.attr('class').split(' '),
+            imgSrc = slide.find('.img-item img').attr('src'),
+            imgAlt = slide.find('.img-item img').attr('alt');
+        if (classList.includes('center')) {
+            $('#img_light-box').attr('src', imgSrc);
+            $('#img_light-box').attr('alt', imgAlt);
+            $('.light-box').fadeIn();
+        }
+    });
+
+});
+$(document).keyup(function (e) {
+
+    if (e.key === "Escape") {
+        // write your logic here.
+        $('.light-box').fadeOut();
+    }
+});
 
 $(window).on('scroll', function () {
     let top = $(window).scrollTop();
     (top >= 100) ? $('header').addClass('scrolled') : $('header').removeClass('scrolled');
-
 });
