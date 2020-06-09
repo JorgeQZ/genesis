@@ -15,10 +15,24 @@
         display: flex;
         align-content: center;
         justify-content: center;
+        .button {
+            position: absolute;
+            right: 20px;
+            top: 120px;
+            cursor: pointer;
+            background-color: $purple;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            img {
+                width: 40px;
+            }
+        }
         img {
             margin: auto;
             width: 80%;
-            max-width: 1440px;
+            max-width: 900px;
         }
     }
 }
