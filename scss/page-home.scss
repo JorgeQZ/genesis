@@ -1,4 +1,5 @@
 @import "variables";
+
 .hero-banner {
     width: 100%;
     display: flex;
@@ -7,137 +8,51 @@
     font-size: 50px;
 }
 
-.contenedor-general-banner {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background-image: url(../img/fondo.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: flex-end;
-    .cont-contenido {
-        width: 95%;
-        margin: 0 auto;
+.contenedor-general-items {
+    margin-top: 75px;
+    .contenedor-items {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        .cont-logo {
+        flex-wrap: wrap;
+        .cont-item {
+            width: calc(50% - 8px);
+            margin: 0 8px 16px;
+            overflow: hidden;
             position: relative;
-            height: 70px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            .logo {
-                position: absolute;
-                opacity: 0;
-                transition: all 0.3s;
-                background-image: url(../img/dec-logos.png);
-                background-size: 100% 100%;
-                background-position: center;
-                background-repeat: no-repeat;
-                padding: 15px 30px;
-                img {
-                    height: 70px;
-                    display: block;
-                }
-                &.active {
-                    opacity: 1;
-                }
-            }
-        }
-        .cont-edificios {
-            position: relative;
-            img {
+            > img{
                 width: 100%;
                 display: block;
-                transition: all 0.3s;
+                transition: all ease-in-out .3s;
             }
-            .hovers {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                img {
-                    width: 100%;
-                    display: block;
-                    opacity: 0;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    transition: all 0.3s;
 
-                    &.active {
-                        opacity: 1;
-                    }
+            .mask{
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                p{
+                    font-size: 18px;
+                    color: white;
+                    text-align: center;
+                    text-transform: uppercase;
+                    margin-right: 10px;
+                }
+                img{
+                    width: 12px;
                 }
             }
-            .items {
-                position: absolute;
-                top: 0;
-                left: 4%;
-                width: 92%;
-                height: 100%;
-                display: flex;
-                .col {
-                    &.col1 {
-                        background: rgba(250, 50, 50, 0.5);
-                        width: 15%;
-                        height: 62%;
-                        position: relative;
-                        top: 12%;
-                        background: transparent;
-                    }
 
-                    &.col2 {
-                        background: rgba(50, 50, 250, 0.5);
-                        width: 21.5%;
-                        height: 30%;
-                        position: relative;
-                        top: 44%;
-                        background: transparent;
-                    }
+            &:nth-child(2n - 1){
+                margin-left: 0;
+            }
+            &:nth-child(2n){
+                margin-right: 0;
+            }
 
-                    &.col3 {
-                        background: rgba(50, 250, 50, 0.5);
-                        width: 26%;
-                        height: 62%;
-                        position: relative;
-                        top: 12%;
-                        background: transparent;
-                        &::after {
-                            content: "";
-                            background: rgba(50, 250, 50, 0.5);
-                            width: 27%;
-                            height: 30%;
-                            position: absolute;
-                            top: 20%;
-                            right: -14%;
-                            z-index: 9;
-                            background: transparent;
-                        }
-                    }
-
-                    &.col4 {
-                        background: rgba(250, 250, 50, 0.5);
-                        width: 20.5%;
-                        height: 40%;
-                        position: relative;
-                        top: 34%;
-                        background: transparent;
-                    }
-
-                    &.col5 {
-                        background: rgba(50, 250, 250, 0.5);
-                        width: 17%;
-                        height: 71%;
-                        position: relative;
-                        top: 3%;
-                        background: transparent;
-                    }
+            &:hover{
+                > img{
+                    transform: scale(1.15);
                 }
             }
         }
