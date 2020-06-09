@@ -9,38 +9,35 @@
 <?php get_header();?>
 
 <!-- Banner -->
-<div class="contenedor-general-banner">
+<div class="contenedor-general-items">
 
-    <div class="cont-contenido">
-        <div class="cont-logo">
-            <div class="logo">
-                <img src="<?php echo get_template_directory_uri().'/img/logo-01.png' ?>" alt="">
-            </div>
-            <div class="logo">
-                <img src="<?php echo get_template_directory_uri().'/img/logo-02.png' ?>" alt="">
-            </div>
-            <div class="logo">
-                <img src="<?php echo get_template_directory_uri().'/img/logo-03.png' ?>" alt="">
-            </div>
-            <div class="logo">
-                <img src="<?php echo get_template_directory_uri().'/img/logo-04.png' ?>" alt="">
+    <div class="contenedor-items">
+        <div class="cont-item">
+            <img src="<?php echo get_template_directory_uri().'/img/edo-mx.jpg' ?>" alt="">
+            <div class="mask">
+                <p>estado de méxico</p>
+                <img src="<?php echo get_template_directory_uri().'/img/triangulo-flecha.png' ?>" alt="">
             </div>
         </div>
-        <div class="cont-edificios">
-            <img src="<?php echo get_template_directory_uri().'/img/edi0.png' ?>" alt="">
-            <div class="hovers">
-                <img src="<?php echo get_template_directory_uri().'/img/edi1.png' ?>" alt="">
-                <img src="<?php echo get_template_directory_uri().'/img/edi2.png' ?>" alt="">
-                <img src="<?php echo get_template_directory_uri().'/img/edi3.png' ?>" alt="">
-                <img src="<?php echo get_template_directory_uri().'/img/edi4.png' ?>" alt="">
-                <img src="<?php echo get_template_directory_uri().'/img/edi5.png' ?>" alt="">
+        <div class="cont-item">
+            <img src="<?php echo get_template_directory_uri().'/img/cabos.jpg' ?>" alt="">
+            <div class="mask">
+                <p>los cabos</p>
+                <img src="<?php echo get_template_directory_uri().'/img/triangulo-flecha.png' ?>" alt="">
             </div>
-            <div class="items">
-                <div class="col col1"></div>
-                <div class="col col2"></div>
-                <div class="col col3"></div>
-                <div class="col col4"></div>
-                <div class="col col5"></div>
+        </div>
+        <div class="cont-item">
+            <img src="<?php echo get_template_directory_uri().'/img/guadalajara.jpg' ?>" alt="">
+            <div class="mask">
+                <p>guadalajara</p>
+                <img src="<?php echo get_template_directory_uri().'/img/triangulo-flecha.png' ?>" alt="">
+            </div>
+        </div>
+        <div class="cont-item">
+            <img src="<?php echo get_template_directory_uri().'/img/guanajuato.jpg' ?>" alt="">
+            <div class="mask">
+                <p>guanajuato</p> 
+                <img src="<?php echo get_template_directory_uri().'/img/triangulo-flecha.png' ?>" alt="">
             </div>
         </div>
     </div>

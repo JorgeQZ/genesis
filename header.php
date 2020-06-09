@@ -10,7 +10,7 @@
 
 <body>
 
-    <header>
+    <header class="scrolled">
         <a href="#" class="brand-logo">
             <img src="<?php echo get_template_directory_uri().'/img/logo.png'?>" alt="Genesis Capital">
         </a>

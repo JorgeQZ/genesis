@@ -74,8 +74,9 @@ $(document).keyup(function (e) {
         $('.light-box').fadeOut();
     }
 });
-
+/*
 $(window).on('scroll', function () {
     let top = $(window).scrollTop();
     (top >= 100) ? $('header').addClass('scrolled') : $('header').removeClass('scrolled');
 });
+*/
