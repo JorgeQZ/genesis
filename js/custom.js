@@ -66,6 +66,12 @@ $(document).ready(function (e) {
         }
     });
 
+    // Close Lightbox
+    $('#close-button').on('click', function (e) {
+        e.preventDefault();
+        $('.light-box').fadeOut();
+    });
+
 });
 $(document).keyup(function (e) {
 

@@ -6,7 +6,10 @@
 get_header(); ?>
 <div class="light-box">
     <div class="cont">
-        <img src="" alt="" id="img_light-box">
+        <div class="button" id="close-button">
+            <img src="<?php echo get_template_directory_uri().'/img/close.png';?>" alt="Cerrar">
+        </div>
+        <img src="<?php echo get_template_directory_uri().'/img/img-1.jpg';?>" alt="" id="img_light-box">
     </div>
 </div>
 
