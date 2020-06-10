@@ -72,6 +72,23 @@ $(document).ready(function (e) {
         $('.light-box').fadeOut();
     });
 
+
+
+    // Panoramic
+    function changePanoraic() {
+        let img = $('.panoramic-active').find('img').attr('src');
+        $('.panoramic-content').css({
+            'background-image': 'url("' + img + '")'
+        });
+    }
+
+    $('.panoramic-item').on('click', function (e) {
+        e.preventDefault();
+        $('.panoramic-item').removeClass('panoramic-active');
+        $(this).addClass('panoramic-active');
+        changePanoraic();
+    });
+    changePanoraic();
 });
 $(document).keyup(function (e) {
 
