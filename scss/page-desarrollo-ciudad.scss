@@ -3,10 +3,45 @@
     .contenedor-general-desarrollo{
         background-size: cover;
         background-position: center;
-        padding: 20px 33px 30px 23px;
+        padding: 16px 33px 30px 23px;
+
+        &:nth-child(1){
+            background-image: url("../img/fondo-ancora.jpg");
+            a.link-desarrollo{
+                color: #8c2c5a;
+            }
+        }
+        &:nth-child(2){
+            background-image: url("../img/fondo-montalva.jpg");
+            a.link-desarrollo{
+                color: #dfaa03;
+            }
+        }
+        &:nth-child(3){
+            background-image: url("../img/fondo-tlanepantla.jpg");
+            a.link-desarrollo{
+                color: #153f71;
+            }
+        }
+        &:nth-child(4){
+            background-image: url("../img/fondo-bolognia.jpg");
+            a.link-desarrollo{
+                color: #dabe7e;
+            }
+        }
+
         .contenedor-desarrollo{
             display: flex;
             align-items: center;
+            position: relative;
+            padding-top: 33px;
+            .logo-esq{
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 56px;
+                width: auto;
+            }
             .cont-info{
                 width: 52%;
                 color: white;
@@ -14,7 +49,8 @@
                     padding-left: 50px;
                     width: 84%;
                     h1{
-                        font-size: 36px;
+                        font-size: 34px;
+                        font-weight: bold;
                         margin: 0;
                         margin-bottom: 25px;
                         position: relative;
@@ -23,7 +59,7 @@
                             bottom: -10px;
                             content: "";
                             height: 1px;
-                            width: 85%;
+                            width: 83%;
                             background: white;
                             left: -73px;
                         }
@@ -66,10 +102,9 @@
                         }
                     }
 
-                    a{
+                    a.link-desarrollo{
                         display: inline-block;
                         font-size: 14px;
-                        color: #8c2c5a;
                         padding: 8px 28px;
                         border-radius: 30px;
                         background: white;
