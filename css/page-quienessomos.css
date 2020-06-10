@@ -1,0 +1,17 @@
+.about-container {
+  background-image: url(../img/fondo-quienessomos.jpg);
+  background-size: cover;
+  height: auto;
+  padding: 285px 60px 250px 60px;
+  min-height: 100vh;
+}
+
+.about-container .content .about-title .focus:before {
+  -moz-text-stroke-color: white !important;
+  -webkit-text-stroke-color: white !important;
+  opacity: .3;
+}
+
+.about-container .content .text {
+  margin-bottom: 0;
+}
