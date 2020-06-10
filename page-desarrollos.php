@@ -95,7 +95,7 @@ get_header(); ?>
             <div class="icon">
                 <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
             </div>
-            <div class="img-item">
+            <div class="img-item lightbox-item">
                 <img src="<?php echo get_template_directory_uri().'/img/img-1.jpg';?>" alt="">
             </div>
         </div>
@@ -103,7 +103,7 @@ get_header(); ?>
             <div class="icon">
                 <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
             </div>
-            <div class="img-item">
+            <div class="img-item lightbox-item">
                 <img src="<?php echo get_template_directory_uri().'/img/img-2.jpg';?>" alt="">
             </div>
         </div>
@@ -111,7 +111,7 @@ get_header(); ?>
             <div class="icon">
                 <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
             </div>
-            <div class="img-item">
+            <div class="img-item lightbox-item">
                 <img src="<?php echo get_template_directory_uri().'/img/img-3.jpg';?>" alt="">
             </div>
         </div>
