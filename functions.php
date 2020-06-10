@@ -67,6 +67,12 @@ function add_theme_scripts() {
         wp_enqueue_style( 'owl.theme.default.min', get_template_directory_uri() . '/css/owl.theme.default.min.css', array(), filemtime( get_stylesheet_directory() . '/css/owl.theme.default.min.css' ), 'all');
     endif;
 
+    if(is_page_template('page-quienessomos.php')):
+        wp_enqueue_style( 'page-home', get_template_directory_uri() . '/css/page-home.css', array(), filemtime( get_stylesheet_directory() . '/css/page-home.css' ), 'all');
+        wp_enqueue_style( 'page-quienessomos', get_template_directory_uri() . '/css/page-quienessomos.css', array(), filemtime( get_stylesheet_directory() . '/css/page-quienessomos.css' ), 'all');
+
+    endif;
+
   }
   add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
