@@ -15,21 +15,37 @@
             <img src="<?php echo get_template_directory_uri().'/img/logo.png'?>" alt="Genesis Capital">
         </a>
 
-        <div class="menu">
+        <div class="cont-menu">
+            <?php
+            wp_nav_menu(
+                array(
+                    'theme_location' => 'Header'
+                )
+            );
+            ?>
+            <!--
             <ul>
                 <li class="active"><a href="#">Inicio</a></li>
                 <li><a href="#">quienés somos</a></li>
                 <li><a href="#">desarrollos</a></li>
                 <li><a href="#">contacto</a></li>
             </ul>
+            -->
             <div class="social-links">
-                <a href="" class="item">
-                    <img src="<?php  echo get_template_directory_uri().'/img/phone.png'?>" alt="">
-                    <!-- <img class="img-alt" src="<?php  echo get_template_directory_uri().'/img/phone-alternate.png'?>" alt=""> -->
+                <a href="busqueda-avanzada/" class="item">
+                    <img src="<?php  echo get_template_directory_uri().'/img/icon-search.png'?>" alt="">
+                    <!-- <img class="img-alt" src="<?php  echo get_template_directory_uri().'/img/mail-alternate.png'?>" alt=""> -->
                 </a>
                 <a href="" class="item">
                     <img src="<?php  echo get_template_directory_uri().'/img/mail.png'?>" alt="">
                     <!-- <img class="img-alt" src="<?php  echo get_template_directory_uri().'/img/mail-alternate.png'?>" alt=""> -->
+                </a>
+                <a href="" class="item">
+                    <img src="<?php  echo get_template_directory_uri().'/img/phone.png'?>" alt="">
+                    <!-- <img class="img-alt" src="<?php  echo get_template_directory_uri().'/img/phone-alternate.png'?>" alt=""> -->
+                </a>
+                <a href="" class="item-txt">
+                    800 0910 800
                 </a>
             </div>
         </div>

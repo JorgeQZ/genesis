@@ -133,6 +133,8 @@
             justify-content: center;
             align-items: center;
             position: relative;
+            cursor: pointer;
+            transition: all .3s;
             .item{
                 width: 21px;
                 height: 21px;
@@ -173,6 +175,11 @@
                 margin: 0;
                 position: absolute;
                 bottom: -25px;
+            }
+
+
+            &:hover{
+                opacity: .7;
             }
 
             &:first-child{

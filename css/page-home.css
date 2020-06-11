@@ -179,6 +179,9 @@
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+  cursor: pointer;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .contenedor-general-valores .contenedor-valores .cont-valor .item {
@@ -225,6 +228,10 @@
   margin: 0;
   position: absolute;
   bottom: -25px;
+}
+
+.contenedor-general-valores .contenedor-valores .cont-valor:hover {
+  opacity: .7;
 }
 
 .contenedor-general-valores .contenedor-valores .cont-valor:first-child::before {

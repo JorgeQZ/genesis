@@ -13,7 +13,7 @@ header {
         padding-top: 5px;
         padding-bottom: 5px;
         background-color: $main;
-        .menu {
+        .cont-menu {
             padding-top: 12px;
         }
     }
@@ -23,7 +23,7 @@ header {
             width: 100%;
         }
     }
-    .menu {
+    .cont-menu {
         display: flex;
         align-items: center;
         margin-top: 8px;
@@ -86,6 +86,17 @@ header {
         .social-links {
             display: flex;
             align-items: center;
+            a.item-txt{
+                font-weight: 100;
+                font-size: 13px;
+                line-height: 2px;
+                color: white;
+                margin-left: 5px;
+                transition: all .3s;
+                &:hover{
+                    opacity: .7;
+                }
+            }
             a.item {
                 margin: 0px;
                 width: 30px;

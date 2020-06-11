@@ -24,7 +24,7 @@ header.scrolled {
   background-color: #11647a;
 }
 
-header.scrolled .menu {
+header.scrolled .cont-menu {
   padding-top: 12px;
 }
 
@@ -36,7 +36,7 @@ header a.brand-logo img {
   width: 100%;
 }
 
-header .menu {
+header .cont-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -48,7 +48,7 @@ header .menu {
   transition: all 0.2s linear;
 }
 
-header .menu ul {
+header .cont-menu ul {
   padding: 0;
   margin: 0;
   display: -webkit-box;
@@ -63,7 +63,7 @@ header .menu ul {
   margin-right: 10px;
 }
 
-header .menu ul li {
+header .cont-menu ul li {
   list-style: none;
   margin: 0 15px;
   display: -webkit-box;
@@ -74,7 +74,7 @@ header .menu ul li {
           align-items: center;
 }
 
-header .menu ul li a {
+header .cont-menu ul li a {
   padding-top: 5px;
   padding-bottom: 5px;
   display: inline-block;
@@ -86,7 +86,7 @@ header .menu ul li a {
   overflow: hidden;
 }
 
-header .menu ul li a:after, header .menu ul li a:before {
+header .cont-menu ul li a:after, header .cont-menu ul li a:before {
   content: "";
   width: 100%;
   height: 1px;
@@ -96,25 +96,25 @@ header .menu ul li a:after, header .menu ul li a:before {
   transition: left 0.2s linear;
 }
 
-header .menu ul li a:after {
+header .cont-menu ul li a:after {
   top: 0;
   left: 100%;
 }
 
-header .menu ul li a:before {
+header .cont-menu ul li a:before {
   bottom: 0;
   left: -100%;
 }
 
-header .menu ul li a:hover:after, header .menu ul li a:hover:before {
+header .cont-menu ul li a:hover:after, header .cont-menu ul li a:hover:before {
   left: 0;
 }
 
-header .menu ul li.active a {
+header .cont-menu ul li.active a {
   font-weight: bold;
 }
 
-header .menu .social-links {
+header .cont-menu .social-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -123,7 +123,21 @@ header .menu .social-links {
           align-items: center;
 }
 
-header .menu .social-links a.item {
+header .cont-menu .social-links a.item-txt {
+  font-weight: 100;
+  font-size: 13px;
+  line-height: 2px;
+  color: white;
+  margin-left: 5px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+header .cont-menu .social-links a.item-txt:hover {
+  opacity: .7;
+}
+
+header .cont-menu .social-links a.item {
   margin: 0px;
   width: 30px;
   height: 30px;
@@ -141,11 +155,11 @@ header .menu .social-links a.item {
   overflow: hidden;
 }
 
-header .menu .social-links a.item:first-child {
+header .cont-menu .social-links a.item:first-child {
   margin-right: -3px;
 }
 
-header .menu .social-links a.item:before {
+header .cont-menu .social-links a.item:before {
   content: "";
   top: 0;
   position: absolute;
@@ -161,7 +175,7 @@ header .menu .social-links a.item:before {
           transform: rotateZ(45deg);
 }
 
-header .menu .social-links a.item:after {
+header .cont-menu .social-links a.item:after {
   content: "";
   bottom: 0;
   position: absolute;
@@ -177,14 +191,14 @@ header .menu .social-links a.item:after {
   border-top: 0;
 }
 
-header .menu .social-links a.item img {
+header .cont-menu .social-links a.item img {
   width: 55%;
   margin: 0;
   position: relative;
   z-index: 1;
 }
 
-header .menu .social-links a.item:hover:before, header .menu .social-links a.item:hover:after {
+header .cont-menu .social-links a.item:hover:before, header .cont-menu .social-links a.item:hover:after {
   -webkit-transform: rotateZ(0deg);
           transform: rotateZ(0deg);
   border-color: white;
