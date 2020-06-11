@@ -217,3 +217,28 @@ get_header(); ?>
     });
 
 </script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+
+<style>
+    .contenedor-general-desarrollos .contenedor-general-desarrollo .contenedor-desarrollo > div,
+    .contact-container .container .col>div {
+        opacity: 0;
+    }
+</style>
+
+<script>
+var $j = jQuery.noConflict();
+
+jQuery(function($j) {
+
+    $j('.contenedor-general-desarrollos .contenedor-general-desarrollo .contenedor-desarrollo > div, .contact-container .container .col > div').waypoint(function() {
+        $j(this).toggleClass('fadeIn animated');
+    }, {
+        offset: '75%',
+        triggerOnce: true
+    });
+    
+});
+</script>

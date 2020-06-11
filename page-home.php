@@ -411,40 +411,26 @@ $(document).ready(function() {
 });
 </script>
 
-
-
-
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
 
 <style>
-
-.contenedor-general-items .contenedor-items,
-.contenedor-general-valores > img,
-.contenedor-general-valores > div,
-.filter-container>div,
-.about-container .container .content,
-.video-container .container>div,
-.contact-container .container .col>div {
-    opacity: 0;
-}
-
+    .contenedor-general-items .contenedor-items,
+    .contenedor-general-valores > img,
+    .contenedor-general-valores > div,
+    .filter-container>div,
+    .about-container .container .content,
+    .video-container .container>div,
+    .contact-container .container .col>div {
+        opacity: 0;
+    }
 </style>
 
 <script>
 var $j = jQuery.noConflict();
 
 jQuery(function($j) {
-    /*
-        $j('.bascule-container .content-front .options .option, .bascule-container .content-behinde .text .title, .bascule-container .content-behinde .text .desc').waypoint(function() {
-            $j(this).toggleClass('fadeInUp animated');
-        }, {
-            offset: '75%',
-            triggerOnce: true
-        });
-    */
-    
+
     $j('.contenedor-general-items .contenedor-items, .contenedor-general-valores > img, .contenedor-general-valores > div, .filter-container > div, .about-container .container .content, .video-container .container > div, .contact-container .container .col > div').waypoint(function() {
         $j(this).toggleClass('fadeIn animated');
     }, {
@@ -452,14 +438,5 @@ jQuery(function($j) {
         triggerOnce: true
     });
     
-    /*
-        $j('.hero-banner .hero-title').waypoint(function() {
-            $j(this).toggleClass('fadeIn animated');
-        }, {
-            offset: '100%',
-            triggerOnce: true
-        });
-    */
-
 });
 </script>

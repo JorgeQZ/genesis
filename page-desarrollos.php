@@ -411,3 +411,38 @@ $('.departments-carousel').owlCarousel({
 });
 </script>
 <?php get_footer(); ?>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+
+<style>
+    .hero-container img,
+    .menu-navigation,
+    .video-cont,
+    .description-container .col > div,
+    .gallery-container > div,
+    .departments-container > div,
+    .amenidades-container,
+    .virtual-cont,
+    .panoramic-container > div,
+    .location-container .col,
+    .map-cont,
+    .contact-container .container .col>div {
+        opacity: 0;
+    }
+</style>
+
+<script>
+var $j = jQuery.noConflict();
+
+jQuery(function($j) {
+
+    $j('.hero-container img, .menu-navigation, .video-cont, .description-container .col > div, .gallery-container > div, .departments-container > div, .amenidades-container, .virtual-cont, .panoramic-container > div, .location-container .col, .map-cont, .contact-container .container .col > div').waypoint(function() {
+        $j(this).toggleClass('fadeIn animated');
+    }, {
+        offset: '75%',
+        triggerOnce: true
+    });
+    
+});
+</script>
