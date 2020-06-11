@@ -434,14 +434,3 @@
   color: #11647a;
   background-color: transparent;
 }
-
-@media screen and (min-width: 990px) {
-  header {
-    background-color: rgba(17, 100, 122, 0.95);
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
-}
