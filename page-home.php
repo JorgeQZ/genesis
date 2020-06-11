@@ -149,6 +149,115 @@
     </div>
 </div>
 <!-- Quienes somos -->
+
+<!-- Valores -->
+<div class="contenedor-general-valores">
+    <img class="dec-izq" src="<?php echo get_template_directory_uri().'/img/valores-dec-izq.png' ?>" alt="">
+    <img class="dec-der" src="<?php echo get_template_directory_uri().'/img/valores-dec-der.png' ?>" alt="">
+    <div class="title">
+            NUESTROS
+        <div class="focus">VALORES</div>
+    </div>
+    <div class="contenedor-info-valores">
+        <div class="cont-info-valor">
+            <div class="info">
+                <img src="<?php echo get_template_directory_uri().'/img/icon-valor.png' ?>" alt="">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi euismod diam ac diam porta.
+                </p>
+            </div>
+        </div>
+        <div class="cont-info-valor">
+            <div class="info">
+                <img src="<?php echo get_template_directory_uri().'/img/icon-valor.png' ?>" alt="">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi euismod diam ac diam porta, 
+                    vitae viverra ante dictum. Praesent imperdiet arcu vel varius imperdiet. Ut posuere dolor.
+                </p>
+            </div>
+        </div>
+        <div class="cont-info-valor">
+            <div class="info">
+                <img src="<?php echo get_template_directory_uri().'/img/icon-valor.png' ?>" alt="">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi euismod diam ac diam porta, 
+                    vitae viverra ante dictum. Praesent imperdiet arcu vel varius imperdiet. Ut posuere dolor 
+                    vitae nisl facilisis hendrerit. Vivamus erat libero.
+                </p>
+            </div>
+        </div>
+        <div class="cont-info-valor">
+            <div class="info">
+                <img src="<?php echo get_template_directory_uri().'/img/icon-valor.png' ?>" alt="">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi euismod diam ac diam porta, 
+                    vitae viverra ante dictum. Praesent imperdiet arcu vel varius imperdiet. Ut posuere dolor 
+                    vitae nisl facilisis hendrerit. Vivamus erat libero, ultricies id egestas eu, tincidunt non 
+                    libero. Fusce vel gravida orci. Praesent vitae arcu urna.
+                </p>
+            </div>
+        </div>
+        <div class="cont-info-valor">
+            <div class="info">
+                <img src="<?php echo get_template_directory_uri().'/img/icon-valor.png' ?>" alt="">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi euismod diam ac diam porta, 
+                    vitae viverra ante dictum. Praesent imperdiet arcu vel varius imperdiet. Ut posuere dolor 
+                    vitae nisl facilisis hendrerit. Vivamus erat liber.
+                </p>
+            </div>
+        </div>
+        <div class="cont-info-valor">
+            <div class="info">
+                <img src="<?php echo get_template_directory_uri().'/img/icon-valor.png' ?>" alt="">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi euismod diam ac diam porta, 
+                    vitae viverra ante dictum. Praesent imperdiet arcu vel varius imperdiet. Ut posuere dolor.
+                </p>
+            </div>
+        </div>
+        <div class="cont-info-valor">
+            <div class="info">
+                <img src="<?php echo get_template_directory_uri().'/img/icon-valor.png' ?>" alt="">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi euismod diam ac diam porta.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="contenedor-valores">
+        <div class="cont-valor">
+            <div class="item"></div>
+            <p class="tit">comunicación</p>
+        </div>
+        <div class="cont-valor">
+            <div class="item"></div>
+            <p class="tit">profesionalismo</p>
+        </div>
+        <div class="cont-valor">
+            <div class="item"></div>
+            <p class="tit">transparencia</p>
+        </div>
+        <div class="cont-valor">
+            <div class="item"></div>
+            <p class="tit">colaboración</p>
+        </div>
+        <div class="cont-valor">
+            <div class="item"></div>
+            <p class="tit">respeto</p>
+        </div>
+        <div class="cont-valor">
+            <div class="item"></div>
+            <p class="tit">servicio</p>
+        </div>
+        <div class="cont-valor">
+            <div class="item"></div>
+            <p class="tit">confianza</p>
+        </div>
+    </div>
+</div>
+<!-- Valores -->
+
 <!-- Video -->
 <div class="video-container">
     <div class="container">
@@ -289,14 +398,12 @@
 $(document).ready(function() {
 
 
-    $(".contenedor-general-banner .cont-contenido .cont-edificios .items .col").each(function(index) {
+    $(".contenedor-general-valores .contenedor-valores .cont-valor").each(function(index) {
 
         $(this).hover(function() {
-            $(".contenedor-general-banner .cont-contenido .cont-edificios .hovers img").eq(index).addClass("active");
-            $(".contenedor-general-banner .cont-contenido .cont-logo .logo").eq(index).addClass("active");
+            $(".contenedor-general-valores .contenedor-info-valores .cont-info-valor").eq(index).addClass("active");
         }, function() {
-            $(".contenedor-general-banner .cont-contenido .cont-edificios .hovers img").eq(index).removeClass("active");
-            $(".contenedor-general-banner .cont-contenido .cont-logo .logo").eq(index).removeClass("active");
+            $(".contenedor-general-valores .contenedor-info-valores .cont-info-valor").eq(index).removeClass("active");
         });
 
     });
@@ -312,7 +419,10 @@ $(document).ready(function() {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
 
 <style>
-.contenedor-general-banner .cont-contenido .cont-edificios,
+
+.contenedor-general-items .contenedor-items,
+.contenedor-general-valores > img,
+.contenedor-general-valores > div,
 .filter-container>div,
 .about-container .container .content,
 .video-container .container>div,
@@ -334,12 +444,14 @@ jQuery(function($j) {
             triggerOnce: true
         });
     */
-    $j('.contenedor-general-banner .cont-contenido .cont-edificios, .filter-container > div, .about-container .container .content, .video-container .container > div, .contact-container .container .col > div').waypoint(function() {
+    
+    $j('.contenedor-general-items .contenedor-items, .contenedor-general-valores > img, .contenedor-general-valores > div, .filter-container > div, .about-container .container .content, .video-container .container > div, .contact-container .container .col > div').waypoint(function() {
         $j(this).toggleClass('fadeIn animated');
     }, {
         offset: '75%',
         triggerOnce: true
     });
+    
     /*
         $j('.hero-banner .hero-title').waypoint(function() {
             $j(this).toggleClass('fadeIn animated');

@@ -59,6 +59,160 @@
     }
 }
 
+.contenedor-general-valores{
+    padding: 140px 0;
+    position: relative;
+    .dec-izq{
+        position: absolute;
+        left: 0;
+        top: 70px;
+        width: 40px;
+        height: auto;
+    }
+    .dec-der{
+        position: absolute;
+        right: 0;
+        top: -115px;
+        width: 210px;
+        height: auto;
+    }
+    .title{
+        font-size: 21px;
+        font-weight: 300;
+        color: #11647a;
+        width: 90%;
+        margin: 0 auto;
+        .focus{
+            font-weight: 700;
+            font-size: 50px;
+            position: relative;
+        }
+    }
+    .contenedor-info-valores{
+        width: 88%;
+        margin: 0 auto;
+        margin-top: 40px;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: flex-end;
+        .cont-info-valor{
+            width: calc(100% / 7);
+            opacity: 0;
+            transition: all .3s;
+            .info{
+                width: 140%;
+                left: -20%;
+                position: relative; 
+                img{
+                    width: 17%;
+                    min-width: 37px;
+                    display: block;
+                    margin: 0 auto;
+                    margin-bottom: 15px;
+                }               
+                p{
+                    font-size: 14px;
+                    font-weight: 100;
+                    color: #066881;
+                    margin: 0;
+                    text-align: justify;
+                }
+            }
+            &.active{
+                opacity: 1;
+            }
+        }
+    }
+    .contenedor-valores{
+        width: 92%;
+        margin: 0 auto;
+        display: flex;
+        .cont-valor{
+            width: calc(100% / 7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            .item{
+                width: 21px;
+                height: 21px;
+                background: #1d7f98;
+                border-radius: 100%;
+            }
+            &::before{
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 0;
+                height: 1px;
+                width: 38%;
+                background: #1d7f98;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: -1;
+            }
+            &::after{
+                position: absolute;
+                content: "";
+                right: 0;
+                top: 0;
+                height: 1px;
+                width: 38%;
+                background:#1d7f98;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: -1;
+            }
+
+            .tit{
+                font-size: 17px;
+                font-weight: bold;
+                color: #065973;
+                text-align: center;
+                text-transform: uppercase;
+                margin: 0;
+                position: absolute;
+                bottom: -25px;
+            }
+
+            &:first-child{
+                &::before{
+                    display: none;
+                }
+            }
+            &:last-child{
+                &::after{
+                    display: none;
+                }
+            }
+            &:nth-child(2), &:nth-child(6){
+                .item{
+                    background: #46a8c1;
+                }
+            }
+            &:nth-child(3), &:nth-child(5){
+                .item{
+                    background: #73d5ee;
+                }
+            }
+            &:nth-child(4){
+                .item{
+                    background: #b0efff;
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+
+            &:nth-child(2n){
+                .tit{
+                    bottom: -60px;
+                }
+            }
+        }
+    }
+}
+
+
 @keyframes LiOption {
     0% {
         opacity: 0;
@@ -76,7 +230,7 @@
     background-position: center;
     padding: 60px;
     .filter-title {
-        font-size: 20px;
+        font-size: 21px;
         text-transform: uppercase;
         text-align: center;
         color: white;
@@ -84,7 +238,7 @@
         margin-bottom: 30px;
         .focus {
             font-weight: $bold;
-            font-size: 1.7em;
+            font-size: 45px;
         }
     }
 
@@ -332,12 +486,12 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    height: 60vh;
+    height: 100vh;
     min-height: 700px;
     overflow: hidden;
     .container {
         max-width: 1280px;
-        width: 100%;
+        width: 92%;
         margin: 0 auto;
         display: flex;
         align-items: center;
@@ -346,14 +500,15 @@
             .about-title {
                 color: $main;
                 text-transform: uppercase;
-                font-size: 20px;
+                font-size: 21px;
                 margin-bottom: 20px;
                 .about-upper-title {
                     width: 450px;
                     overflow: hidden;
+                    margin-bottom: 2px;
                     span {
                         font-weight: 100;
-                        margin-left: 50px;
+                        margin-left: 16%;
                         display: inline-block;
                         position: relative;
                         padding: 0px 10px;
@@ -379,22 +534,22 @@
                 }
                 .focus {
                     font-weight: $bold;
-                    font-size: 2em;
+                    font-size: 50px;
                     position: relative;
                     &:before {
-                        width: 740px;
+                        width: 771px;
                         content: attr(data-text);
                         position: absolute;
                         font-weight: bold;
-                        font-size: 5.5rem;
-                        bottom: 100%;
-                        right: -50px;
+                        font-size: 93px;
+                        bottom: 115%;
+                        right: -90px;
                         color: transparent;
-                        letter-spacing: -4px;
+                        letter-spacing: -5px;
                         -moz-text-fill-color: transparent;
                         -webkit-text-fill-color: transparent;
-                        -moz-text-stroke-color: rgba($main, 0.1);
-                        -webkit-text-stroke-color: rgba($main, 0.1);
+                        -moz-text-stroke-color: rgba($main, 0.15);
+                        -webkit-text-stroke-color: rgba($main, 0.15);
                         -moz-text-stroke-width: 1px;
                         -webkit-text-stroke-width: 1px;
                     }
@@ -404,13 +559,14 @@
             .text {
                 font-weight: $book;
                 font-size: 14px;
-                max-width: 450px;
+                line-height: 16px;
+                max-width: 500px;
                 margin-bottom: 20px;
             }
 
             .vermas {
                 border-radius: 20px;
-                padding: 10px 15px;
+                padding: 10px 20px;
                 display: inline-block;
                 background-color: $main;
                 color: white;
@@ -462,27 +618,27 @@
         max-width: 1280px;
         margin: 0 auto;
         .title {
-            font-size: 20px;
+            font-size: 26px;
             font-weight: $book;
             text-align: center;
             color: $main;
             .focus {
                 font-weight: $bold;
-                font-size: 1.7em;
+                font-size: 45px;
                 position: relative;
                 &:before {
                     content: attr(data-text);
                     position: absolute;
                     font-weight: bold;
-                    font-size: 4.8rem;
-                    top: 0px;
-                    left: calc(50% - 320px);
+                    font-size: 93px;
+                    top: 5px;
+                    left: calc(50% - 430px);
                     color: transparent;
-                    letter-spacing: -4px;
+                    letter-spacing: -5px;
                     -moz-text-fill-color: transparent;
                     -webkit-text-fill-color: transparent;
-                    -moz-text-stroke-color: rgba($main, 0.1);
-                    -webkit-text-stroke-color: rgba($main, 0.1);
+                    -moz-text-stroke-color: rgba($main, 0.15);
+                    -webkit-text-stroke-color: rgba($main, 0.15);
                     -moz-text-stroke-width: 1px;
                     -webkit-text-stroke-width: 1px;
                 }
