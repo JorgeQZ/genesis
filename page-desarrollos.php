@@ -306,13 +306,13 @@ get_header(); ?>
     </div>
     <div class="tab-tab-container">
         <div class="panoramic-item panoramic-active">
-            <img src="<?php echo get_template_directory_uri().'/img/thumbnail-1.jpg'?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/img/thumbnail-1.jpg'?>" alt="" data-src="<?php echo get_template_directory_uri().'/img/panoramic-1.jpg'?>">
         </div>
         <div class="panoramic-item">
-            <img src="<?php echo get_template_directory_uri().'/img/thumbnail-3.jpg'?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/img/thumbnail-3.jpg'?>" alt="" data-src="<?php echo get_template_directory_uri().'/img/panoramic-3.jpg'?>">
         </div>
         <div class="panoramic-item">
-            <img src="<?php echo get_template_directory_uri().'/img/thumbnail-2.jpg'?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/img/thumbnail-2.jpg'?>" alt="" data-src="<?php echo get_template_directory_uri().'/img/panoramic-2.jpg'?>">
         </div>
     </div>
 </div>

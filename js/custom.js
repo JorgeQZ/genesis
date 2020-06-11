@@ -76,7 +76,7 @@ $(document).ready(function (e) {
 
     // Panoramic
     function changePanoraic() {
-        let img = $('.panoramic-active').find('img').attr('src');
+        let img = $('.panoramic-active').find('img').attr('data-src');
         $('.panoramic-content').css({
             'background-image': 'url("' + img + '")'
         });
@@ -84,7 +84,7 @@ $(document).ready(function (e) {
 
     $('.panoramic-item').on('click', function (e) {
         e.preventDefault();
-        $('.panoramic-item').removeClass('panoramic-active');
+        $('.panoramic-item').removeClass('panoramic-active')
         $(this).addClass('panoramic-active');
         changePanoraic();
     });
