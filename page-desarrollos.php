@@ -95,7 +95,7 @@ get_header(); ?>
             <div class="icon">
                 <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
             </div>
-            <div class="img-item">
+            <div class="img-item lightbox-item">
                 <img src="<?php echo get_template_directory_uri().'/img/img-1.jpg';?>" alt="">
             </div>
         </div>
@@ -103,7 +103,7 @@ get_header(); ?>
             <div class="icon">
                 <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
             </div>
-            <div class="img-item">
+            <div class="img-item lightbox-item">
                 <img src="<?php echo get_template_directory_uri().'/img/img-2.jpg';?>" alt="">
             </div>
         </div>
@@ -111,7 +111,7 @@ get_header(); ?>
             <div class="icon">
                 <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
             </div>
-            <div class="img-item">
+            <div class="img-item lightbox-item">
                 <img src="<?php echo get_template_directory_uri().'/img/img-3.jpg';?>" alt="">
             </div>
         </div>
@@ -289,9 +289,34 @@ get_header(); ?>
 </div>
 <!-- AMENIDADES -->
 
+<!-- Paseo virtual -->
 <div class="virtual-cont" id="recorridos">
     <img src="<?php echo get_template_directory_uri().'/img/paseo-virtual.jpg'; ?>" alt="">
+</div><!-- Paseo virtual -->
+
+<!-- Vista Panoramica -->
+<div class="panoramic-container">
+    <div class="tab-content-container">
+        <div class="title-cont">
+            <div class="title" data-text="ANCÓRA">vista panóramica</div>
+        </div>
+        <div class="panoramic-content">
+
+        </div>
+    </div>
+    <div class="tab-tab-container">
+        <div class="panoramic-item panoramic-active">
+            <img src="<?php echo get_template_directory_uri().'/img/thumbnail-1.jpg'?>" alt="">
+        </div>
+        <div class="panoramic-item">
+            <img src="<?php echo get_template_directory_uri().'/img/thumbnail-3.jpg'?>" alt="">
+        </div>
+        <div class="panoramic-item">
+            <img src="<?php echo get_template_directory_uri().'/img/thumbnail-2.jpg'?>" alt="">
+        </div>
+    </div>
 </div>
+<!-- Vista Panoramica -->
 
 <!-- Ubicación -->
 <div class="location-container" id="ubicacion">

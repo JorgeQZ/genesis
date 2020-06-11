@@ -1,5 +1,7 @@
 <?php
 
+include "includes/function-departments.php";
+
 if ( ! isset ( $content_width) )
 $content_width = 800;
 
