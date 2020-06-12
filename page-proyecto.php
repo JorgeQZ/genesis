@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Desarrollos
+ * Template Name: Proyecto
  */
 
 get_header(); ?>
@@ -416,20 +416,21 @@ $('.departments-carousel').owlCarousel({
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
 
 <style>
-    .hero-container img,
-    .menu-navigation,
-    .video-cont,
-    .description-container .col > div,
-    .gallery-container > div,
-    .departments-container > div,
-    .amenidades-container,
-    .virtual-cont,
-    .panoramic-container > div,
-    .location-container .col,
-    .map-cont,
-    .contact-container .container .col>div {
-        opacity: 0;
-    }
+.hero-container img,
+.menu-navigation,
+.video-cont,
+.description-container .col>div,
+.gallery-container>div,
+.departments-container>div,
+.amenidades-container,
+.virtual-cont,
+.panoramic-container>div,
+.location-container .col,
+.map-cont,
+.contact-container .container .col>div {
+    opacity: 0;
+}
+
 </style>
 
 <script>
@@ -443,6 +444,6 @@ jQuery(function($j) {
         offset: '75%',
         triggerOnce: true
     });
-    
+
 });
 </script>
