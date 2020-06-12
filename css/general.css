@@ -254,23 +254,28 @@ footer .columns .column .footer-menu {
   margin-top: 10px;
 }
 
-footer .columns .column .footer-menu li {
+footer .columns .column .footer-menu ul {
+  padding: 0;
+  margin: 0;
+}
+
+footer .columns .column .footer-menu ul li {
   list-style: none;
   margin: 5px;
   padding: 5px 0px;
 }
 
-footer .columns .column .footer-menu li a {
+footer .columns .column .footer-menu ul li a {
   font-weight: 100;
   font-size: 14px;
   color: #828285;
 }
 
-footer .columns .column .footer-menu li a:hover {
+footer .columns .column .footer-menu ul li a:hover {
   color: white;
 }
 
-footer .columns .column .footer-menu li.active a {
+footer .columns .column .footer-menu ul li.active a {
   color: white;
 }
 
