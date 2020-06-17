@@ -1,4 +1,31 @@
 $(document).ready(function (e) {
+
+    // Result open - close button
+    $('.button-fold').on('click', function (e) {
+        e.preventDefault();
+        let id = $(this).attr('data-id');
+        if ($('#' + id).hasClass('active')) {
+            $('#' + id).removeClass('active');
+            $(this).removeClass('active');
+        } else {
+            $('#' + id).addClass('active');
+            $(this).addClass('active');
+
+        }
+    });
+
+    $('.result-tab-item').on('click', function (e) {
+        e.preventDefault();
+        let id = $(this).attr('data-id');
+
+        if (!$('#' + id).hasClass('active')) {
+            $('.result-tab-item').removeClass('active');
+            $('.result-tab-cont').removeClass('active');
+            $(this).addClass('active');
+            $('#' + id).addClass('active');
+        }
+    });
+
     // Custom Li's
     $('.filter-cont .value').click(function (e) {
         e.preventDefault();
@@ -75,7 +102,7 @@ $(document).ready(function (e) {
 
 
     // Panoramic
-    function changePanoraic() {
+    function changePanoramic() {
         let img = $('.panoramic-active').find('img').attr('data-src');
         $('.panoramic-content').css({
             'background-image': 'url("' + img + '")'
@@ -86,9 +113,9 @@ $(document).ready(function (e) {
         e.preventDefault();
         $('.panoramic-item').removeClass('panoramic-active')
         $(this).addClass('panoramic-active');
-        changePanoraic();
+        changePanoramic();
     });
-    changePanoraic();
+    changePanoramic();
 });
 $(document).keyup(function (e) {
 
