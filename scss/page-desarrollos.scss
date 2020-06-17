@@ -152,3 +152,62 @@
         }
     }
 }
+
+@media screen and (min-width: 1024px) and (max-width: 1279px){
+
+    .contenedor-general-desarrollos{
+        .contenedor-general-desarrollo{
+            .contenedor-desarrollo{
+                .cont-info{
+                    .info{
+                        width: 95%;
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 1023px){
+
+    .contenedor-general-desarrollos{
+        .contenedor-general-desarrollo{
+            .contenedor-desarrollo{
+                padding-top: 90px;
+                flex-direction: column;
+                .cont-info{
+                    width: 100%;
+                    margin-bottom: 30px;
+                    .info{
+                        width: 100%;
+                        padding-left: 0;
+                        .detalles{
+                            flex-wrap: wrap;
+                            div{
+                                margin-bottom: 20px;
+                                img {
+                                    margin: 0 auto;
+                                }
+                            }
+                        }
+                        a.link-desarrollo{
+                            display: table;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+                .cont-media{
+                    width: 100%;
+                    .desarrollo-slider{
+                        max-width: 550px;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+
+}
