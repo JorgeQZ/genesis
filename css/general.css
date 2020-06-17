@@ -303,6 +303,56 @@ footer .bottom a:hover {
   color: white;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  footer .columns {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  footer .columns .column {
+    -webkit-box-flex: inherit;
+        -ms-flex: inherit;
+            flex: inherit;
+    width: 30%;
+    max-width: unset;
+  }
+  footer .columns .column:nth-child(2) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  footer {
+    padding: 25px;
+  }
+  footer .columns {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer .columns .column {
+    -webkit-box-flex: inherit;
+        -ms-flex: inherit;
+            flex: inherit;
+    width: 100%;
+    max-width: unset;
+    text-align: center;
+    margin: 10px 0;
+  }
+  footer .columns .column .footer-menu ul li {
+    margin: 0;
+    padding: 2px 0;
+  }
+  footer .columns .column:nth-child(2) {
+    display: none;
+  }
+  footer .bottom {
+    padding: 10px 0;
+    text-align: center;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
