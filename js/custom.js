@@ -1,5 +1,10 @@
 $(document).ready(function (e) {
 
+    // Header Menu
+    $('#menu-button').on('click', function (e) {
+        $("header .cont-menu").slideToggle();
+    });
+
     // Result open - close button
     $('.button-fold').on('click', function (e) {
         e.preventDefault();
