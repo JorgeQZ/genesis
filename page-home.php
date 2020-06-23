@@ -162,6 +162,7 @@
         <div class="cont-info-valor">
             <div class="info">
                 <img src="<?php echo get_template_directory_uri().'/img/icon-valor.png' ?>" alt="">
+                <p class="tit">comunicación</p>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi euismod diam ac diam porta.
                 </p>
@@ -170,6 +171,7 @@
         <div class="cont-info-valor">
             <div class="info">
                 <img src="<?php echo get_template_directory_uri().'/img/icon-valor.png' ?>" alt="">
+                <p class="tit">profesionalismo</p>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi euismod diam ac diam porta, 
                     vitae viverra ante dictum. Praesent imperdiet arcu vel varius imperdiet. Ut posuere dolor.
@@ -179,6 +181,7 @@
         <div class="cont-info-valor">
             <div class="info">
                 <img src="<?php echo get_template_directory_uri().'/img/icon-valor.png' ?>" alt="">
+                <p class="tit">transparencia</p>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi euismod diam ac diam porta, 
                     vitae viverra ante dictum. Praesent imperdiet arcu vel varius imperdiet. Ut posuere dolor 
@@ -189,6 +192,7 @@
         <div class="cont-info-valor">
             <div class="info">
                 <img src="<?php echo get_template_directory_uri().'/img/icon-valor.png' ?>" alt="">
+                <p class="tit">colaboración</p>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi euismod diam ac diam porta, 
                     vitae viverra ante dictum. Praesent imperdiet arcu vel varius imperdiet. Ut posuere dolor 
@@ -200,6 +204,7 @@
         <div class="cont-info-valor">
             <div class="info">
                 <img src="<?php echo get_template_directory_uri().'/img/icon-valor.png' ?>" alt="">
+                <p class="tit">respeto</p>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi euismod diam ac diam porta, 
                     vitae viverra ante dictum. Praesent imperdiet arcu vel varius imperdiet. Ut posuere dolor 
@@ -210,6 +215,7 @@
         <div class="cont-info-valor">
             <div class="info">
                 <img src="<?php echo get_template_directory_uri().'/img/icon-valor.png' ?>" alt="">
+                <p class="tit">servicio</p>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi euismod diam ac diam porta, 
                     vitae viverra ante dictum. Praesent imperdiet arcu vel varius imperdiet. Ut posuere dolor.
@@ -219,6 +225,7 @@
         <div class="cont-info-valor">
             <div class="info">
                 <img src="<?php echo get_template_directory_uri().'/img/icon-valor.png' ?>" alt="">
+                <p class="tit">confianza</p>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi euismod diam ac diam porta.
                 </p>

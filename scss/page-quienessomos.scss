@@ -26,14 +26,6 @@
 
     .about-container{
         padding: 235px 60px 200px 60px;
-        background-position: right;
-        .container{
-            .content{
-                .text{
-                    max-width: 455px;
-                }
-            }
-        }
     }
 
 }
@@ -42,29 +34,6 @@
 
     .about-container{
         padding: 255px 20px 150px 20px;
-        background-position: right;
-        .container{
-            width: 100%;
-            .content{
-                .about-title{ 
-                    .about-upper-title{
-                        width: 100%;
-                        margin-bottom: 6px;
-                    }
-                    .focus{
-                        &::before{
-                            width: auto;
-                            font-size: 30px;
-                            font-size: 70px;
-                            right: inherit;
-                        }
-                    }
-                }
-                .text{
-                    max-width: unset
-                }
-            }
-        }
     }
 
 }
