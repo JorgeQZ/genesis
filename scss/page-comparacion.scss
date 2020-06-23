@@ -328,3 +328,47 @@
 //         padding-bottom: 15px;
 //     }
 // }
+
+
+@media screen and (max-width: 767px){
+
+    .advanced-search-container{
+        .filter-container{
+            padding: 60px 20px;
+            overflow: hidden;
+            .filters{
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                .col{
+                    width: 85%;
+                    .filter-cont{
+                        max-width: inherit;
+                    }
+                }
+            }
+            .advanced-search{
+                width: 100%;
+                .title{
+                    width: auto;
+                }
+            }
+            .advanced-search-options{
+                flex-direction: column;
+                align-items: flex-start;
+                width: 50%;
+                margin: 0 auto;
+                .form-checkbox{
+                    margin-left: 0;
+                    &:first-child{
+                        margin-left: 0;
+                    }
+                }
+            }
+            .filter-submit{
+                margin-top: 15px;
+            }
+        }
+    }
+
+}
