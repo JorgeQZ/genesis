@@ -1208,3 +1208,40 @@
 .map-cont iframe {
   margin-bottom: -5px;
 }
+
+@media screen and (max-width: 767px) {
+  .hero-container img {
+    width: 85%;
+    display: block;
+    margin: 0 auto;
+  }
+  .menu-navigation ul li {
+    padding: 10px 8px;
+  }
+  .description-container .col {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 100%;
+            flex: 1 0 100%;
+  }
+  .description-container .col:last-child {
+    padding: 100px 40px 0;
+  }
+  .departments-container {
+    overflow: hidden;
+  }
+  .departments-container .title {
+    font-size: 31px;
+  }
+  .panoramic-container {
+    min-height: 450px;
+  }
+  .location-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .location-container .col {
+    width: 100% !important;
+  }
+}
