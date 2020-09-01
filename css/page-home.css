@@ -155,6 +155,17 @@
   text-align: justify;
 }
 
+.contenedor-general-valores .contenedor-info-valores .cont-info-valor .info .tit {
+  font-size: 17px;
+  font-weight: bold;
+  color: #065973;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 10px;
+  display: none;
+}
+
 .contenedor-general-valores .contenedor-info-valores .cont-info-valor.active {
   opacity: 1;
 }
@@ -870,4 +881,153 @@
 .video-container .container .grid .item .content .text {
   font-weight: 100;
   font-size: 14px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .about-container {
+    background-size: cover !important;
+    background-position: right !important;
+  }
+  .about-container .container .content .text {
+    max-width: 455px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .contenedor-general-valores .title {
+    width: 85%;
+  }
+  .contenedor-general-valores .contenedor-valores {
+    width: 96%;
+  }
+  .contenedor-general-valores .contenedor-valores .cont-valor .tit {
+    font-size: 14px;
+  }
+  .video-container .container .video {
+    width: 100%;
+    max-width: 700px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .contenedor-general-items .contenedor-items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contenedor-general-items .contenedor-items .cont-item {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .contenedor-general-items .contenedor-items .cont-item:first-child {
+    margin-top: 0;
+  }
+  .contenedor-general-items .contenedor-items .cont-item:last-child {
+    margin-bottom: 0;
+  }
+  .filter-container {
+    padding: 60px 20px;
+    overflow: hidden;
+  }
+  .filter-container .filters {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  .filter-container .filters .col {
+    width: 85%;
+  }
+  .filter-container .filters .col .filter-cont {
+    max-width: inherit;
+  }
+  .filter-container .advanced-search {
+    width: 100%;
+  }
+  .filter-container .advanced-search .title {
+    width: auto;
+  }
+  .contenedor-general-valores {
+    padding: 140px 0 30px;
+  }
+  .contenedor-general-valores .dec-der {
+    width: 160px;
+  }
+  .contenedor-general-valores .title {
+    width: 70%;
+  }
+  .contenedor-general-valores .contenedor-info-valores {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contenedor-general-valores .contenedor-info-valores .cont-info-valor {
+    opacity: 1;
+    width: 100%;
+    margin: 10px 0;
+  }
+  .contenedor-general-valores .contenedor-info-valores .cont-info-valor .info {
+    width: 100%;
+    left: inherit;
+  }
+  .contenedor-general-valores .contenedor-info-valores .cont-info-valor .info .tit {
+    display: block;
+  }
+  .contenedor-general-valores .contenedor-valores {
+    display: none;
+  }
+  .about-container {
+    padding: 100px 20px 100px 20px;
+    background-position: right !important;
+    background-size: cover !important;
+  }
+  .about-container .container {
+    width: 100%;
+  }
+  .about-container .container .content .about-title .about-upper-title {
+    width: 100%;
+    margin-bottom: 6px;
+  }
+  .about-container .container .content .about-title .focus::before {
+    width: auto;
+    font-size: 30px;
+    font-size: 70px;
+    right: inherit;
+  }
+  .about-container .container .content .text {
+    max-width: unset;
+  }
+  .video-container {
+    padding: 60px 20px;
+  }
+  .video-container .container .title .focus::before {
+    width: auto;
+    font-size: 30px;
+    font-size: 70px;
+    right: inherit;
+    left: 0;
+  }
+  .video-container .container .video {
+    width: 100%;
+  }
+  .video-container .container .grid {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .video-container .container .grid .item {
+    width: 65% !important;
+    border-right: none;
+    border-bottom: 2px solid #11647a;
+  }
+  .video-container .container .grid .item:last-child {
+    border-bottom: none;
+  }
 }

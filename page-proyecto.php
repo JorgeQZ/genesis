@@ -405,6 +405,9 @@ $('.departments-carousel').owlCarousel({
             items: 1
         },
         600: {
+            items: 3
+        },
+        991: {
             items: 4
         }
     }

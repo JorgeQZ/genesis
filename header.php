@@ -15,6 +15,12 @@
             <img src="<?php echo get_template_directory_uri().'/img/logo.png'?>" alt="Genesis Capital">
         </a>
 
+        <div class="menu-button" id="menu-button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
         <div class="cont-menu">
             <?php
             wp_nav_menu(

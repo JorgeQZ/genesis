@@ -1011,3 +1011,52 @@
         margin-bottom: -5px;
     }
 }
+
+
+@media screen and (max-width: 767px){
+
+
+    .hero-container{ 
+        img{
+            width: 85%;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    .menu-navigation{
+        ul{
+            li{
+                padding: 10px 8px;
+            }
+        }
+    }
+
+    .description-container{ 
+        .col{
+            flex: 1 0 100%;
+            &:last-child{
+                padding: 100px 40px 0;
+            }
+        }
+    }
+
+    .departments-container{ 
+        overflow: hidden;
+        .title{
+            font-size: 31px;
+        }
+    }
+
+    .panoramic-container{
+        min-height: 450px;
+    }
+
+    .location-container{
+        flex-direction: column;
+        .col{
+            width: 100% !important;
+        }
+    }
+
+}
