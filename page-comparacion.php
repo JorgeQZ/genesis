@@ -24,9 +24,16 @@ get_header(); ?>
                         <!-- <div class="value">Ubicación </div> -->
                         <input type="text" class="value" placeholder="Ubicación" readonly name="ubicacion" id="ubicacion">
                         <ul>
-                            <li>Test 1</li>
-                            <li>Test 2</li>
-                            <li>Test 3</li>
+                            <?php
+                            $ubicaciones  =  get_terms(
+                                array(
+                                    'taxonomy' => 'categorias-ubicaciones',
+                                    'hide_empty' => true
+                                )
+                            );
+                            foreach($ubicaciones as $ubicacion): ?>
+                            <li><?php  echo $ubicacion->name; ?></li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
                 </div> <!-- col -->
@@ -36,12 +43,13 @@ get_header(); ?>
                     <div class="filter-cont">
                         <!-- <div class="value">Nº de recamaras </div> -->
                         <input type="text" class="value" placeholder="Nº de recamaras" readonly name="recamaras" id="recamaras">
-
+                        <?php $recamaras = $wpdb->get_results( 'SELECT DISTINCT meta_value FROM gen_postmeta WHERE meta_key LIKE "recamaras" ORDER BY meta_value ASC', ARRAY_A ); ?>
                         <ul>
-                            <li>Test 1</li>
-                            <li>Test 2</li>
-                            <li>Test 3</li>
+                            <?php foreach ($recamaras as $recamara): ?>
+                            <li><?php echo $recamara['meta_value'] ?></li>
+                            <?php endforeach;?>
                         </ul>
+
                     </div>
                 </div> <!-- col -->
             </div><!-- Filters -->
@@ -53,11 +61,11 @@ get_header(); ?>
                     <div class="filter-cont">
                         <!-- <div class="value">Baños </div> -->
                         <input type="text" class="value" placeholder="Baños" readonly name="banos" id="banos">
-
+                        <?php $banos = $wpdb->get_results( 'SELECT DISTINCT meta_value FROM gen_postmeta WHERE meta_key LIKE "banos" ORDER BY meta_value ASC', ARRAY_A ); ?>
                         <ul>
-                            <li>Test 1</li>
-                            <li>Test 2</li>
-                            <li>Test 3</li>
+                            <?php foreach ($banos as $bano): ?>
+                            <li><?php echo $bano['meta_value'] ?></li>
+                            <?php endforeach;?>
                         </ul>
                     </div>
                 </div> <!-- col -->
@@ -155,10 +163,11 @@ get_footer(); ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
 
 <style>
-    .advanced-search-container .filter-container,
-    .contact-container .container .col>div {
-        opacity: 0;
-    }
+.advanced-search-container .filter-container,
+.contact-container .container .col>div {
+    opacity: 0;
+}
+
 </style>
 
 <script>
@@ -172,6 +181,6 @@ jQuery(function($j) {
         offset: '75%',
         triggerOnce: true
     });
-    
+
 });
 </script>

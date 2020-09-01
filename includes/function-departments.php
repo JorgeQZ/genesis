@@ -61,6 +61,55 @@ function taxonomia_departamentos_category() {
 			'choose_from_most_used'      => __('Elegir de las más usadas','Genesis'),
 		)
 	) );
+
+	register_taxonomy( 'categorias-ubicaciones',
+	array (0 => 'departamento'),
+	array(
+		'hierarchical'      => true,
+		'label'             => __('Ubicaciones','Genesis'),
+		'show_ui'           => true,
+		'query_var'         => true,
+		'show_admin_column' => true,
+		'labels'            => array (
+			'search_items'               => __('Buscar categorías','Genesis'),
+			'popular_items'              => __('Más populares','Genesis'),
+			'all_items'                  => __('Todas','Genesis'),
+			'parent_item'                => __('Superior','Genesis'),
+			'parent_item_colon'          => __('Categoría superior','Genesis'),
+			'edit_item'                  => __('Editar categoría','Genesis'),
+			'update_item'                => __('Actualizar categoría','Genesis'),
+			'add_new_item'               => __('Añadir nueva categoría','Genesis'),
+			'new_item_name'              => __('Nueva categoría','Genesis'),
+			'separate_items_with_commas' => __('Separar por comas','Genesis'),
+			'add_or_remove_items'        => __('Añadir o borrar','Genesis'),
+			'choose_from_most_used'      => __('Elegir de las más usadas','Genesis'),
+		)
+	) );
+
+
+	register_taxonomy( 'categorias-desarrollos',
+	array (0 => 'departamento'),
+	array(
+		'hierarchical'      => true,
+		'label'             => __('Desarrollos','Genesis'),
+		'show_ui'           => true,
+		'query_var'         => true,
+		'show_admin_column' => true,
+		'labels'            => array (
+			'search_items'               => __('Buscar categorías','Genesis'),
+			'popular_items'              => __('Más populares','Genesis'),
+			'all_items'                  => __('Todas','Genesis'),
+			'parent_item'                => __('Superior','Genesis'),
+			'parent_item_colon'          => __('Categoría superior','Genesis'),
+			'edit_item'                  => __('Editar categoría','Genesis'),
+			'update_item'                => __('Actualizar categoría','Genesis'),
+			'add_new_item'               => __('Añadir nueva categoría','Genesis'),
+			'new_item_name'              => __('Nueva categoría','Genesis'),
+			'separate_items_with_commas' => __('Separar por comas','Genesis'),
+			'add_or_remove_items'        => __('Añadir o borrar','Genesis'),
+			'choose_from_most_used'      => __('Elegir de las más usadas','Genesis'),
+		)
+	) );
 }
 
 add_action( 'init', 'register_departmentos_type' );
