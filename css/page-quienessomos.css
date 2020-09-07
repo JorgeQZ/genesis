@@ -10,11 +10,30 @@
 .about-container .content .about-title .focus:before {
   -moz-text-stroke-color: white !important;
   -webkit-text-stroke-color: white !important;
-  opacity: .3;
+  opacity: 0.3;
 }
 
 .about-container .content .text {
   margin-bottom: 0;
+}
+
+.meet-the-team {
+  min-height: 40px;
+  padding: 30px 50px;
+}
+
+.meet-the-team .title {
+  color: #11647a;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-indent: 30px;
+  font-size: 30px;
+}
+
+.meet-the-team .title .bolder {
+  font-weight: 700;
+  text-indent: 0 !important;
+  font-size: 50px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {

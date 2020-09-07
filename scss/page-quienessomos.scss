@@ -1,3 +1,4 @@
+@import "variables";
 .about-container {
     background-image: url(../img/fondo-quienessomos.jpg);
     background-size: cover;
@@ -11,7 +12,7 @@
                 &:before {
                     -moz-text-stroke-color: white !important;
                     -webkit-text-stroke-color: white !important;
-                    opacity: .3;
+                    opacity: 0.3;
                 }
             }
         }
@@ -21,19 +22,31 @@
     }
 }
 
-
-@media screen and (min-width: 768px) and (max-width: 1279px){
-
-    .about-container{
-        padding: 235px 60px 200px 60px;
+.meet-the-team {
+    min-height: 40px;
+    padding: 30px 50px;
+    .title {
+        color: $main;
+        font-weight: $book;
+        text-transform: uppercase;
+        text-indent: 30px;
+        font-size: 30px;
+        .bolder {
+            font-weight: $bold;
+            text-indent: 0 !important;
+            font-size: 50px;
+        }
     }
-
 }
 
-@media screen and (max-width: 767px){
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    .about-container {
+        padding: 235px 60px 200px 60px;
+    }
+}
 
-    .about-container{
+@media screen and (max-width: 767px) {
+    .about-container {
         padding: 255px 20px 150px 20px;
     }
-
 }

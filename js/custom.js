@@ -85,17 +85,21 @@ $(document).ready(function (e) {
 
     // LightBox
 
-    $('.gallery-carousel .item').on('click', function (e) {
+    $('.light').on('click', function (e) {
         e.preventDefault();
-        let slide = $(this), obj = slide.parent('div'),
-            classList = obj.attr('class').split(' '),
-            imgSrc = slide.find('.img-item img').attr('src'),
-            imgAlt = slide.find('.img-item img').attr('alt');
-        if (classList.includes('center')) {
-            $('#img_light-box').attr('src', imgSrc);
-            $('#img_light-box').attr('alt', imgAlt);
-            $('.light-box').fadeIn();
-        }
+        let naturalW = $(this).find('.bed-img')[0].naturalWidth,
+            naturalH = $(this).find('.bed-img')[0].naturalHeight,
+            imgSrc = $(this).find('.bed-img').attr('src'),
+            imgAlt = $(this).find('.bed-img').attr('alt');
+
+
+
+        $('#img_light-box').attr('src', imgSrc).css({
+            'max-width': naturalW,
+            'max-height': naturalH,
+        });
+        $('#img_light-box').attr('alt', imgAlt);
+        $('.light-box').fadeIn();
     });
 
     // Close Lightbox
@@ -121,6 +125,35 @@ $(document).ready(function (e) {
         changePanoramic();
     });
     changePanoramic();
+
+    //  Tabs Type Bedrooms
+    var room_tabs = document.getElementsByClassName('room-tab');
+    $(room_tabs).on('click', function (e) {
+        e.preventDefault();
+        if (!$(this).hasClass('active')) {
+            let data_id = $(this).attr('data-id');
+            $('.room-tab').removeClass('active');
+            $(this).addClass('active');
+            $('.room-type').hide();
+            document.getElementById(data_id).style.display = 'block';
+        }
+    });
+
+    // Tabs numero de recamaras
+    var room_sub_tabs = document.getElementsByClassName('option-tab');
+    $(room_sub_tabs).on('click', function (e) {
+        e.preventDefault();
+
+        if (!$(this).hasClass('active')) {
+            let sub_data_id = $(this).attr('data-id');
+            $(this).addClass('active')
+                .siblings().removeClass('active');
+
+            $(this).parent().siblings('.sub-option').hide();
+            document.getElementById(sub_data_id).style.display = 'flex';
+        }
+    });
+
 });
 $(document).keyup(function (e) {
 

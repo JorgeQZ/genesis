@@ -18,18 +18,18 @@ get_header(); ?>
                 <div class="focus" data-text="GÉNESIS CAPITAL">GÉNESIS CAPITAL</div>
             </div>
             <div class="text">
-                Somos una desarrolladora que nace bajo la premisa de dar solidez a proyectos residenciales, 
-                corporativos y comerciales que se rigen bajo los más estrictos estándares de calidad. 
-                Por ello nuestro equipo está conformado por expertos del sector que cuentan con más de 15 años 
-                de experiencia, generando propuestas de vanguardia y reafirmando nuestro compromiso con la calidad, 
-                el diseño y la exclusividad. 
+                Somos una desarrolladora que nace bajo la premisa de dar solidez a proyectos residenciales,
+                corporativos y comerciales que se rigen bajo los más estrictos estándares de calidad.
+                Por ello nuestro equipo está conformado por expertos del sector que cuentan con más de 15 años
+                de experiencia, generando propuestas de vanguardia y reafirmando nuestro compromiso con la calidad,
+                el diseño y la exclusividad.
                 <br><br>
-                Cada uno de nuestros proyectos cuenta con una ubicación privilegiada, convirtiéndolos en un referente 
-                local importante, pues no solo tienen acceso a las principales vías de comunicación, también cuentan con 
-                una gran conectividad a sitios importantes de la zona, aumentando su valor y plusvalía.  
+                Cada uno de nuestros proyectos cuenta con una ubicación privilegiada, convirtiéndolos en un referente
+                local importante, pues no solo tienen acceso a las principales vías de comunicación, también cuentan con
+                una gran conectividad a sitios importantes de la zona, aumentando su valor y plusvalía.
                 <br><br>
-                Nuestros diseños son una propuesta arquitectónica que buscan satisfacer las necesidades de nuestros clientes 
-                desde una perspectiva vanguardista, elegante y confortable, que se alineen al entorno y que sume valor a la zona, 
+                Nuestros diseños son una propuesta arquitectónica que buscan satisfacer las necesidades de nuestros clientes
+                desde una perspectiva vanguardista, elegante y confortable, que se alineen al entorno y que sume valor a la zona,
                 generando un impacto positivo para el lugar.
             </div>
         </div>
@@ -43,16 +43,28 @@ get_header(); ?>
 </div>
 <!-- Contacto -->
 
+<!-- Conoce al equipo -->
+<div class="meet-the-team">
+    <div class="title">
+        conoce
+        <div class="bolder">
+            al equipo
+        </div>
+    </div>
+
+    .
+</div>
 <?php get_footer(); ?>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
 
 <style>
-    .about-container .container .content,
-    .contact-container .container .col>div {
-        opacity: 0;
-    }
+.about-container .container .content,
+.contact-container .container .col>div {
+    opacity: 0;
+}
+
 </style>
 
 <script>
@@ -66,6 +78,6 @@ jQuery(function($j) {
         offset: '75%',
         triggerOnce: true
     });
-    
+
 });
 </script>
