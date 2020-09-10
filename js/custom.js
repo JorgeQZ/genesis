@@ -61,26 +61,36 @@ $(document).ready(function (e) {
     });
 
 
+    // Mini BAnner slider Home
+    $('.mini-banner-slider').owlCarousel({
+        loop: true,
+        nav: false,
+        dots: true,
+        items: 1,
+        autoHeight: true
+
+    })
+
     // Slider Range Owl Carousel Desarrollos
-    let slider_width = $('.departments-carousel .owl-stage').width(),
-        total_items = $('.departments-carousel .owl-stage .owl-item').length,
-        slide_width = (slider_width / total_items),
-        max_slider_range = Math.floor((slide_width) * (total_items - 4));
+    // let slider_width = $('.departments-carousel .owl-stage').width(),
+    //     total_items = $('.departments-carousel .owl-stage .owl-item').length,
+    //     slide_width = (slider_width / total_items),
+    //     max_slider_range = Math.floor((slide_width) * (total_items - 4));
 
-    const owl = $(".departments-carousel"), inputType = $("#departments-slider");
+    // const owl = $(".departments-carousel"), inputType = $("#departments-slider");
 
-    inputType.attr({ "max": max_slider_range });
+    // inputType.attr({ "max": max_slider_range });
 
-    inputType.on('input', function (e) {
-        e.preventDefault();
-        $('.departments-carousel .owl-stage').css({
-            'transform': 'translate3d(-' + parseInt($(this).val()) + 'px, 0px, 0px)',
-        });
-    });
+    // inputType.on('input', function (e) {
+    //     e.preventDefault();
+    //     $('.departments-carousel .owl-stage').css({
+    //         'transform': 'translate3d(-' + parseInt($(this).val()) + 'px, 0px, 0px)',
+    //     });
+    // });
 
-    owl.on('changed.owl.carousel', function (e) {
-        inputType.val(slide_width * e.item.index);
-    });
+    // owl.on('changed.owl.carousel', function (e) {
+    //     inputType.val(slide_width * e.item.index);
+    // });
 
 
     // LightBox
@@ -110,21 +120,21 @@ $(document).ready(function (e) {
 
 
 
-    // Panoramic
-    function changePanoramic() {
-        let img = $('.panoramic-active').find('img').attr('data-src');
-        $('.panoramic-content').css({
-            'background-image': 'url("' + img + '")'
-        });
-    }
+    // // Panoramic
+    // function changePanoramic() {
+    //     let img = $('.panoramic-active').find('img').attr('data-src');
+    //     $('.panoramic-content').css({
+    //         'background-image': 'url("' + img + '")'
+    //     });
+    // }
 
-    $('.panoramic-item').on('click', function (e) {
-        e.preventDefault();
-        $('.panoramic-item').removeClass('panoramic-active')
-        $(this).addClass('panoramic-active');
-        changePanoramic();
-    });
-    changePanoramic();
+    // $('.panoramic-item').on('click', function (e) {
+    //     e.preventDefault();
+    //     $('.panoramic-item').removeClass('panoramic-active')
+    //     $(this).addClass('panoramic-active');
+    //     changePanoramic();
+    // });
+    // changePanoramic();
 
     //  Tabs Type Bedrooms
     var room_tabs = document.getElementsByClassName('room-tab');

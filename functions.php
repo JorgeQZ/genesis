@@ -49,6 +49,11 @@ function add_theme_scripts() {
 
     if(is_page_template('page-home.php')):
         wp_enqueue_style( 'page-home', get_template_directory_uri() . '/css/page-home.css', array(), filemtime( get_stylesheet_directory() . '/css/page-home.css' ), 'all');
+
+        // Slider
+        wp_enqueue_script('owl.carousel.min', get_template_directory_uri().'/js/owl.carousel.min.js', array('jquery'),filemtime( get_stylesheet_directory() . '/js/owl.carousel.min.js' ), false);
+        wp_enqueue_style( 'owl.carousel.min', get_template_directory_uri() . '/css/owl.carousel.min.css', array(), filemtime( get_stylesheet_directory() . '/css/owl.carousel.min.css' ), 'all');
+        wp_enqueue_style( 'owl.theme.default.min', get_template_directory_uri() . '/css/owl.theme.default.min.css', array(), filemtime( get_stylesheet_directory() . '/css/owl.theme.default.min.css' ), 'all');
     endif;
 
     if(is_page_template('page-comparacion.php')):
@@ -75,6 +80,23 @@ function add_theme_scripts() {
         wp_enqueue_style( 'page-home', get_template_directory_uri() . '/css/page-home.css', array(), filemtime( get_stylesheet_directory() . '/css/page-home.css' ), 'all');
         wp_enqueue_style( 'page-quienessomos', get_template_directory_uri() . '/css/page-quienessomos.css', array(), filemtime( get_stylesheet_directory() . '/css/page-quienessomos.css' ), 'all');
         wp_enqueue_script('headerjs', get_template_directory_uri().'/js/header.js', array('jquery'),filemtime( get_stylesheet_directory() . '/js/header.js' ), false);
+    endif;
+
+    if( is_user_logged_in()):
+        ?>
+<style>
+@media screen and (min-width: 1280px) {
+    body {
+        padding-top: 32px !important;
+    }
+
+    header {
+        top: 32px !important;
+    }
+}
+
+</style>
+<?php
     endif;
 
   }
