@@ -4,9 +4,9 @@
  * Template Name: Home Page
  */
 
-?>
 
-<?php get_header();?>
+ get_header();
+?>
 
 <!-- Banner -->
 <!-- <div class="contenedor-general-items">
@@ -45,6 +45,12 @@
 </div> -->
 <!-- Banner -->
 
+<!-- Home Hero -->
+<div class="owl-carousel owl-theme home-hero">
+    <div class="item">
+        <img src="" alt="">
+    </div>
+</div><!-- Home Hero -->
 
 <!-- Mini Banner Ads -->
 <div class="owl-carousel owl-theme mini-banner-slider">

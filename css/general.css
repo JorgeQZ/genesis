@@ -162,12 +162,12 @@ header .cont-menu .social-links a.item-txt {
   line-height: 2px;
   color: white;
   margin-left: 5px;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 header .cont-menu .social-links a.item-txt:hover {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 header .cont-menu .social-links a.item {
@@ -235,6 +235,67 @@ header .cont-menu .social-links a.item:hover:before, header .cont-menu .social-l
   -webkit-transform: rotateZ(0deg);
           transform: rotateZ(0deg);
   border-color: white;
+}
+
+.call-center {
+  position: fixed;
+  z-index: 1;
+  bottom: 20px;
+  right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.call-center .text {
+  z-index: 2;
+  font-weight: 700;
+  padding: 18px 7px;
+  margin-right: 8px;
+  background-color: #fff;
+  color: #00465f;
+  text-align: center;
+  font-size: 10px;
+  text-transform: uppercase;
+  border-radius: 30px 30px 4px 30px;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  line-height: 1.1;
+}
+
+.call-center .text small {
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.call-center .image {
+  background-color: #00465f;
+  padding: 5px;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 0 0 36px 0px rgba(0, 0, 0, 0.97);
+          box-shadow: 0 0 36px 0px rgba(0, 0, 0, 0.97);
+}
+
+.call-center .image img {
+  width: 66%;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -435,13 +496,13 @@ footer .bottom a:hover {
   font-family: halcom, sans-serif;
   font-weight: 400;
   line-height: 1;
-  scroll-behavior: smooth;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 a {

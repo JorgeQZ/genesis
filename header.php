@@ -9,7 +9,15 @@
 </head>
 
 <body>
-
+    <a class="call-center" href="#" target="_blank">
+        <div class="text">
+            call-center <br>
+            <small>800-0910-800</small>
+        </div>
+        <div class="image">
+            <img src="<?php echo get_template_directory_uri().'/img/headset.png' ?>" alt="">
+        </div>
+    </a>
     <header class="scrolled">
         <a href="#" class="brand-logo">
             <img src="<?php echo get_template_directory_uri().'/img/logo.png'?>" alt="Genesis Capital">

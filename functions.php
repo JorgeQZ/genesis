@@ -60,7 +60,7 @@ function add_theme_scripts() {
         wp_enqueue_style( 'page-comparacion', get_template_directory_uri() . '/css/page-comparacion.css', array(), filemtime( get_stylesheet_directory() . '/css/page-comparacion.css' ), 'all');
     endif;
 
-    if(is_page_template('page-proyecto.php') || is_page_template('page-proyecto-resultado.php')):
+    if(is_page_template('page-proyecto.php') || is_page_template('page-proyecto-resultado.php') || get_post_type() === 'departamento'):
         wp_enqueue_style( 'page-proyecto', get_template_directory_uri() . '/css/page-proyecto.css', array(), filemtime( get_stylesheet_directory() . '/css/page-proyecto.css' ), 'all');
         wp_enqueue_script('owl.carousel.min', get_template_directory_uri().'/js/owl.carousel.min.js', array('jquery'),filemtime( get_stylesheet_directory() . '/js/owl.carousel.min.js' ), false);
         wp_enqueue_script('owl.carousel.thumbs.min', get_template_directory_uri().'/js/owl.carousel.thumbs.min.js', array('jquery'),filemtime( get_stylesheet_directory() . '/js/owl.carousel.thumbs.min.js' ), false);
