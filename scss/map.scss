@@ -4,15 +4,114 @@
     background-image: url(../img/map-bg.jpg);
     background-position: center;
     height: 100vh;
-    max-height: 800px;
-    .column {
-        .title {
+    max-height: 600px;
+    padding: 50px 60px;
+    position: relative;
+
+    .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        .column {
+            flex: 1 0 40%;
+            // &:nth-child(1) {
+            //     width: 30%;
+            // }
+            // &:nth-child(2) {
+            //     width: 70%;
+            //     svg {
+            //         margin-top: 60px;
+            //         width: 100%;
+            //         transform: scale(1.2);
+            //     }
+            // }
+            .title {
+                color: $alt;
+                text-transform: uppercase;
+                font-size: 25px;
+                font-weight: $book;
+                text-indent: 20px;
+                .bold-title {
+                    font-weight: $bold;
+                    text-indent: 0px;
+                    font-size: 45px;
+                }
+            }
+
+            .data-points {
+                background-color: red;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                .item {
+                    .state {
+                        background-color: $alt;
+                        color: white;
+                        padding: 10px 40px;
+                        border-radius: 10px;
+                        text-transform: uppercase;
+                        transform: translateX(80%);
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            top: calc(50% - 1.5px);
+                            right: 100%;
+                            width: 1000px;
+                            height: 3px;
+                            background-color: $alt;
+                        }
+                    }
+
+                    ul {
+                        margin-top: 40px;
+                        li {
+                            color: $main;
+                            text-transform: uppercase;
+                            transform: translateX(140%);
+                            &:before {
+                                content: "";
+                                position: absolute;
+                                top: calc(50% - 1.8px);
+                                right: calc(100% + 14px);
+                                width: 1000px;
+                                height: 3px;
+                                background-color: $alt;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
-path {
-    fill: #bbbbbb;
-    cursor: pointer;
+svg {
+    path {
+        fill: #bbbbbb;
+        cursor: pointer;
+    }
+    g {
+        &.selected {
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                filter: url(#shadow);
+            }
+            #MX- {
+                &BCS,
+                &JAL,
+                &MOR {
+                    fill: $main;
+                    transition: all 0.3s ease-in-out;
+                    stroke-width: 1;
+                    stroke: transparent;
+                    &:hover {
+                        stroke: white;
+                        stroke-width: 1;
+                    }
+                }
+            }
+        }
+    }
 }
 
 #MX- {
@@ -34,11 +133,5 @@ path {
     &CAM,
     &GRO {
         fill: #d1d1d1;
-    }
-
-    &BCS,
-    &JAL,
-    &MOR {
-        fill: $main;
     }
 }

@@ -124,7 +124,7 @@
 }
 
 .advanced-search-container .filter-container .filters .col .filter-cont .value:hover {
-  background-color: #01303f;
+  background-color: #00596e;
 }
 
 .advanced-search-container .filter-container .filters .col .filter-cont .value:before {
@@ -143,7 +143,7 @@
 .advanced-search-container .filter-container .filters .col .filter-cont ul {
   width: 100%;
   position: absolute;
-  background-color: #01303f;
+  background-color: #00596e;
   border-radius: 0 0 0 10px;
   margin: 0;
   opacity: 0;

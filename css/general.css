@@ -663,7 +663,7 @@ a {
 .contact-container .container .col .form .form-row .form-group .select-cont ul {
   width: 100%;
   position: absolute;
-  background-color: rgba(1, 48, 63, 0.9);
+  background-color: rgba(0, 89, 110, 0.9);
   padding: 5px;
   border-radius: 0 0 0 10px;
   margin: 0;
@@ -833,7 +833,7 @@ a {
   width: 130px;
   padding: 10px;
   height: 40px;
-  background-color: #01303f;
+  background-color: #00596e;
   font-weight: 100;
   color: white;
   border: none;
