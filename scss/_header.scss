@@ -9,12 +9,33 @@ header {
     width: 100%;
     z-index: 1001;
     transition: all 0.2s linear;
+    background-color: transparent;
     &.scrolled {
         padding-top: 5px;
         padding-bottom: 5px;
         background-color: $main;
         .cont-menu {
-            padding-top: 12px;
+            ul {
+                li {
+                    a {
+                        color: white;
+                    }
+                }
+            }
+
+            .social-links {
+                a.item-txt {
+                    color: white;
+                }
+                a.item {
+                    &:hover {
+                        &:before,
+                        &:after {
+                            border-color: white;
+                        }
+                    }
+                }
+            }
         }
     }
     a.brand-logo {
@@ -69,7 +90,8 @@ header {
                     font-weight: 100;
                     text-transform: uppercase;
                     font-size: 13px;
-                    color: white;
+                    // color: white;
+                    color: $main;
                     position: relative;
                     overflow: hidden;
                     &:after,
@@ -77,7 +99,8 @@ header {
                         content: "";
                         width: 100%;
                         height: 1px;
-                        background-color: rgba(white, 0.6);
+                        // background-color: rgba(white, 0.6);
+                        background-color: rgba($main, 0.6);
                         position: absolute;
                         transition: left 0.2s linear;
                     }
@@ -112,7 +135,8 @@ header {
                 font-weight: 100;
                 font-size: 13px;
                 line-height: 2px;
-                color: white;
+                // color: white;
+                color: $main;
                 margin-left: 5px;
                 transition: all 0.3s;
                 &:hover {
@@ -171,7 +195,8 @@ header {
                     &:after {
                         transform: rotateZ(0deg);
 
-                        border-color: white;
+                        // border-color: white;
+                        border-color: $main;
                     }
                 }
             }

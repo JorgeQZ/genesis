@@ -1,5 +1,10 @@
 @import "variables";
 
+.home-banner {
+    img {
+        width: 100%;
+    }
+}
 .hero-banner {
     width: 100%;
     display: flex;
@@ -9,7 +14,6 @@
 }
 
 .mini-banner-slider {
-    margin-top: 130px;
     position: relative;
     .item {
         min-height: 140px;

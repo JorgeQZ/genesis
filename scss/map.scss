@@ -1,0 +1,44 @@
+@import "variables";
+
+.map-container {
+    background-image: url(../img/map-bg.jpg);
+    background-position: center;
+    height: 100vh;
+    max-height: 800px;
+    .column {
+        .title {
+        }
+    }
+}
+path {
+    fill: #bbbbbb;
+    cursor: pointer;
+}
+
+#MX- {
+    &BCN,
+    &CHH,
+    &SIN,
+    &NEL,
+    &ZAC,
+    &MIC,
+    &OAX,
+    &YUC,
+    &TAB,
+    &HID {
+        fill: #959595;
+    }
+
+    &DUR,
+    &VER,
+    &CAM,
+    &GRO {
+        fill: #d1d1d1;
+    }
+
+    &BCS,
+    &JAL,
+    &MOR {
+        fill: $main;
+    }
+}

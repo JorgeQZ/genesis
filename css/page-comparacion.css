@@ -51,7 +51,7 @@
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
-  color: #00465f;
+  color: #066881;
   font-weight: 100;
   margin-bottom: 30px;
 }
@@ -96,7 +96,7 @@
   font-weight: 100;
   color: white;
   border: 1px solid white;
-  background-color: #00465f;
+  background-color: #066881;
   width: 100%;
   padding: 10px;
   border-radius: 8px;
@@ -268,7 +268,7 @@
 
 .advanced-search-container .filter-container .advanced-search .title {
   width: 190px;
-  color: #00465f;
+  color: #066881;
   position: relative;
   display: inline-block;
   padding: 5px 10px;
@@ -297,7 +297,7 @@
 
 .advanced-search-container .filter-container .advanced-search .title::after {
   content: "";
-  background-color: #00465f;
+  background-color: #066881;
   height: 1px;
   width: 100px;
   right: calc(100% + 0px);
@@ -307,7 +307,7 @@
 
 .advanced-search-container .filter-container .advanced-search .title::before {
   content: "";
-  background-color: #00465f;
+  background-color: #066881;
   height: 1px;
   width: 100px;
   left: calc(100% + 0px);
@@ -351,7 +351,7 @@
 .advanced-search-container .filter-container .advanced-search-options .form-checkbox label {
   text-transform: uppercase;
   font-size: 12px;
-  color: #00465f;
+  color: #066881;
 }
 
 .advanced-search-container .filter-container .advanced-search-options .form-checkbox input {
@@ -362,7 +362,7 @@
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  border: 1px solid #00465f;
+  border: 1px solid #066881;
 }
 
 .advanced-search-container .filter-container .advanced-search-options .form-checkbox input:focus {
@@ -370,7 +370,7 @@
 }
 
 .advanced-search-container .filter-container .advanced-search-options .form-checkbox input:checked {
-  background-color: #00465f;
+  background-color: #066881;
 }
 
 .advanced-search-container .filter-container .filter-submit {
@@ -387,7 +387,7 @@
   content: "";
   width: calc(100% - 10px);
   height: 1px;
-  background-color: #00465f;
+  background-color: #066881;
   position: absolute;
   -webkit-transition: left 0.3s ease-in-out;
   transition: left 0.3s ease-in-out;
@@ -409,7 +409,7 @@
   width: 190px;
   cursor: pointer;
   font-weight: normal;
-  background-color: #00465f;
+  background-color: #066881;
   border: none;
   color: #fff;
   padding: 12px 10px;
@@ -431,7 +431,7 @@
 }
 
 .advanced-search-container .filter-container .filter-submit .submit-cont:hover input[type="submit"] {
-  color: #00465f;
+  color: #066881;
   background-color: transparent;
 }
 

@@ -4,5 +4,5 @@ $(document).ready(function (e) {
 
 $(window).on('scroll', function () {
     let top = $(window).scrollTop();
-    (top >= 100) ? $('header').addClass('scrolled') : $('header').removeClass('scrolled');
+    (top >= 150) ? $('header').addClass('scrolled') : $('header').removeClass('scrolled');
 });

@@ -16,16 +16,25 @@ header {
   z-index: 1001;
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
+  background-color: transparent;
 }
 
 header.scrolled {
   padding-top: 5px;
   padding-bottom: 5px;
-  background-color: #00465f;
+  background-color: #066881;
 }
 
-header.scrolled .cont-menu {
-  padding-top: 12px;
+header.scrolled .cont-menu ul li a {
+  color: white;
+}
+
+header.scrolled .cont-menu .social-links a.item-txt {
+  color: white;
+}
+
+header.scrolled .cont-menu .social-links a.item:hover:before, header.scrolled .cont-menu .social-links a.item:hover:after {
+  border-color: white;
 }
 
 header a.brand-logo {
@@ -114,7 +123,7 @@ header .cont-menu ul li a {
   font-weight: 100;
   text-transform: uppercase;
   font-size: 13px;
-  color: white;
+  color: #066881;
   position: relative;
   overflow: hidden;
 }
@@ -123,7 +132,7 @@ header .cont-menu ul li a:after, header .cont-menu ul li a:before {
   content: "";
   width: 100%;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(6, 104, 129, 0.6);
   position: absolute;
   -webkit-transition: left 0.2s linear;
   transition: left 0.2s linear;
@@ -160,7 +169,7 @@ header .cont-menu .social-links a.item-txt {
   font-weight: 100;
   font-size: 13px;
   line-height: 2px;
-  color: white;
+  color: #066881;
   margin-left: 5px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -234,7 +243,7 @@ header .cont-menu .social-links a.item img {
 header .cont-menu .social-links a.item:hover:before, header .cont-menu .social-links a.item:hover:after {
   -webkit-transform: rotateZ(0deg);
           transform: rotateZ(0deg);
-  border-color: white;
+  border-color: #066881;
 }
 
 .call-center {
@@ -259,7 +268,7 @@ header .cont-menu .social-links a.item:hover:before, header .cont-menu .social-l
   padding: 18px 7px;
   margin-right: 8px;
   background-color: #fff;
-  color: #00465f;
+  color: #066881;
   text-align: center;
   font-size: 10px;
   text-transform: uppercase;
@@ -275,7 +284,7 @@ header .cont-menu .social-links a.item:hover:before, header .cont-menu .social-l
 }
 
 .call-center .image {
-  background-color: #00465f;
+  background-color: #066881;
   padding: 5px;
   width: 60px;
   height: 60px;
@@ -565,7 +574,7 @@ a {
 .contact-container .container .col .form {
   width: 600px;
   margin-top: 30px;
-  color: #00465f;
+  color: #066881;
 }
 
 .contact-container .container .col .form .form-row {
@@ -590,7 +599,7 @@ a {
   border: none;
   padding: 10px;
   font-size: 14px;
-  color: #00465f;
+  color: #066881;
   font-weight: 100;
   height: 40px;
 }
@@ -600,19 +609,19 @@ a {
 }
 
 .contact-container .container .col .form .form-row .form-group input::-webkit-input-placeholder {
-  color: #00465f;
+  color: #066881;
 }
 
 .contact-container .container .col .form .form-row .form-group input:-ms-input-placeholder {
-  color: #00465f;
+  color: #066881;
 }
 
 .contact-container .container .col .form .form-row .form-group input::-ms-input-placeholder {
-  color: #00465f;
+  color: #066881;
 }
 
 .contact-container .container .col .form .form-row .form-group input::placeholder {
-  color: #00465f;
+  color: #066881;
 }
 
 .contact-container .container .col .form .form-row .form-group .select-cont {
@@ -623,7 +632,7 @@ a {
   cursor: pointer;
   font-weight: 100;
   background-color: #fff;
-  color: #00465f;
+  color: #066881;
   width: 100%;
   padding: 10px;
   height: 40px;
@@ -776,19 +785,19 @@ a {
 }
 
 .contact-container .container .col .form .form-row textarea::-webkit-input-placeholder {
-  color: #00465f;
+  color: #066881;
 }
 
 .contact-container .container .col .form .form-row textarea:-ms-input-placeholder {
-  color: #00465f;
+  color: #066881;
 }
 
 .contact-container .container .col .form .form-row textarea::-ms-input-placeholder {
-  color: #00465f;
+  color: #066881;
 }
 
 .contact-container .container .col .form .form-row textarea::placeholder {
-  color: #00465f;
+  color: #066881;
 }
 
 .contact-container .container .col .form .form-row .submit-cont {

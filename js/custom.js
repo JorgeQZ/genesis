@@ -62,15 +62,16 @@ $(document).ready(function (e) {
 
 
     // Mini BAnner slider Home
-    $('.mini-banner-slider').owlCarousel({
-        loop: true,
-        nav: false,
-        dots: true,
-        items: 1,
-        autoHeight: true
+    if ($('.mini-banner-slider')) {
+        $('.mini-banner-slider').owlCarousel({
+            loop: true,
+            nav: false,
+            dots: true,
+            items: 1,
+            autoHeight: true
 
-    })
-
+        });
+    }
     // Slider Range Owl Carousel Desarrollos
     // let slider_width = $('.departments-carousel .owl-stage').width(),
     //     total_items = $('.departments-carousel .owl-stage .owl-item').length,

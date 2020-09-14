@@ -46,10 +46,8 @@
 <!-- Banner -->
 
 <!-- Home Hero -->
-<div class="owl-carousel owl-theme home-hero">
-    <div class="item">
-        <img src="" alt="">
-    </div>
+<div class="home-banner">
+    <img src="<?php echo get_template_directory_uri().'/img/home-banner.jpg' ?>" alt="">
 </div><!-- Home Hero -->
 
 <!-- Mini Banner Ads -->
@@ -112,6 +110,10 @@
         </div>
     </div>
 </div><!-- Grid Departments -->
+
+<!-- Map -->
+<?php get_template_part('template-parts/map'); ?>
+<!-- Map -->
 
 
 <!-- Valores -->

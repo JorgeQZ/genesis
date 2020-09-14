@@ -18,9 +18,9 @@
             <img src="<?php echo get_template_directory_uri().'/img/headset.png' ?>" alt="">
         </div>
     </a>
-    <header class="scrolled">
+    <header class="">
         <a href="#" class="brand-logo">
-            <img src="<?php echo get_template_directory_uri().'/img/logo.png'?>" alt="Genesis Capital">
+            <img src="<?php echo get_template_directory_uri().'/img/logo-color.png'?>" alt="Genesis Capital">
         </a>
 
         <div class="menu-button" id="menu-button">

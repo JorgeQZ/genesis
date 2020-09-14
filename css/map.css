@@ -1,0 +1,23 @@
+.map-container {
+  background-image: url(../img/map-bg.jpg);
+  background-position: center;
+  height: 100vh;
+  max-height: 800px;
+}
+
+path {
+  fill: #bbbbbb;
+  cursor: pointer;
+}
+
+#MX-BCN, #MX-CHH, #MX-SIN, #MX-NEL, #MX-ZAC, #MX-MIC, #MX-OAX, #MX-YUC, #MX-TAB, #MX-HID {
+  fill: #959595;
+}
+
+#MX-DUR, #MX-VER, #MX-CAM, #MX-GRO {
+  fill: #d1d1d1;
+}
+
+#MX-BCS, #MX-JAL, #MX-MOR {
+  fill: #066881;
+}
