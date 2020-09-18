@@ -4,10 +4,12 @@
 
 @keyframes map_point {
     0% {
+        opacity: 0;
         transform: translateX(-1000px);
     }
 
     90% {
+        opacity: 1;
         transform: translateX(20px);
     }
 
@@ -48,9 +50,28 @@
                 position: absolute;
                 top: 40%;
                 left: -1000px;
-
+                transform: all 0.4s ease;
                 &.active {
                     left: 0;
+                    .item {
+                        ul {
+                            li {
+                                transition: all 0.3s ease-in-out;
+                                animation: map_point 2.1s ease-in-out 0.15s 1 forwards;
+                                transform: translateX(-1000px);
+                                @for $i from 1 through 10 {
+                                    &:nth-child(#{$i}n) {
+                                        animation-delay: #{$i * 0.15}s;
+                                        margin-left: #{$i * 0.75 + 14}em;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.hide {
+                    left: -1000px;
                 }
                 .item {
                     .state {
@@ -86,15 +107,7 @@
                             font-size: 20px;
                             margin-bottom: 10px;
                             position: relative;
-                            transition: all 0.3s ease-in-out;
-                            animation: map_point 2.1s ease-in-out 0.15s 1 forwards;
-                            transform: translateY(-1000px);
-                            @for $i from 1 through 10 {
-                                &:nth-child(#{$i}n) {
-                                    animation-delay: #{$i * 0.15}s;
-                                    margin-left: #{$i * 0.75 + 14}em;
-                                }
-                            }
+
                             &:before {
                                 content: "";
                                 position: absolute;

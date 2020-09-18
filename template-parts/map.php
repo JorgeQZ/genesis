@@ -8,7 +8,7 @@
                 </div>
             </div>
 
-            <div class="data-points active" data-points="edomex">
+            <div class="data-points active" data-points="MX-MEX">
                 <div class="item">
                     <div class="state">
                         estado de méxico
@@ -16,17 +16,28 @@
                     <ul>
                         <li>torres de satélite</li>
                         <li>sd</li>
-                        <li>sd</li>
-                        <li>sd</li>
-                        <li>sd</li>
-                        <li>sd</li>
+                        <li>sdsdsdsdsdsd</li>
+                        <li>sdsdsdsdsdsd</li>
                     </ul>
                 </div>
             </div>
             <div class="data-points" data-points="MX-BCS">
                 <div class="item">
                     <div class="state">
-                        estado de méxico
+                        Baja California Sur
+                    </div>
+                    <ul>
+                        <li>torres de satélite</li>
+                        <li>sdsdsdsd</li>
+                        <li>sdsdsdsdsdsd</li>
+                        <li>sdsdsdsdsdsd</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="data-points" data-points="MX-JAL">
+                <div class="item">
+                    <div class="state">
+                        Jalisco
                     </div>
                     <ul>
                         <li>torres de satélite</li>
@@ -38,10 +49,26 @@
                     </ul>
                 </div>
             </div>
-            <div class="data-points" data-points="mor">
+
+            <div class="data-points" data-points="MX-MOR">
                 <div class="item">
                     <div class="state">
-                        estado de méxico
+                        Morelos
+                    </div>
+                    <ul>
+                        <li>torres de satélite</li>
+                        <li>sd</li>
+                        <li>sd</li>
+                        <li>sd</li>
+                        <li>sd</li>
+                        <li>sd</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="data-points" data-points="MX-GUA">
+                <div class="item">
+                    <div class="state">
+                        Guanajuato
                     </div>
                     <ul>
                         <li>torres de satélite</li>
@@ -54,6 +81,8 @@
                 </div>
             </div>
         </div>
+
+
         <div class="column">
 
             <!-- Created for MapSVG plugin: http://mapsvg.com -->
