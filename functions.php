@@ -59,6 +59,10 @@ function add_theme_scripts() {
         wp_enqueue_style( 'owl.carousel.min', get_template_directory_uri() . '/css/owl.carousel.min.css', array(), filemtime( get_stylesheet_directory() . '/css/owl.carousel.min.css' ), 'all');
         wp_enqueue_style( 'owl.theme.default.min', get_template_directory_uri() . '/css/owl.theme.default.min.css', array(), filemtime( get_stylesheet_directory() . '/css/owl.theme.default.min.css' ), 'all');
 
+        // Script
+    wp_enqueue_script('map', get_template_directory_uri().'/js/map.js', array('jquery'),filemtime( get_stylesheet_directory() . '/js/map.js' ), false);
+
+
     endif;
 
     if(is_page_template('page-comparacion.php')):
