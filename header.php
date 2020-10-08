@@ -19,8 +19,9 @@
         </div>
     </a>
     <header class="">
-        <a href="#" class="brand-logo">
+        <a href="<?php echo home_url(); ?>" class="brand-logo">
             <img src="<?php echo get_template_directory_uri().'/img/logo-color.png'?>" alt="Genesis Capital">
+            <img class="scrolled" src="<?php echo get_template_directory_uri().'/img/logo.png'?>" alt="Genesis Capital">
         </a>
 
         <div class="menu-button" id="menu-button">
@@ -37,28 +38,21 @@
                 )
             );
             ?>
-            <!--
-            <ul>
-                <li class="active"><a href="#">Inicio</a></li>
-                <li><a href="#">quienés somos</a></li>
-                <li><a href="#">desarrollos</a></li>
-                <li><a href="#">contacto</a></li>
-            </ul>
-            -->
+
             <div class="social-links">
                 <a href="busqueda-avanzada/" class="item">
                     <img src="<?php  echo get_template_directory_uri().'/img/icon-search.png'?>" alt="">
-                    <!-- <img class="img-alt" src="<?php  echo get_template_directory_uri().'/img/mail-alternate.png'?>" alt=""> -->
+                    <img class="img-alt" src="<?php  echo get_template_directory_uri().'/img/icon-search-alt.png'?>" alt="">
                 </a>
                 <a href="" class="item">
                     <img src="<?php  echo get_template_directory_uri().'/img/mail.png'?>" alt="">
-                    <!-- <img class="img-alt" src="<?php  echo get_template_directory_uri().'/img/mail-alternate.png'?>" alt=""> -->
+                    <img class="img-alt" src="<?php  echo get_template_directory_uri().'/img/mail-alternate.png'?>" alt="">
                 </a>
-                <a href="" class="item">
+                <a class="item">
                     <img src="<?php  echo get_template_directory_uri().'/img/phone.png'?>" alt="">
-                    <!-- <img class="img-alt" src="<?php  echo get_template_directory_uri().'/img/phone-alternate.png'?>" alt=""> -->
+                    <img class="img-alt" src="<?php  echo get_template_directory_uri().'/img/phone-alternate.png'?>" alt="">
                 </a>
-                <a href="" class="item-txt">
+                <a class="item-txt">
                     800 0910 800
                 </a>
             </div>

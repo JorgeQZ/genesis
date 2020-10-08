@@ -14,7 +14,18 @@ header {
         padding-top: 5px;
         padding-bottom: 5px;
         background-color: $main;
+        a.brand-logo {
+            img {
+                opacity: 0;
+                &.scrolled {
+                    opacity: 1;
+                }
+            }
+        }
+
         .cont-menu {
+            margin-top: 15px;
+
             ul {
                 li {
                     a {
@@ -28,6 +39,12 @@ header {
                     color: white;
                 }
                 a.item {
+                    img {
+                        opacity: 1;
+                        &.img-alt {
+                            opacity: 0;
+                        }
+                    }
                     &:hover {
                         &:before,
                         &:after {
@@ -40,8 +57,17 @@ header {
     }
     a.brand-logo {
         max-width: 175px;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s ease-in;
         img {
             width: 100%;
+            &.scrolled {
+                left: -5px;
+                opacity: 0;
+                position: absolute;
+                top: -5px;
+            }
         }
     }
     .menu-button {
@@ -70,7 +96,7 @@ header {
         display: flex;
         align-items: center;
         margin-top: 8px;
-        //transition: all 0.2s linear;
+        transition: all 0.2s linear;
         ul {
             padding: 0;
             margin: 0;
@@ -131,6 +157,7 @@ header {
         .social-links {
             display: flex;
             align-items: center;
+            display: none;
             a.item-txt {
                 font-weight: 100;
                 font-size: 13px;
@@ -188,6 +215,11 @@ header {
                     margin: 0;
                     position: relative;
                     z-index: 1;
+                    opacity: 0;
+                    &.img-alt {
+                        opacity: 1;
+                        position: absolute;
+                    }
                 }
 
                 &:hover {

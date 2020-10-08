@@ -25,6 +25,18 @@ header.scrolled {
   background-color: #066881;
 }
 
+header.scrolled a.brand-logo img {
+  opacity: 0;
+}
+
+header.scrolled a.brand-logo img.scrolled {
+  opacity: 1;
+}
+
+header.scrolled .cont-menu {
+  margin-top: 15px;
+}
+
 header.scrolled .cont-menu ul li a {
   color: white;
 }
@@ -33,16 +45,35 @@ header.scrolled .cont-menu .social-links a.item-txt {
   color: white;
 }
 
+header.scrolled .cont-menu .social-links a.item img {
+  opacity: 1;
+}
+
+header.scrolled .cont-menu .social-links a.item img.img-alt {
+  opacity: 0;
+}
+
 header.scrolled .cont-menu .social-links a.item:hover:before, header.scrolled .cont-menu .social-links a.item:hover:after {
   border-color: white;
 }
 
 header a.brand-logo {
   max-width: 175px;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 header a.brand-logo img {
   width: 100%;
+}
+
+header a.brand-logo img.scrolled {
+  left: -5px;
+  opacity: 0;
+  position: absolute;
+  top: -5px;
 }
 
 header .menu-button {
@@ -88,6 +119,8 @@ header .cont-menu {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 8px;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 header .cont-menu ul {
@@ -163,6 +196,7 @@ header .cont-menu .social-links {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  display: none;
 }
 
 header .cont-menu .social-links a.item-txt {
@@ -238,6 +272,12 @@ header .cont-menu .social-links a.item img {
   margin: 0;
   position: relative;
   z-index: 1;
+  opacity: 0;
+}
+
+header .cont-menu .social-links a.item img.img-alt {
+  opacity: 1;
+  position: absolute;
 }
 
 header .cont-menu .social-links a.item:hover:before, header .cont-menu .social-links a.item:hover:after {

@@ -69,8 +69,7 @@ $(document).ready(function (e) {
             dots: true,
             items: 1,
             autoHeight: true
-
-        });
+        })
     }
     // Slider Range Owl Carousel Desarrollos
     // let slider_width = $('.departments-carousel .owl-stage').width(),
