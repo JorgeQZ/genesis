@@ -28,7 +28,7 @@
   background-image: url(../img/search-bg.jpg);
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 80vh;
   min-height: 600px;
   padding-top: 120px;
   max-height: 800px;
@@ -536,7 +536,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #cacaca;
   padding-bottom: 80px;
   margin-bottom: 30px;
 }
@@ -548,6 +548,12 @@
 
 .departaments-container .column .item .col:nth-child(2) {
   padding-left: 15px;
+  width: 75%;
+}
+
+.departaments-container .column .item .col hr {
+  background-color: #cacaca;
+  border-color: #cacaca;
 }
 
 .departaments-container .column .item .col .dept-img {

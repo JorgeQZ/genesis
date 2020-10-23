@@ -194,14 +194,14 @@ get_header(); ?>
                 </div>
                 <div class="price-dept">
                     <div class="price">
-                        4 Departamentos desde <span>$2,395,300.00</span>
+                        3 Departamentos desde <span>$1,595,300.00</span>
                     </div>
                     <a href="#" class="link">ver</a>
                 </div>
                 <hr>
                 <div class="price-dept">
                     <div class="price">
-                        4 Departamentos desde <span>$2,395,300.00</span>
+                        3 Departamentos desde <span>$1,740,775.00</span>
                     </div>
                     <a href="#" class="link">ver</a>
                 </div>
@@ -209,33 +209,34 @@ get_header(); ?>
         </div>
         <div class="item">
             <div class="col">
-                <img src="<?php echo get_template_directory_uri().'/img/dept-img.jpg' ?>" alt="" class="dept-img">
+                <img src="<?php echo get_template_directory_uri().'/img/dept-montalva.png' ?>" alt="" class="dept-img">
             </div>
             <div class="col">
-                <img src="<?php echo get_template_directory_uri().'/img/dept-logo.png' ?>" alt="" class="logo">
+                <img src="<?php echo get_template_directory_uri().'/img/dept-logo-montalva.png' ?>" alt="" class="logo">
 
                 <div class="address">
 
                     <img src="<?php echo get_template_directory_uri().'/img/pin-aqua.png' ?>" alt="" class="pin">
 
                     <div class="text">
-                        Av. Sor Juana Inés de la Cruz 312, Tlalnepantla Estado de México.
+                        Av. Cvln. Jorge Alvarez del Castillo 1433, <br>
+                        Country Club, Guadalajara
                     </div>
                 </div>
 
                 <div class="title">
-                    Puerta Tlanepantla
+                    Essentia Country
                 </div>
                 <div class="price-dept">
                     <div class="price">
-                        4 Departamentos desde <span>$2,395,300.00</span>
+                        5 Departamentos desde <span>$2,895,300.00</span>
                     </div>
                     <a href="#" class="link">ver</a>
                 </div>
                 <hr>
                 <div class="price-dept">
                     <div class="price">
-                        4 Departamentos desde <span>$2,395,300.00</span>
+                        3 Departamentos desde <span>$3,540,775.00</span>
                     </div>
                     <a href="#" class="link">ver</a>
                 </div>
@@ -245,22 +246,22 @@ get_header(); ?>
     <div class="column">
         <div class="item">
             <div class="col">
-                <img src="<?php echo get_template_directory_uri().'/img/dept-img.jpg' ?>" alt="" class="dept-img">
+                <img src="<?php echo get_template_directory_uri().'/img/dept-ancora.png' ?>" alt="" class="dept-img">
             </div>
             <div class="col">
-                <img src="<?php echo get_template_directory_uri().'/img/dept-logo.png' ?>" alt="" class="logo">
+                <img src="<?php echo get_template_directory_uri().'/img/dept-logo-ancora.png' ?>" alt="" class="logo">
 
                 <div class="address">
 
                     <img src="<?php echo get_template_directory_uri().'/img/pin-aqua.png' ?>" alt="" class="pin">
 
                     <div class="text">
-                        Av. Sor Juana Inés de la Cruz 312, Tlalnepantla Estado de México.
+                        9721 Glen Creek Ave. Ballston <br>Spa, NY
                     </div>
                 </div>
 
                 <div class="title">
-                    Puerta Tlanepantla
+                    Áncora Satélite
                 </div>
 
                 <div class="price-dept">
@@ -272,7 +273,7 @@ get_header(); ?>
                 <hr>
                 <div class="price-dept">
                     <div class="price">
-                        4 Departamentos desde <span>$2,395,300.00</span>
+                        6 Departamentos desde <span>$1,740,775.00</span>
                     </div>
                     <a href="#" class="link">ver</a>
                 </div>
@@ -281,34 +282,34 @@ get_header(); ?>
         </div>
         <div class="item">
             <div class="col">
-                <img src="<?php echo get_template_directory_uri().'/img/dept-img.jpg' ?>" alt="" class="dept-img">
+                <img src="<?php echo get_template_directory_uri().'/img/dept-bologna.png' ?>" alt="" class="dept-img">
             </div>
             <div class="col">
-                <img src="<?php echo get_template_directory_uri().'/img/dept-logo.png' ?>" alt="" class="logo">
+                <img src="<?php echo get_template_directory_uri().'/img/dept-logo-bolognia.png' ?>" alt="" class="logo">
 
                 <div class="address">
 
                     <img src="<?php echo get_template_directory_uri().'/img/pin-aqua.png' ?>" alt="" class="pin">
 
                     <div class="text">
-                        Av. Sor Juana Inés de la Cruz 312, Tlalnepantla Estado de México.
+                        Cto. Bosques de Bolognia 163,<br>
+                        Cuautitln Izcalli.
                     </div>
                 </div>
 
                 <div class="title">
-                    Puerta Tlanepantla
-                </div>
+                    Bolognia Residencial </div>
 
                 <div class="price-dept">
                     <div class="price">
-                        4 Departamentos desde <span>$2,395,300.00</span>
+                        2 Departamentos desde <span>$2,795,300.00</span>
                     </div>
                     <a href="#" class="link">ver</a>
                 </div>
                 <hr>
                 <div class="price-dept">
                     <div class="price">
-                        4 Departamentos desde <span>$2,395,300.00</span>
+                        3 Departamentos desde <span>$1,740,775.00</span>
                     </div>
                     <a href="#" class="link">ver</a>
                 </div>

@@ -13,7 +13,7 @@
     background-image: url(../img/search-bg.jpg);
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 80vh;
     min-height: 600px;
     padding-top: 120px;
     max-height: 800px;
@@ -390,13 +390,18 @@
         flex: 0 0 48%;
         .item {
             display: flex;
-            border-bottom: 1px solid grey;
+            border-bottom: 1px solid #cacaca;
             padding-bottom: 80px;
             margin-bottom: 30px;
             .col {
                 box-sizing: border-box;
                 &:nth-child(2) {
                     padding-left: 15px;
+                    width: 75%;
+                }
+                hr {
+                    background-color: #cacaca;
+                    border-color: #cacaca;
                 }
                 .dept-img {
                     width: 100%;
