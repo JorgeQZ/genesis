@@ -53,12 +53,14 @@
                 transform: all 0.4s ease;
                 &.active {
                     left: 0;
+                    opacity: 1;
                     .item {
                         ul {
                             li {
-                                transition: all 0.3s ease-in-out;
+                                transition: left 300ms ease-in-out, opacity 100ms;
                                 animation: map_point 2.1s ease-in-out 0.15s 1 forwards;
                                 transform: translateX(-1000px);
+
                                 @for $i from 1 through 10 {
                                     &:nth-child(#{$i}n) {
                                         animation-delay: #{$i * 0.15}s;
@@ -72,6 +74,7 @@
 
                 &.hide {
                     left: -1000px;
+                    opacity: 0;
                 }
                 .item {
                     .state {

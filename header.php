@@ -48,7 +48,7 @@
                     <img src="<?php  echo get_template_directory_uri().'/img/mail.png'?>" alt="">
                     <img class="img-alt" src="<?php  echo get_template_directory_uri().'/img/mail-alternate.png'?>" alt="">
                 </a>
-                <a class="item">
+                <a class="item" href="">
                     <img src="<?php  echo get_template_directory_uri().'/img/phone.png'?>" alt="">
                     <img class="img-alt" src="<?php  echo get_template_directory_uri().'/img/phone-alternate.png'?>" alt="">
                 </a>

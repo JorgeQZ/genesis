@@ -62,7 +62,7 @@ $(document).ready(function (e) {
 
 
     // Mini BAnner slider Home
-    if ($('.mini-banner-slider')) {
+    if ($('.mini-banner-slider').length != 0) {
         $('.mini-banner-slider').owlCarousel({
             loop: true,
             nav: false,

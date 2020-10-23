@@ -1,0 +1,63 @@
+@import "variables";
+
+header {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: transparent;
+    a.brand-logo {
+        img {
+            opacity: 0;
+            &.scrolled {
+                opacity: 1;
+            }
+        }
+    }
+
+    .cont-menu {
+        margin-top: 15px;
+
+        ul {
+            li {
+                a {
+                    color: white;
+                    &:hover {
+                        &:before,
+                        &:after {
+                            background-color: white;
+                        }
+                    }
+                }
+            }
+        }
+
+        .social-links {
+            a.item-txt {
+                color: white;
+            }
+            a.item {
+                img {
+                    opacity: 1;
+                    &.img-alt {
+                        opacity: 0;
+                    }
+                }
+                &:hover {
+                    &:before,
+                    &:after {
+                        border-color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+.contact-container {
+    height: 100vh;
+    min-height: 600px;
+    max-height: 900px;
+    display: flex;
+    background-size: cover;
+    .container {
+        width: 100%;
+    }
+}

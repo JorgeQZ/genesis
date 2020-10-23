@@ -72,7 +72,9 @@ header {
         }
     }
 }
-
+.upper-container {
+    overflow: hidden;
+}
 .container {
     max-width: 1280px;
     margin: 0 auto;
@@ -89,6 +91,13 @@ header {
         padding: 0;
         width: 100%;
     }
+
+    video,
+    iframe {
+        width: 100%;
+        height: auto;
+        min-height: 600px;
+    }
 }
 
 .middle-description {
@@ -100,6 +109,24 @@ header {
         font-weight: $book;
         font-size: 22px;
         line-height: 1.1;
+        position: relative;
+        &:before {
+            content: attr(data-text);
+            position: absolute;
+            font-weight: bold;
+            font-size: 5.2rem;
+            top: -40px;
+            left: -70px;
+            width: 1200px;
+            color: #0000;
+            letter-spacing: -5px;
+            -moz-text-fill-color: transparent;
+            -webkit-text-fill-color: #0000;
+            -moz-text-stroke-color: rgba($purple, 0.15);
+            -webkit-text-stroke-color: rgba($purple, 0.3);
+            -moz-text-stroke-width: 1px;
+            -webkit-text-stroke-width: 1px;
+        }
     }
 
     .bold-title {
@@ -139,6 +166,7 @@ header {
                 img {
                     width: 100%;
                     max-width: 445px;
+                    z-index: 1;
                 }
             }
             &:nth-child(3) {
@@ -184,6 +212,16 @@ header {
         margin: 40px 0;
         margin-bottom: 80px;
         .column {
+            position: relative;
+            .overlay {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: rgba($purple, 0.6);
+                border-radius: 45px;
+            }
             &:first-child {
                 width: 41.5%;
                 padding-right: 45px;
@@ -206,8 +244,28 @@ header {
                 align-items: center;
                 img {
                     width: 100%;
-                    max-width: 635px;
+
                     border-radius: 45px;
+                }
+
+                .owl-dots {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    .owl-dot {
+                        span {
+                            background-color: transparent;
+                            border: 1px solid white;
+                            width: 12px;
+                            height: 12px;
+                        }
+
+                        &.active {
+                            span {
+                                background-color: #fff;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -504,12 +562,13 @@ header {
                         padding: 10px 20px;
                         width: 100%;
                         max-width: 300px;
-                        background-color: $purple;
+                        background-color: #b23778;
                         border: none;
                         color: white;
                         text-transform: uppercase;
                         font-size: 14px;
                         font-weight: $book;
+                        cursor: pointer;
                     }
                     &:nth-child(3) {
                         flex: 1 0 35%;

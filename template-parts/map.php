@@ -15,9 +15,9 @@
                     </div>
                     <ul>
                         <li>torres de satélite</li>
-                        <li>sd</li>
-                        <li>sdsdsdsdsdsd</li>
-                        <li>sdsdsdsdsdsd</li>
+
+                        <li>Tlalnepantla</li>
+                        <li>Cuautitlán Izcalli</li>
                     </ul>
                 </div>
             </div>
@@ -27,10 +27,8 @@
                         Baja California Sur
                     </div>
                     <ul>
-                        <li>torres de satélite</li>
-                        <li>sdsdsdsd</li>
-                        <li>sdsdsdsdsdsd</li>
-                        <li>sdsdsdsdsdsd</li>
+                        <li>San José del Cabo</li>
+                        <li>Los Cabos</li>
                     </ul>
                 </div>
             </div>
@@ -40,12 +38,8 @@
                         Jalisco
                     </div>
                     <ul>
-                        <li>torres de satélite</li>
-                        <li>sd</li>
-                        <li>sd</li>
-                        <li>sd</li>
-                        <li>sd</li>
-                        <li>sd</li>
+                        <li>Guadalajara</li>
+
                     </ul>
                 </div>
             </div>
@@ -56,12 +50,7 @@
                         Morelos
                     </div>
                     <ul>
-                        <li>torres de satélite</li>
-                        <li>sd</li>
-                        <li>sd</li>
-                        <li>sd</li>
-                        <li>sd</li>
-                        <li>sd</li>
+                        <li>Ejemplo</li>
                     </ul>
                 </div>
             </div>
@@ -71,12 +60,7 @@
                         Guanajuato
                     </div>
                     <ul>
-                        <li>torres de satélite</li>
-                        <li>sd</li>
-                        <li>sd</li>
-                        <li>sd</li>
-                        <li>sd</li>
-                        <li>sd</li>
+                        <li>Irapuato</li>
                     </ul>
                 </div>
             </div>

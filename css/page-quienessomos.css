@@ -59,10 +59,12 @@
 
 .meet-the-team .grid .item .image {
   width: 100%;
+  text-align: center;
 }
 
 .meet-the-team .grid .item .image img {
   width: 100%;
+  max-width: 180px;
   border-radius: 12px;
 }
 

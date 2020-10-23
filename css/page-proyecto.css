@@ -101,6 +101,10 @@
   color: white;
 }
 
+.upper-container {
+  overflow: hidden;
+}
+
 .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -120,6 +124,13 @@
   width: 100%;
 }
 
+.video-container video,
+.video-container iframe {
+  width: 100%;
+  height: auto;
+  min-height: 600px;
+}
+
 .middle-description {
   padding: 60px 55px;
   color: #852c5b;
@@ -130,6 +141,25 @@
   font-weight: 300;
   font-size: 22px;
   line-height: 1.1;
+  position: relative;
+}
+
+.middle-description .title:before {
+  content: attr(data-text);
+  position: absolute;
+  font-weight: bold;
+  font-size: 5.2rem;
+  top: -40px;
+  left: -70px;
+  width: 1200px;
+  color: #0000;
+  letter-spacing: -5px;
+  -moz-text-fill-color: transparent;
+  -webkit-text-fill-color: #0000;
+  -moz-text-stroke-color: rgba(133, 44, 91, 0.15);
+  -webkit-text-stroke-color: rgba(133, 44, 91, 0.3);
+  -moz-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 1px;
 }
 
 .middle-description .bold-title {
@@ -188,6 +218,7 @@
 .middle-description .location-container .column:nth-child(2) img {
   width: 100%;
   max-width: 445px;
+  z-index: 1;
 }
 
 .middle-description .location-container .column:nth-child(3) {
@@ -240,6 +271,20 @@
   margin-bottom: 80px;
 }
 
+.middle-description .meet-us-container .column {
+  position: relative;
+}
+
+.middle-description .meet-us-container .column .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(133, 44, 91, 0.6);
+  border-radius: 45px;
+}
+
 .middle-description .meet-us-container .column:first-child {
   width: 41.5%;
   padding-right: 45px;
@@ -277,8 +322,24 @@
 
 .middle-description .meet-us-container .column:nth-child(2) img {
   width: 100%;
-  max-width: 635px;
   border-radius: 45px;
+}
+
+.middle-description .meet-us-container .column:nth-child(2) .owl-dots {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.middle-description .meet-us-container .column:nth-child(2) .owl-dots .owl-dot span {
+  background-color: transparent;
+  border: 1px solid white;
+  width: 12px;
+  height: 12px;
+}
+
+.middle-description .meet-us-container .column:nth-child(2) .owl-dots .owl-dot.active span {
+  background-color: #fff;
 }
 
 .middle-description .rooms-container {
@@ -660,12 +721,13 @@
   padding: 10px 20px;
   width: 100%;
   max-width: 300px;
-  background-color: #852c5b;
+  background-color: #b23778;
   border: none;
   color: white;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 300;
+  cursor: pointer;
 }
 
 .contact-form .container .column .contact .col:nth-child(3) {

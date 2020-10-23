@@ -79,11 +79,12 @@
 
 .map-container .container .column .data-points.active {
   left: 0;
+  opacity: 1;
 }
 
 .map-container .container .column .data-points.active .item ul li {
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: left 300ms ease-in-out, opacity 100ms;
+  transition: left 300ms ease-in-out, opacity 100ms;
   -webkit-animation: map_point 2.1s ease-in-out 0.15s 1 forwards;
           animation: map_point 2.1s ease-in-out 0.15s 1 forwards;
   -webkit-transform: translateX(-1000px);
@@ -152,6 +153,7 @@
 
 .map-container .container .column .data-points.hide {
   left: -1000px;
+  opacity: 0;
 }
 
 .map-container .container .column .data-points .item .state {

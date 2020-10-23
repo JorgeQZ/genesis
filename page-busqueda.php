@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Comparación
+/* Template Name: Búsqueda Avanzada
 *
 */
 get_header(); ?>
@@ -8,9 +8,9 @@ get_header(); ?>
 <div class="advanced-search-container">
     <div class="filter-container">
         <div class="filter-title">
-            Filtrar
+            Busca tu
             <div class="focus">
-                resultados
+                departamento
             </div>
         </div>
 
@@ -154,177 +154,6 @@ get_header(); ?>
 
     </div>
 </div><!-- Filtros -->
-
-<!-- Comparacion -->
-<div class="tabs-container">
-    <div class="tab-option active">
-        departamentos
-    </div>
-    <div class="tab-option">
-        casa
-    </div>
-</div>
-
-<div class="select-filter-cont">
-    <div class="filter-select" id="filter">
-        Ordenar por precio
-    </div>
-</div>
-
-<div class="departaments-container">
-    <div class="column">
-        <div class="item">
-            <div class="col">
-                <img src="<?php echo get_template_directory_uri().'/img/dept-img.jpg' ?>" alt="" class="dept-img">
-            </div>
-            <div class="col">
-                <img src="<?php echo get_template_directory_uri().'/img/dept-logo.png' ?>" alt="" class="logo">
-
-                <div class="address">
-
-                    <img src="<?php echo get_template_directory_uri().'/img/pin-aqua.png' ?>" alt="" class="pin">
-
-                    <div class="text">
-                        Av. Sor Juana Inés de la Cruz 312, Tlalnepantla Estado de México.
-                    </div>
-                </div>
-
-                <div class="title">
-                    Puerta Tlanepantla
-                </div>
-                <div class="price-dept">
-                    <div class="price">
-                        4 Departamentos desde <span>$2,395,300.00</span>
-                    </div>
-                    <a href="#" class="link">ver</a>
-                </div>
-                <hr>
-                <div class="price-dept">
-                    <div class="price">
-                        4 Departamentos desde <span>$2,395,300.00</span>
-                    </div>
-                    <a href="#" class="link">ver</a>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="col">
-                <img src="<?php echo get_template_directory_uri().'/img/dept-img.jpg' ?>" alt="" class="dept-img">
-            </div>
-            <div class="col">
-                <img src="<?php echo get_template_directory_uri().'/img/dept-logo.png' ?>" alt="" class="logo">
-
-                <div class="address">
-
-                    <img src="<?php echo get_template_directory_uri().'/img/pin-aqua.png' ?>" alt="" class="pin">
-
-                    <div class="text">
-                        Av. Sor Juana Inés de la Cruz 312, Tlalnepantla Estado de México.
-                    </div>
-                </div>
-
-                <div class="title">
-                    Puerta Tlanepantla
-                </div>
-                <div class="price-dept">
-                    <div class="price">
-                        4 Departamentos desde <span>$2,395,300.00</span>
-                    </div>
-                    <a href="#" class="link">ver</a>
-                </div>
-                <hr>
-                <div class="price-dept">
-                    <div class="price">
-                        4 Departamentos desde <span>$2,395,300.00</span>
-                    </div>
-                    <a href="#" class="link">ver</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="column">
-        <div class="item">
-            <div class="col">
-                <img src="<?php echo get_template_directory_uri().'/img/dept-img.jpg' ?>" alt="" class="dept-img">
-            </div>
-            <div class="col">
-                <img src="<?php echo get_template_directory_uri().'/img/dept-logo.png' ?>" alt="" class="logo">
-
-                <div class="address">
-
-                    <img src="<?php echo get_template_directory_uri().'/img/pin-aqua.png' ?>" alt="" class="pin">
-
-                    <div class="text">
-                        Av. Sor Juana Inés de la Cruz 312, Tlalnepantla Estado de México.
-                    </div>
-                </div>
-
-                <div class="title">
-                    Puerta Tlanepantla
-                </div>
-
-                <div class="price-dept">
-                    <div class="price">
-                        4 Departamentos desde <span>$2,395,300.00</span>
-                    </div>
-                    <a href="#" class="link">ver</a>
-                </div>
-                <hr>
-                <div class="price-dept">
-                    <div class="price">
-                        4 Departamentos desde <span>$2,395,300.00</span>
-                    </div>
-                    <a href="#" class="link">ver</a>
-                </div>
-
-            </div>
-        </div>
-        <div class="item">
-            <div class="col">
-                <img src="<?php echo get_template_directory_uri().'/img/dept-img.jpg' ?>" alt="" class="dept-img">
-            </div>
-            <div class="col">
-                <img src="<?php echo get_template_directory_uri().'/img/dept-logo.png' ?>" alt="" class="logo">
-
-                <div class="address">
-
-                    <img src="<?php echo get_template_directory_uri().'/img/pin-aqua.png' ?>" alt="" class="pin">
-
-                    <div class="text">
-                        Av. Sor Juana Inés de la Cruz 312, Tlalnepantla Estado de México.
-                    </div>
-                </div>
-
-                <div class="title">
-                    Puerta Tlanepantla
-                </div>
-
-                <div class="price-dept">
-                    <div class="price">
-                        4 Departamentos desde <span>$2,395,300.00</span>
-                    </div>
-                    <a href="#" class="link">ver</a>
-                </div>
-                <hr>
-                <div class="price-dept">
-                    <div class="price">
-                        4 Departamentos desde <span>$2,395,300.00</span>
-                    </div>
-                    <a href="#" class="link">ver</a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="pagination">
-    <div class="item active">1</div>
-    <div class="item ">2</div>
-    <div class="item ">3</div>
-</div>
-<!-- Comparacion -->
 
 <?php
 get_template_part('template-parts/contact');

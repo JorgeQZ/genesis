@@ -30,6 +30,12 @@ header {
                 li {
                     a {
                         color: white;
+                        &:hover {
+                            &:before,
+                            &:after {
+                                background-color: white;
+                            }
+                        }
                     }
                 }
             }
@@ -157,7 +163,7 @@ header {
         .social-links {
             display: flex;
             align-items: center;
-            display: none;
+            // display: none;
             a.item-txt {
                 font-weight: 100;
                 font-size: 13px;
@@ -283,7 +289,7 @@ header {
     header {
         .cont-menu {
             .social-links {
-                display: none;
+                // display: none;
             }
         }
     }
@@ -297,7 +303,7 @@ header {
             display: flex;
         }
         .cont-menu {
-            display: none;
+            // display: none;
             flex-direction: column;
             width: 100%;
             padding: 10px 0 !important;
