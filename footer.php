@@ -11,17 +11,17 @@
             <div class="footer-title">
                 Mapa de sitio
             </div>
-            
+
             <div class="footer-menu">
-            <?php
-            wp_nav_menu(
-                array(
-                    'theme_location' => 'Footer',
-                )
-            );
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'Footer',
+                    )
+                );
             ?>
             </div>
-            
+
         </div>
         <div class="column">
             <div class="footer-title">

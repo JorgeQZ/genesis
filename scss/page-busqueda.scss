@@ -68,6 +68,7 @@
                         text-transform: uppercase;
                         transition: background-color 0.3s linear;
                         font-size: 12px;
+                        transition: border 200ms ease, box-shadow 300ms linear;
                         &::placeholder {
                             color: #fff;
                         }
@@ -151,7 +152,7 @@
                             z-index: 100;
                             opacity: 1;
                             padding: 10px;
-                            max-height: 200px;
+                            max-height: 1000px;
                             li {
                                 height: auto;
                                 padding: 10px 5px;

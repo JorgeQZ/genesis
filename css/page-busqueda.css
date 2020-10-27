@@ -105,6 +105,10 @@
   -webkit-transition: background-color 0.3s linear;
   transition: background-color 0.3s linear;
   font-size: 12px;
+  -webkit-transition: border 200ms ease, -webkit-box-shadow 300ms linear;
+  transition: border 200ms ease, -webkit-box-shadow 300ms linear;
+  transition: border 200ms ease, box-shadow 300ms linear;
+  transition: border 200ms ease, box-shadow 300ms linear, -webkit-box-shadow 300ms linear;
 }
 
 .advanced-search-container .filter-container .filters .col .filter-cont .value::-webkit-input-placeholder {
@@ -206,7 +210,7 @@
   z-index: 100;
   opacity: 1;
   padding: 10px;
-  max-height: 200px;
+  max-height: 1000px;
 }
 
 .advanced-search-container .filter-container .filters .col .filter-cont ul.active li {

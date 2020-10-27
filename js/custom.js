@@ -31,6 +31,9 @@ $(document).ready(function (e) {
         }
     });
 
+
+
+    // CUSTOM SEARCH DEPARTAMENTS
     // Custom Li's
     $('.filter-cont .value').click(function (e) {
         e.preventDefault();
@@ -45,9 +48,17 @@ $(document).ready(function (e) {
     $('.filter-cont li').click(function (e) {
         e.preventDefault();
         let text_value = $(this).text();
-        $(this).parent().removeClass('active').siblings('.value').val(text_value);
+        $(this).parent().removeClass('active')
+            .siblings('.value')
+            .val(text_value)
+            .css({
+                'border-color': 'unset',
+                'box-shadow': 'unset'
+            });
     });
+    // CUSTOM SEARCH DEPARTAMENTS
 
+    // ------------------ CONTACT FORM HOME --------------
 
     $('.select-cont .value').click(function (e) {
         e.preventDefault();
@@ -60,6 +71,7 @@ $(document).ready(function (e) {
         $(this).parent().removeClass('active').siblings('.value').html(text_value);
     });
 
+    // ------------------ CONTACT FORM HOME --------------
 
     // Mini BAnner slider Home
     if ($('.mini-banner-slider').length != 0) {

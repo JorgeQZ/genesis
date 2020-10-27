@@ -386,78 +386,80 @@
     flex-wrap: wrap;
     flex-direction: row;
     padding: 60px 10px;
-    .column {
+
+    .item {
         flex: 0 0 48%;
-        .item {
-            display: flex;
-            border-bottom: 1px solid #cacaca;
-            padding-bottom: 80px;
-            margin-bottom: 30px;
-            .col {
-                box-sizing: border-box;
-                &:nth-child(2) {
-                    padding-left: 15px;
-                    width: 75%;
+        display: flex;
+        border-bottom: 1px solid #cacaca;
+        padding-bottom: 80px;
+        margin-bottom: 30px;
+        .col {
+            box-sizing: border-box;
+            &:nth-child(2) {
+                padding-left: 15px;
+                width: 75%;
+            }
+            hr {
+                background-color: #cacaca;
+                border-color: #cacaca;
+                &:last-child {
+                    display: none;
                 }
-                hr {
-                    background-color: #cacaca;
-                    border-color: #cacaca;
-                }
-                .dept-img {
-                    width: 100%;
-                    max-width: 300px;
-                }
+            }
+            .dept-img {
+                width: 100%;
+                max-width: 300px;
+            }
 
-                .logo {
-                    max-height: 50px;
-                    margin-bottom: 30px;
-                }
+            .logo {
+                max-height: 50px;
+                margin-bottom: 30px;
+            }
 
-                .address {
-                    display: flex;
-                    align-items: flex-start;
-                    .pin {
-                        width: 13px;
-                        img {
-                            width: 100%;
-                        }
-                    }
-
-                    .text {
-                        font-size: 14px;
-                        margin: 0 5px;
+            .address {
+                display: flex;
+                align-items: flex-start;
+                .pin {
+                    width: 13px;
+                    img {
+                        width: 100%;
                     }
                 }
 
-                .title {
-                    font-weight: bold;
-                    color: black;
-                    margin: 20px 0;
+                .text {
+                    font-size: 14px;
+                    margin: 0 5px;
                 }
+            }
 
-                .price-dept {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    .price {
-                        color: $main;
-                        font-size: 14px;
-                        span {
-                            font-weight: bold;
-                        }
+            .title {
+                font-weight: bold;
+                color: black;
+                margin: 20px 0;
+            }
+
+            .price-dept {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .price {
+                    color: $main;
+                    font-size: 14px;
+                    span {
+                        font-weight: bold;
                     }
-                    .link {
-                        color: white;
-                        background-color: #29bcb7;
-                        padding: 8px 20px;
-                        border-radius: 14px;
-                        font-weight: thin;
-                        text-transform: uppercase;
-                        font-size: 12px;
-                        transition: background-color 300ms ease;
-                        &:hover {
-                            background-color: $main;
-                        }
+                }
+                .link {
+                    color: white;
+                    background-color: #29bcb7;
+                    padding: 8px 20px;
+                    border-radius: 14px;
+                    font-weight: thin;
+                    text-transform: uppercase;
+                    font-size: 12px;
+                    transition: background-color 300ms ease;
+                    &:hover {
+                        background-color: $main;
                     }
                 }
             }

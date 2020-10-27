@@ -14,17 +14,18 @@ get_header(); ?>
             </div>
         </div>
 
-        <!-- FORM -->
-        <form method="post">
-            <!-- Filters -->
-            <div class="filters">
-                <!-- col -->
-                <div class="col">
-                    <div class="filter-cont">
-                        <!-- <div class="value">Ubicación </div> -->
-                        <input type="text" class="value" placeholder="Ubicación" readonly name="ubicacion" id="ubicacion">
-                        <ul>
-                            <?php
+        <div class="GNS_search" id="GNS_search">
+            <!-- FORM -->
+            <form method="get" id="formsearch">
+                <!-- Filters -->
+                <div class="filters">
+                    <!-- col -->
+                    <div class="col">
+                        <div class="filter-cont">
+                            <!-- <div class="value">Ubicación </div> -->
+                            <input type="text" class="value" placeholder="Ubicación" readonly name="ubicacion" id="ubicacion">
+                            <ul>
+                                <?php
                             $ubicaciones  =  get_terms(
                                 array(
                                     'taxonomy' => 'categorias-ubicaciones',
@@ -32,126 +33,130 @@ get_header(); ?>
                                 )
                             );
                             foreach($ubicaciones as $ubicacion): ?>
-                            <li><?php  echo $ubicacion->name; ?></li>
-                            <?php endforeach; ?>
-                        </ul>
+                                <li><?php  echo $ubicacion->name; ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div> <!-- col -->
+
+                    <!-- col -->
+                    <div class="col">
+                        <div class="filter-cont">
+                            <!-- <div class="value">Nº de recamaras </div> -->
+                            <input type="text" class="value" placeholder="Nº de recamaras" readonly name="recamaras" id="recamaras">
+                            <?php $recamaras = $wpdb->get_results( 'SELECT DISTINCT meta_value FROM gen_postmeta WHERE meta_key LIKE "recamaras" ORDER BY meta_value ASC', ARRAY_A ); ?>
+                            <ul>
+                                <?php foreach ($recamaras as $recamara): ?>
+                                <li><?php echo $recamara['meta_value'] ?></li>
+                                <?php endforeach;?>
+                            </ul>
+
+                        </div>
+                    </div> <!-- col -->
+                </div><!-- Filters -->
+                <!-- Filters -->
+                <div class="filters">
+                    <!-- col -->
+
+                    <div class="col">
+                        <div class="filter-cont">
+                            <!-- <div class="value">Baños </div> -->
+                            <input type="text" class="value" placeholder="Baños" readonly name="banos" id="banos">
+                            <?php $banos = $wpdb->get_results( 'SELECT DISTINCT meta_value FROM gen_postmeta WHERE meta_key LIKE "banos" ORDER BY meta_value ASC', ARRAY_A ); ?>
+                            <ul>
+                                <?php foreach ($banos as $bano): ?>
+                                <li><?php echo $bano['meta_value'] ?></li>
+                                <?php endforeach;?>
+                            </ul>
+                        </div>
+                    </div> <!-- col -->
+
+                    <!-- col -->
+                    <div class="col">
+                        <div class="filter-cont">
+                            <!-- <div class="value">rango de precios </div> -->
+                            <input type="text" class="value" placeholder="Rango de precios" readonly name="precios" id="precios">
+
+                            <ul>
+                                <li>Test 1</li>
+                                <li>Test 2</li>
+                                <li>Test 3</li>
+                            </ul>
+                        </div>
+                    </div> <!-- col -->
+
+                </div><!-- Filters -->
+
+                <!-- Busqueda avanzada -->
+                <div class="advanced-search">
+                    <div class="title">
+                        Búsqueda avanzada
+                        <div class="little-arrow"></div>
                     </div>
-                </div> <!-- col -->
-
-                <!-- col -->
-                <div class="col">
-                    <div class="filter-cont">
-                        <!-- <div class="value">Nº de recamaras </div> -->
-                        <input type="text" class="value" placeholder="Nº de recamaras" readonly name="recamaras" id="recamaras">
-                        <?php $recamaras = $wpdb->get_results( 'SELECT DISTINCT meta_value FROM gen_postmeta WHERE meta_key LIKE "recamaras" ORDER BY meta_value ASC', ARRAY_A ); ?>
-                        <ul>
-                            <?php foreach ($recamaras as $recamara): ?>
-                            <li><?php echo $recamara['meta_value'] ?></li>
-                            <?php endforeach;?>
-                        </ul>
-
-                    </div>
-                </div> <!-- col -->
-            </div><!-- Filters -->
-            <!-- Filters -->
-            <div class="filters">
-                <!-- col -->
-
-                <div class="col">
-                    <div class="filter-cont">
-                        <!-- <div class="value">Baños </div> -->
-                        <input type="text" class="value" placeholder="Baños" readonly name="banos" id="banos">
-                        <?php $banos = $wpdb->get_results( 'SELECT DISTINCT meta_value FROM gen_postmeta WHERE meta_key LIKE "banos" ORDER BY meta_value ASC', ARRAY_A ); ?>
-                        <ul>
-                            <?php foreach ($banos as $bano): ?>
-                            <li><?php echo $bano['meta_value'] ?></li>
-                            <?php endforeach;?>
-                        </ul>
-                    </div>
-                </div> <!-- col -->
-
-                <!-- col -->
-                <div class="col">
-                    <div class="filter-cont">
-                        <!-- <div class="value">rango de precios </div> -->
-                        <input type="text" class="value" placeholder="Rango de precios" readonly name="precios" id="precios">
-
-                        <ul>
-                            <li>Test 1</li>
-                            <li>Test 2</li>
-                            <li>Test 3</li>
-                        </ul>
-                    </div>
-                </div> <!-- col -->
-
-            </div><!-- Filters -->
-
-            <!-- Busqueda avanzada -->
-            <div class="advanced-search">
-                <div class="title">
-                    Búsqueda avanzada
-                    <div class="little-arrow"></div>
                 </div>
+
+                <div class="advanced-search-options">
+
+                    <div class="form-checkbox">
+                        <input type="checkbox" name="alberca" id="alberca">
+                        <label for="alberca">
+                            ALBERCA
+                        </label>
+                    </div>
+
+                    <div class="form-checkbox">
+                        <input type="checkbox" name="estacionamiento" id="estacionamiento">
+                        <label for="estacionamiento">
+                            estacionamiento
+                        </label>
+                    </div>
+
+                    <div class="form-checkbox">
+                        <input type="checkbox" name="vigilancia" id="vigilancia">
+                        <label for="vigilancia">
+                            vigilancia
+                        </label>
+                    </div>
+                </div>
+
+                <div class="advanced-search-options">
+
+                    <div class="form-checkbox">
+                        <input type="checkbox" name="gym" id="gym">
+                        <label for="gym">
+                            gym
+                        </label>
+                    </div>
+
+                    <div class="form-checkbox">
+                        <input type="checkbox" name="areasverdes" id="areasverdes">
+                        <label for="areasverdes">
+                            áreas verdes
+                        </label>
+                    </div>
+
+                    <div class="form-checkbox">
+                        <input type="checkbox" name="petfriendly" id="petfriendly">
+                        <label for="petfriendly">
+                            pet friendly
+                        </label>
+                    </div>
+                </div>
+                <!-- Busqueda avanzada -->
+
+                <!-- Boton buscar -->
+                <div class="filter-submit">
+                    <div class="submit-cont">
+                        <input type="submit" value="Buscar">
+                    </div>
+                </div><!-- Boton buscar -->
+            </form>
+            <!-- FORM -->
+            <div class="results" id="results">
+
+                <h1>Resultados</h1>
             </div>
-
-            <div class="advanced-search-options">
-
-                <div class="form-checkbox">
-                    <input type="checkbox" name="alberca" id="alberca">
-                    <label for="alberca">
-                        ALBERCA
-                    </label>
-                </div>
-
-                <div class="form-checkbox">
-                    <input type="checkbox" name="estacionamiento" id="estacionamiento">
-                    <label for="estacionamiento">
-                        estacionamiento
-                    </label>
-                </div>
-
-                <div class="form-checkbox">
-                    <input type="checkbox" name="vigilancia" id="vigilancia">
-                    <label for="vigilancia">
-                        vigilancia
-                    </label>
-                </div>
-            </div>
-
-            <div class="advanced-search-options">
-
-                <div class="form-checkbox">
-                    <input type="checkbox" name="gym" id="gym">
-                    <label for="gym">
-                        gym
-                    </label>
-                </div>
-
-                <div class="form-checkbox">
-                    <input type="checkbox" name="areasverdes" id="areasverdes">
-                    <label for="areasverdes">
-                        áreas verdes
-                    </label>
-                </div>
-
-                <div class="form-checkbox">
-                    <input type="checkbox" name="petfriendly" id="petfriendly">
-                    <label for="petfriendly">
-                        pet friendly
-                    </label>
-                </div>
-            </div>
-            <!-- Busqueda avanzada -->
-
-            <!-- Boton buscar -->
-            <div class="filter-submit">
-                <div class="submit-cont">
-                    <input type="submit" value="Buscar">
-                </div>
-            </div><!-- Boton buscar -->
-        </form>
-        <!-- FORM -->
-
+        </div>
     </div>
 </div><!-- Filtros -->
 
