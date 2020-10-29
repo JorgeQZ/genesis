@@ -69,10 +69,6 @@ function add_theme_scripts() {
     endif;
 
 
-    // if(is_page_template('page-busqueda.php')):
-        // wp_enqueue_style( 'page-busqueda', get_template_directory_uri() . '/css/page-busqueda.css', array(), filemtime( get_stylesheet_directory() . '/css/page-busqueda.css' ), 'all');
-    // endif;
-
     if(is_page_template('page-proyecto.php') || is_page_template('page-proyecto-resultado.php') || get_post_type() === 'departamento'):
         wp_enqueue_style( 'page-proyecto', get_template_directory_uri() . '/css/page-proyecto.css', array(), filemtime( get_stylesheet_directory() . '/css/page-proyecto.css' ), 'all');
         wp_enqueue_script('owl.carousel.min', get_template_directory_uri().'/js/owl.carousel.min.js', array('jquery'),filemtime( get_stylesheet_directory() . '/js/owl.carousel.min.js' ), false);
