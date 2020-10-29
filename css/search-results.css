@@ -472,13 +472,17 @@
   background-color: #066881;
 }
 
-.select-filter-cont {
+.order-filter-cont {
   padding: 10px;
   max-width: 1280px;
   margin: 0 auto;
+  position: relative;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  display: inline-block;
 }
 
-.select-filter-cont .filter-select {
+.order-filter-cont .filter-select {
   position: relative;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -493,9 +497,10 @@
   border-radius: 8px;
   display: inline;
   cursor: pointer;
+  display: none;
 }
 
-.select-filter-cont .filter-select:before {
+.order-filter-cont .filter-select:before {
   content: "";
   background-image: url(../img/arrow-down-white.png);
   background-position: center;
@@ -506,6 +511,51 @@
   top: 14px;
   width: 12px;
   height: 10px;
+}
+
+.order-filter-cont .order-options {
+  background-color: #29bcb7;
+  list-style: none;
+  position: absolute;
+  width: 93%;
+  top: 100%;
+  left: 0;
+  padding: 10px;
+  margin: 0;
+  margin-top: 5px;
+  border-radius: 8px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-left: 3.5%;
+  display: none;
+}
+
+.order-filter-cont .order-options li {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 14px;
+  padding: 5px 0;
+  margin-top: 5px;
+  border-bottom: 1px solid white;
+}
+
+.order-filter-cont .order-options li button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  color: white;
+  text-align: center;
+  width: 100%;
+  background: transparent;
+}
+
+.order-filter-cont .order-options li:first-child {
+  margin-top: 0;
+}
+
+.order-filter-cont .order-options li:last-child {
+  border-bottom: 1px solid transparent;
 }
 
 .departaments-container {

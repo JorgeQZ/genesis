@@ -3,6 +3,8 @@
 function search_department_scripts(){
     wp_enqueue_script( 'custom_search', get_stylesheet_directory_uri(). '/js/search.js', array(), '1.0', true );
     wp_localize_script( 'custom_search', 'ajax_url', admin_url('admin-ajax.php') );
+    wp_enqueue_style( 'search-results', get_template_directory_uri() . '/css/search-results.css', array(), filemtime( get_stylesheet_directory() . '/css/search-results.css' ), 'all');
+
 }
 
 // Creacion de formulario
@@ -73,9 +75,12 @@ function custom_search_shortcode(){
                         <div class="filter-cont">
                             <input type="text" class="value" placeholder="Rango de precios" readonly name="precios" id="precios">
                             <ul>
-                                <li>Test 1</li>
-                                <li>Test 2</li>
-                                <li>Test 3</li>
+                                <li>$1,500,000 - $1,999,999</li>
+                                <li>$2,000,000 - $2,499,000</li>
+                                <li>$2,500,000 - $2,999,000</li>
+                                <li>$3,000,000 - $3,499,000</li>
+                                <li>$3,500,000 - $4,999,000</li>
+
                             </ul>
                         </div>
                     </div> <!-- col -->
@@ -148,10 +153,6 @@ function custom_search_shortcode(){
             </form>
             <!-- FORM -->
         </div>
-
-        <h1>Resultados</h1>
-        <div class="results" id="results">
-        </div>
     </div>
 </div>
 
@@ -164,12 +165,23 @@ function custom_search_shortcode(){
     </div>
 </div>
 
-<div class="select-filter-cont">
-    <div class="filter-select" id="filter">
+<div class="order-filter-cont">
+    <div class="filter-select" id="order-filter">
         Ordenar por precio
     </div>
+    <ul class="order-options">
+        <li>
+            <button onclick="Sort_to_Hight()">
+                De mayor a menor
+            </button>
+        </li>
+        <li>
+            <button onclick="Sort_to_Low()">
+                De menor a mayor
+            </button>
+        </li>
+    </ul>
 </div>
-
 <div class="departaments-container" id="column-results">
 
 </div><?php
@@ -191,6 +203,14 @@ function departament_search_callback() {
     if(isset($_GET['ubicacion'])) {$ubicacion = sanitize_text_field( $_GET['ubicacion'] );}
     if(isset($_GET['recamaras'])) {$recamaras = sanitize_text_field( $_GET['recamaras'] );}
     if(isset($_GET['banos'])) {$banos = sanitize_text_field( $_GET['banos'] );}
+    if(isset($_GET['precios'])) {$precios = sanitize_text_field( $_GET['precios'] );}
+
+    $result = $precios;
+
+    $precio = explode("-", $precios);
+    $precio_no_commas =  str_replace(',', "", $precio);
+    $precio_no_black =  str_replace('$', "", $precio_no_commas);
+    $precio =  str_replace(' ', "", $precio_no_black);
 
     // Amenidades
     if(isset($_GET['alberca'])) {$alberca = sanitize_text_field( $_GET['alberca'] );}
@@ -299,6 +319,13 @@ function departament_search_callback() {
                 'key'           => 'banos',
                 'value'         => array(1, $banos),
                 'compare'	    => 'BETWEEN',
+            ),
+
+            array(
+                'key'           => 'precio',
+                'value'         => array($precio[0], $precio[1]),
+                'compare'	    => 'BETWEEN',
+                'type'	        => 'NUMERIC'
             ),
 
             array(

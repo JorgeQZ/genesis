@@ -68,12 +68,9 @@ function add_theme_scripts() {
 
     endif;
 
-    // if(is_page_template('page-comparacion.php')):
-        wp_enqueue_style( 'page-comparacion', get_template_directory_uri() . '/css/page-comparacion.css', array(), filemtime( get_stylesheet_directory() . '/css/page-comparacion.css' ), 'all');
-    // endif;
 
     // if(is_page_template('page-busqueda.php')):
-        wp_enqueue_style( 'page-busqueda', get_template_directory_uri() . '/css/page-busqueda.css', array(), filemtime( get_stylesheet_directory() . '/css/page-busqueda.css' ), 'all');
+        // wp_enqueue_style( 'page-busqueda', get_template_directory_uri() . '/css/page-busqueda.css', array(), filemtime( get_stylesheet_directory() . '/css/page-busqueda.css' ), 'all');
     // endif;
 
     if(is_page_template('page-proyecto.php') || is_page_template('page-proyecto-resultado.php') || get_post_type() === 'departamento'):
