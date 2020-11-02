@@ -165,22 +165,24 @@ function custom_search_shortcode(){
     </div>
 </div>
 
-<div class="order-filter-cont">
-    <div class="filter-select" id="order-filter">
-        Ordenar por precio
+<div class="container">
+    <div class="order-filter-cont">
+        <div class="filter-select" id="order-filter">
+            Ordenar por precio
+        </div>
+        <ul class="order-options">
+            <li>
+                <button onclick="Sort_to_Hight()">
+                    De mayor a menor
+                </button>
+            </li>
+            <li>
+                <button onclick="Sort_to_Low()">
+                    De menor a mayor
+                </button>
+            </li>
+        </ul>
     </div>
-    <ul class="order-options">
-        <li>
-            <button onclick="Sort_to_Hight()">
-                De mayor a menor
-            </button>
-        </li>
-        <li>
-            <button onclick="Sort_to_Low()">
-                De menor a mayor
-            </button>
-        </li>
-    </ul>
 </div>
 <div class="departaments-container" id="column-results">
 

@@ -1,12 +1,15 @@
 <?php
+/**
+ * Template Name: Proyecto
+ */
 get_header();
-echo get_post_type();
- if (get_post_type() === 'departamento'):
-    $term = wp_get_post_terms( $post->ID, 'categorias-desarrollos');
-    $tax_name = 'categorias-desarrollos';
-    $iconos = get_field('iconos', $tax_name.'_'.$term[0]->term_id);
-    $color = get_field('color_de_desarrollo', $tax_name.'_'.$term[0]->term_id);
-    ?>
+// get the current taxonomy term
+$term = get_queried_object();
+$iconos = get_field('iconos', $term);
+$color = get_field('color_de_desarrollo', $term);
+
+
+?>
 
 <style>
 .middle-description,
@@ -50,6 +53,7 @@ header.scrolled {
     ?>;
 }
 
+
 path {
     fill: <?php echo $color;
     ?>;
@@ -78,14 +82,14 @@ path {
     <div class="container">
         <div class="middle-description">
             <div class="title">
-                <?php echo get_field('nombre_desarrollo', $tax_name.'_'.$term[0]->term_id); ?>
+                <?php echo get_field('nombre_desarrollo', $term); ?>
             </div>
             <div class="bold-title">
-                <?php echo $term[0]->name; ?>
+                <?php echo $des_name = $term->name; ?>
             </div>
 
             <div class="text">
-                <?php echo get_field('descripcion', $tax_name.'_'.$term[0]->term_id) ?>
+                <?php echo get_field('descripcion', $term) ?>
             </div>
 
             <!-- GRID -->
@@ -98,20 +102,20 @@ path {
 
                 <!-- 2nd column -->
                 <div class="column">
-                    <img src="<?php echo get_field('imagen', $tax_name.'_'.$term[0]->term_id) ?>" alt="">
+                    <img src="<?php echo get_field('imagen', $term) ?>" alt="">
                 </div>
 
                 <!-- 3rd column -->
                 <div class="column">
                     <div class="text">
-                        <div class="title" data-text="<?php echo get_field('nombre_desarrollo', $tax_name.'_'.$term[0]->term_id); ?>">
+                        <div class="title" data-text="<?php echo get_field('nombre_desarrollo', $term); ?>">
                             ubicacion
                         </div>
                         <div class="list">
-                            <?php print_r(get_field('ubicacion', $tax_name.'_'.$term[0]->term_id)); ?>
+                            <?php echo get_field('ubicacion', $term); ?>
 
                             <p>
-                                <?php echo get_field('direccion', $tax_name.'_'.$term[0]->term_id); ?>
+                                <?php echo get_field('direccion', $term); ?>
                             </p>
                         </div>
                     </div>
@@ -124,8 +128,8 @@ path {
             <div class="meet-us-container">
                 <div class="column">
                     <div>
-                        conócelo
-                        <?php get_template_part('template-parts/icons/arrow'); ?>
+                        conócelo <?php get_template_part('template-parts/icons/arrow'); ?>
+
                     </div>
                 </div>
                 <div class="column">
@@ -140,9 +144,7 @@ path {
             <div class="meet-us-container">
                 <div class="column">
                     <div>
-                        visítalo
-                        <?php get_template_part('template-parts/icons/arrow'); ?>
-
+                        visítalo <?php get_template_part('template-parts/icons/arrow'); ?>
                     </div>
                 </div>
                 <div class="column">
@@ -243,7 +245,7 @@ path {
                                             <div class="img">
                                                 <?php get_template_part('template-parts/icons/bed'); ?>
                                             </div>
-                                            <div class="caption">
+                                            <div class=" caption">
                                                 3 recamaras
                                             </div>
 
@@ -1432,7 +1434,7 @@ path {
 
 
 <?php
-$des_carrusel = get_field('carrusel_de_imagenes', $tax_name.'_'.$term[0]->term_id);
+$des_carrusel = get_field('carrusel_de_imagenes', $term);
 if($des_carrusel != ''):
 ?>
 <div class="slider-container">
@@ -1444,17 +1446,13 @@ if($des_carrusel != ''):
             echo '<div class="item"><img data-thumb="'.$image_carr[0].'"  src="'.$image_prev[0].'" alt=""></div>';
         }
         ?>
-
-
     </div>
-
-
 </div>
 <?php endif; ?>
 
 
 <?php
-$des_galeria = get_field('galeria', $tax_name.'_'.$term[0]->term_id);
+$des_galeria = get_field('galeria', $term);
 if($des_galeria != ''):
 ?>
 <div class="grid-gallery">
@@ -1474,15 +1472,17 @@ if($des_galeria != ''):
         ?>
     </div>
 </div>
-<?php endif;?>
+<?php endif; ?>
 
 
 
 <script>
 $('.galeria-slider').owlCarousel({
+
     nav: false,
     dots: true,
     items: 1,
+
     thumbs: true,
     thumbImage: true,
     thumbsPrerendered: false,
@@ -1498,8 +1498,4 @@ $('.visit-slider').owlCarousel({
     margin: 10
 });
 </script>
-<?php
-endif;
-
-get_footer();
-?>
+<?php get_footer(); ?>

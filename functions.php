@@ -11,6 +11,10 @@ if ( ! function_exists( 'Genesis_setup' ) ) :
         add_theme_support( 'title-tag' );
         add_theme_support( 'custom-logo' );
         add_theme_support( 'post-thumbnails' );
+        add_image_size( 'project-image', 445, 238, true );
+        add_image_size( 'gallery-size', 370, 278, true );
+        add_image_size( 'carrusel-size', 995, 746, true );
+
     }
 endif;
 add_action( 'after_setup_theme', 'Genesis_setup' );
@@ -78,7 +82,7 @@ function add_theme_scripts() {
 
     endif;
 
-    if(is_page_template('page-desarrollos.php')):
+    if(is_page_template('page-desarrollos.php') || is_archive()):
         wp_enqueue_style( 'page-desarrollos', get_template_directory_uri() . '/css/page-desarrollos.css', array(), filemtime( get_stylesheet_directory() . '/css/page-desarrollos.css' ), 'all');
         wp_enqueue_script('owl.carousel.min', get_template_directory_uri().'/js/owl.carousel.min.js', array('jquery'),filemtime( get_stylesheet_directory() . '/js/owl.carousel.min.js' ), false);
         wp_enqueue_style( 'owl.carousel.min', get_template_directory_uri() . '/css/owl.carousel.min.css', array(), filemtime( get_stylesheet_directory() . '/css/owl.carousel.min.css' ), 'all');
@@ -98,10 +102,12 @@ function add_theme_scripts() {
         ?>
 <style>
 @media screen and (min-width: 1280px) {
-    body {
-        /* padding-top: 32px !important; */
+    header {
+        top: 31px !important;
     }
+}
 
+@media screen and (min-width: 900px) {
     header {
         top: 31px !important;
     }
@@ -114,6 +120,31 @@ function add_theme_scripts() {
   }
   add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
+  function wpse344725_taxonomy_css() {
+
+    global $taxonomy;
+
+    $modified_tax_arr = array( 'categorias-desarrollos' );
+
+    if( empty( $taxonomy ) || ! in_array( $taxonomy, $modified_tax_arr ) ) {
+        return;
+    }
+
+    ?>
+
+<style>
+.form-field.term-slug-wrap,
+.form-field.term-parent-wrap,
+.form-field.term-description-wrap {
+    display: none;
+}
+
+</style>
+
+<?php
+
+}
+add_action( 'admin_head', 'wpse344725_taxonomy_css' );
 
 function wpb_widgets_init() {
 

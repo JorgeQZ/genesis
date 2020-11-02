@@ -472,7 +472,13 @@
   background-color: #066881;
 }
 
-.order-filter-cont {
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.container .order-filter-cont {
   padding: 10px;
   max-width: 1280px;
   margin: 0 auto;
@@ -482,7 +488,7 @@
   display: inline-block;
 }
 
-.order-filter-cont .filter-select {
+.container .order-filter-cont .filter-select {
   position: relative;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -497,10 +503,9 @@
   border-radius: 8px;
   display: inline;
   cursor: pointer;
-  display: none;
 }
 
-.order-filter-cont .filter-select:before {
+.container .order-filter-cont .filter-select:before {
   content: "";
   background-image: url(../img/arrow-down-white.png);
   background-position: center;
@@ -513,7 +518,7 @@
   height: 10px;
 }
 
-.order-filter-cont .order-options {
+.container .order-filter-cont .order-options {
   background-color: #29bcb7;
   list-style: none;
   position: absolute;
@@ -530,7 +535,7 @@
   display: none;
 }
 
-.order-filter-cont .order-options li {
+.container .order-filter-cont .order-options li {
   width: 80%;
   margin: 0 auto;
   font-size: 14px;
@@ -539,7 +544,7 @@
   border-bottom: 1px solid white;
 }
 
-.order-filter-cont .order-options li button {
+.container .order-filter-cont .order-options li button {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -550,11 +555,11 @@
   background: transparent;
 }
 
-.order-filter-cont .order-options li:first-child {
+.container .order-filter-cont .order-options li:first-child {
   margin-top: 0;
 }
 
-.order-filter-cont .order-options li:last-child {
+.container .order-filter-cont .order-options li:last-child {
   border-bottom: 1px solid transparent;
 }
 

@@ -244,14 +244,14 @@ header {
 
 .call-center {
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     bottom: 20px;
     right: 20px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     .text {
-        z-index: 2;
+        z-index: 1000;
         font-weight: $bold;
         padding: 18px 7px;
         margin-right: 8px;
