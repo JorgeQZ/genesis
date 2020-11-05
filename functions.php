@@ -1,11 +1,10 @@
 <?php
 
+// Imports
 include "includes/function-departments.php";
 include "includes/search-department.php";
 
-if ( ! isset ( $content_width) )
-$content_width = 800;
-
+// Images Sizes
 if ( ! function_exists( 'Genesis_setup' ) ) :
     function Genesis_setup() {
         add_theme_support( 'title-tag' );
@@ -20,7 +19,7 @@ if ( ! function_exists( 'Genesis_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'Genesis_setup' );
 
-
+// Menu
 function register_Genesis_menus(){
 
     register_nav_menus( array(
@@ -31,6 +30,7 @@ function register_Genesis_menus(){
 
 add_action('init', 'register_Genesis_menus');
 
+// Setup
 function Genesis_setup_custom_logo_setup() {
     $defaults = array(
     'height'      => 100,
@@ -45,22 +45,19 @@ add_action( 'after_setup_theme', 'Genesis_setup_custom_logo_setup' );
 
 function add_theme_scripts() {
 
-
+    // Generales
     wp_enqueue_style( 'general', get_template_directory_uri() . '/css/general.css', array(), filemtime( get_stylesheet_directory() . '/css/general.css' ), 'all');
     wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css', array(), '1.1', 'all');
-
     wp_deregister_script('jquery');
     wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), null, true);
     wp_enqueue_script('custom', get_template_directory_uri().'/js/custom.js', array('jquery'),filemtime( get_stylesheet_directory() . '/js/custom.js' ), false);
     wp_enqueue_script('search', get_template_directory_uri().'/js/search.js', array('jquery'),filemtime( get_stylesheet_directory() . '/js/search.js' ), false);
-
     wp_enqueue_script('headerjs', get_template_directory_uri().'/js/header.js', array('jquery'),filemtime( get_stylesheet_directory() . '/js/header.js' ), false);
 
+    // Home
     if(is_page_template('page-home.php')):
         wp_enqueue_style( 'page-home', get_template_directory_uri() . '/css/page-home.css', array(), filemtime( get_stylesheet_directory() . '/css/page-home.css' ), 'all');
-
         wp_enqueue_style( 'map', get_template_directory_uri() . '/css/map.css', array(), filemtime( get_stylesheet_directory() . '/css/map.css' ), 'all');
-
 
         // Slider
         wp_enqueue_script('owl.carousel.min', get_template_directory_uri().'/js/owl.carousel.min.js', array('jquery'),filemtime( get_stylesheet_directory() . '/js/owl.carousel.min.js' ), false);
@@ -69,16 +66,11 @@ function add_theme_scripts() {
 
         // Script
         wp_enqueue_script('map', get_template_directory_uri().'/js/map.js', array('jquery'),filemtime( get_stylesheet_directory() . '/js/map.js' ), false);
-
-
     endif;
 
 
-    if(
-        is_page_template('page-proyecto.php') ||
-        is_page_template('page-proyecto-resultado.php') ||
-        get_post_type() === 'departamento'
-        ) :
+    // Departamento
+    if(is_page_template('page-proyecto.php') || is_page_template('page-proyecto-resultado.php') || get_post_type() === 'departamento' ) :
 
         wp_enqueue_style( 'page-proyecto', get_template_directory_uri() . '/css/page-proyecto.css', array(), filemtime( get_stylesheet_directory() . '/css/page-proyecto.css' ), 'all');
         wp_enqueue_script('owl.carousel.min', get_template_directory_uri().'/js/owl.carousel.min.js', array('jquery'),filemtime( get_stylesheet_directory() . '/js/owl.carousel.min.js' ), false);
@@ -88,6 +80,7 @@ function add_theme_scripts() {
 
     endif;
 
+    // desarrollos
     if(is_page_template('page-desarrollos.php') || is_archive()):
         wp_enqueue_style( 'page-desarrollos', get_template_directory_uri() . '/css/page-desarrollos.css', array(), filemtime( get_stylesheet_directory() . '/css/page-desarrollos.css' ), 'all');
         wp_enqueue_script('owl.carousel.min', get_template_directory_uri().'/js/owl.carousel.min.js', array('jquery'),filemtime( get_stylesheet_directory() . '/js/owl.carousel.min.js' ), false);
@@ -95,63 +88,34 @@ function add_theme_scripts() {
         wp_enqueue_style( 'owl.theme.default.min', get_template_directory_uri() . '/css/owl.theme.default.min.css', array(), filemtime( get_stylesheet_directory() . '/css/owl.theme.default.min.css' ), 'all');
     endif;
 
+    // Quienes somos
     if(is_page_template('page-quienessomos.php')):
         wp_enqueue_style( 'page-home', get_template_directory_uri() . '/css/page-home.css', array(), filemtime( get_stylesheet_directory() . '/css/page-home.css' ), 'all');
         wp_enqueue_style( 'page-quienessomos', get_template_directory_uri() . '/css/page-quienessomos.css', array(), filemtime( get_stylesheet_directory() . '/css/page-quienessomos.css' ), 'all');
 
     endif;
 
+    // contacto
     if(is_page_template('page-contacto.php')):
         wp_enqueue_style( 'page-contacto', get_template_directory_uri() . '/css/page-contacto.css', array(), filemtime( get_stylesheet_directory() . '/css/page-contacto.css' ), 'all');
     endif;
-    if( is_user_logged_in()):
-        ?>
-<style>
-@media screen and (min-width: 1280px) {
-    header {
-        top: 31px !important;
-    }
+
 }
+add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
-@media screen and (min-width: 900px) {
-    header {
-        top: 31px !important;
-    }
-}
-
-</style>
-<?php
-    endif;
-
-  }
-  add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
-
-  function wpse344725_taxonomy_css() {
-
+// Hide unnecesary fields
+function wpse344725_taxonomy_css() {
     global $taxonomy;
-
     $modified_tax_arr = array( 'categorias-desarrollos' );
-
     if( empty( $taxonomy ) || ! in_array( $taxonomy, $modified_tax_arr ) ) {
         return;
     }
 
-    ?>
-
-<style>
-.form-field.term-slug-wrap,
-.form-field.term-parent-wrap,
-.form-field.term-description-wrap {
-    display: none;
-}
-
-</style>
-
-<?php
-
+   echo'<style>.form-field.term-slug-wrap,.form-field.term-parent-wrap,.form-field.term-description-wrap {display: none;}</style>';
 }
 add_action( 'admin_head', 'wpse344725_taxonomy_css' );
 
+// widgets
 function wpb_widgets_init() {
 
     register_sidebar( array(
@@ -214,7 +178,7 @@ function wpb_widgets_init() {
 }
 add_action( 'widgets_init', 'wpb_widgets_init' );
 
-
+// Registros de Postype = Miembors
 function register_miembros_type(){
     $labels = array(
         'name'               => _x('Miembros', 'Genesis'),

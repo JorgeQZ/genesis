@@ -40,7 +40,7 @@ d_search_form.submit(function (e) {
                     //Ya configurado como un cluster de desarrollos (Proyectos)
                     let desarrollos_data = clustering_depts(response);
                     data_global = desarrollos_data;
-
+                    $('.results-container').fadeIn(750);
                     // Imprimir resultados en pantalla
                     writeResultsScreen(desarrollos_data);
 

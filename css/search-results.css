@@ -440,7 +440,7 @@
 }
 
 .results-container {
-  display: none !important;
+  display: none;
 }
 
 .results-container .tabs-container {
@@ -507,7 +507,6 @@
   border-radius: 8px;
   display: inline;
   cursor: pointer;
-  display: none;
 }
 
 .results-container .container .order-filter-cont .filter-select:before {

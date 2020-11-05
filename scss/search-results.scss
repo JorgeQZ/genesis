@@ -322,7 +322,7 @@
 }
 
 .results-container {
-    display: none !important;
+    display: none;
     .tabs-container {
         display: flex;
         align-items: center;
@@ -372,7 +372,6 @@
                 border-radius: 8px;
                 display: inline;
                 cursor: pointer;
-                display: none;
                 &:before {
                     content: "";
                     background-image: url(../img/arrow-down-white.png);
