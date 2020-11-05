@@ -55,7 +55,19 @@
                     margin: 5px;
                     position: relative;
                     max-width: 200px;
-
+                    &:before {
+                        content: "";
+                        background-image: url(../img/arrow-down.png);
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        position: absolute;
+                        right: 8px;
+                        top: 12px;
+                        width: 10px;
+                        height: 9px;
+                        z-index: 10000;
+                    }
                     .value {
                         cursor: pointer;
                         font-weight: 100;
@@ -74,18 +86,6 @@
                         }
                         &:hover {
                             background-color: $alt;
-                        }
-                        &:before {
-                            content: "";
-                            background-image: url(../img/arrow-down.png);
-                            background-position: center;
-                            background-size: contain;
-                            background-repeat: no-repeat;
-                            position: absolute;
-                            right: 8px;
-                            top: 12px;
-                            width: 10px;
-                            height: 9px;
                         }
                     }
                     ul {
@@ -540,26 +540,22 @@
         }
     }
 }
-// @media screen and (min-width: 990px) {
-//     header {
-//         background-color: rgba($main, 0.95);
-//         align-items: center;
-//         padding-top: 15px;
-//         padding-bottom: 15px;
-//     }
-// }
 
 @media screen and (max-width: 767px) {
     .advanced-search-container {
+        height: 50vh;
+        padding-top: 0;
+        min-height: auto;
         .filter-container {
             padding: 60px 20px;
             overflow: hidden;
+            width: 100%;
             .filters {
-                flex-direction: column;
+                flex-direction: row;
                 align-items: center;
                 width: 100%;
+
                 .col {
-                    width: 85%;
                     .filter-cont {
                         max-width: inherit;
                     }
@@ -572,12 +568,12 @@
                 }
             }
             .advanced-search-options {
-                flex-direction: column;
                 align-items: flex-start;
-                width: 50%;
-                margin: 0 auto;
+                margin: 5 auto;
+
                 .form-checkbox {
                     margin-left: 0;
+                    margin-right: 10px;
                     &:first-child {
                         margin-left: 0;
                     }
@@ -585,6 +581,78 @@
             }
             .filter-submit {
                 margin-top: 15px;
+            }
+        }
+    }
+    .results-container {
+        .tabs-container {
+            margin: 30px 0;
+            .tab-option {
+                padding: 15px 10px;
+                width: 50%;
+            }
+        }
+
+        .container {
+            .order-filter-cont {
+                padding: 0 5px;
+                .filter-select {
+                    position: relative;
+                    appearance: none;
+                    background-color: #29bcb7;
+                    border: none;
+                    color: white;
+                    text-align: center;
+                    text-transform: uppercase;
+                    padding: 10px 20px;
+                    padding-right: 35px;
+                    border-radius: 8px;
+                    display: inline;
+                    cursor: pointer;
+                    &:before {
+                        content: "";
+                        background-image: url(../img/arrow-down-white.png);
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        position: absolute;
+                        right: 10px;
+                        top: 14px;
+                        width: 12px;
+                        height: 10px;
+                    }
+                }
+
+                .order-options {
+                    margin-left: 2%;
+                    margin-top: 14px;
+                    width: 96%;
+                }
+            }
+        }
+        .departaments-container {
+            padding: 30px 10px;
+            display: block;
+            .item {
+                width: 100%;
+                display: block;
+                flex: 0 0 100%;
+                .col {
+                    text-align: center;
+                    margin-bottom: 10px;
+                    width: 100%;
+                    &:nth-child(2) {
+                        width: 100%;
+
+                        text-align: left;
+                    }
+
+                    .dept-img {
+                        max-width: 250px;
+                        border: 1px solid #808080;
+                        margin: 0;
+                    }
+                }
             }
         }
     }
