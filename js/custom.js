@@ -1,7 +1,7 @@
 $(document).ready(function (e) {
     // Header Menu
     $('#menu-button').on('click', function (e) {
-        $("header .cont-menu").slideToggle();
+        $("header .cont-menu").slideToggle('slow');
     });
 
 
