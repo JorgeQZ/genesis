@@ -1,9 +1,9 @@
 $(document).ready(function (e) {
-
     // Header Menu
     $('#menu-button').on('click', function (e) {
         $("header .cont-menu").slideToggle();
     });
+
 
     // Result open - close button
     $('.button-fold').on('click', function (e) {
@@ -31,8 +31,6 @@ $(document).ready(function (e) {
         }
     });
 
-
-
     // CUSTOM SEARCH DEPARTAMENTS
     // Custom Li's
     $('.filter-cont .value').click(function (e) {
@@ -56,10 +54,9 @@ $(document).ready(function (e) {
                 'box-shadow': 'unset'
             });
     });
+
     // CUSTOM SEARCH DEPARTAMENTS
-
     // ------------------ CONTACT FORM HOME --------------
-
     $('.select-cont .value').click(function (e) {
         e.preventDefault();
         $(this).siblings('ul').toggleClass('active');
@@ -130,8 +127,6 @@ $(document).ready(function (e) {
         $('.light-box').fadeOut();
     });
 
-
-
     // // Panoramic
     // function changePanoramic() {
     //     let img = $('.panoramic-active').find('img').attr('data-src');
@@ -177,6 +172,7 @@ $(document).ready(function (e) {
     });
 
 });
+
 $(document).keyup(function (e) {
 
     if (e.key === "Escape") {

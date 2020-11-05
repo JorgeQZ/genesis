@@ -75,6 +75,7 @@ function custom_search_shortcode(){
                         <div class="filter-cont">
                             <input type="text" class="value" placeholder="Rango de precios" readonly name="precios" id="precios">
                             <ul>
+                                <li>$1,000,000 - $1,499,999</li>
                                 <li>$1,500,000 - $1,999,999</li>
                                 <li>$2,000,000 - $2,499,000</li>
                                 <li>$2,500,000 - $2,999,000</li>
@@ -156,36 +157,37 @@ function custom_search_shortcode(){
     </div>
 </div>
 
-<div class="tabs-container">
-    <div class="tab-option active">
-        departamentos
-    </div>
-    <div class="tab-option">
-        casa
-    </div>
-</div>
-
-<div class="container">
-    <div class="order-filter-cont">
-        <div class="filter-select" id="order-filter">
-            Ordenar por precio
+<div class="results-container">
+    <div class="tabs-container">
+        <div class="tab-option search_tab-option active" data-value="Departamento">
+            departamentos
         </div>
-        <ul class="order-options">
-            <li>
-                <button onclick="Sort_to_Hight()">
-                    De mayor a menor
-                </button>
-            </li>
-            <li>
-                <button onclick="Sort_to_Low()">
-                    De menor a mayor
-                </button>
-            </li>
-        </ul>
+        <div class="tab-option search_tab-option" data-value="Casa">
+            casa
+        </div>
     </div>
-</div>
-<div class="departaments-container" id="column-results">
 
+    <div class="container">
+        <div class="order-filter-cont">
+            <div class="filter-select" id="order-filter">
+                Ordenar por precio
+            </div>
+            <ul class="order-options">
+                <li>
+                    <button onclick="Sort_to_Hight()">
+                        De mayor a menor
+                    </button>
+                </li>
+                <li>
+                    <button onclick="Sort_to_Low()">
+                        De menor a mayor
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="departaments-container" id="column-results">
+    </div>
 </div><?php
     return ob_get_clean();
 }
@@ -347,14 +349,16 @@ function departament_search_callback() {
             $custom_search->the_post();
 
             $precio = get_field('precio');
+            $clase = get_field('clase');
             $unidades = get_field('unidades_disponibles');
             $term  = get_the_terms( get_the_ID(), 'categorias-desarrollos' );
 
             $d_logo = get_field( 'logo',  $tax_name.'_'.$term[0]->term_id);
             $d_name = get_field( 'nombre_desarrollo',  $tax_name.'_'.$term[0]->term_id);
-            $d_image = get_field( 'imagen',  $tax_name.'_'.$term[0]->term_id);
+            $d_image_id = get_field( 'imagen',  $tax_name.'_'.$term[0]->term_id);
             $d_address = get_field( 'direccion',  $tax_name.'_'.$term[0]->term_id);
 
+            $d_image = wp_get_attachment_image_src( $d_image_id, 'result-image');
             $result[] = array(
                 // 'id' => get_the_ID(),
                 // 'name' => get_the_title(),
@@ -365,8 +369,9 @@ function departament_search_callback() {
                 'desarrollo_slug' => $term[0]->slug,
                 'desarrollo_logo' => $d_logo,
                 'desarrollo_name' => $d_name,
-                'desarrollo_image' => $d_image,
-                'desarrollo_address' => $d_address
+                'desarrollo_image' => $d_image[0],
+                'desarrollo_address' => $d_address,
+                'clase' => $clase
             );
         endwhile;
         wp_reset_query();

@@ -12,9 +12,10 @@ if ( ! function_exists( 'Genesis_setup' ) ) :
         add_theme_support( 'custom-logo' );
         add_theme_support( 'post-thumbnails' );
         add_image_size( 'project-image', 445, 238, true );
+        add_image_size( 'result-image', 528, 560, true);
         add_image_size( 'gallery-size', 370, 278, true );
         add_image_size( 'carrusel-size', 995, 746, true );
-
+        add_image_size( 'member-size', 180, 180, true );
     }
 endif;
 add_action( 'after_setup_theme', 'Genesis_setup' );
@@ -212,3 +213,38 @@ function wpb_widgets_init() {
 
 }
 add_action( 'widgets_init', 'wpb_widgets_init' );
+
+
+function register_miembros_type(){
+    $labels = array(
+        'name'               => _x('Miembros', 'Genesis'),
+        'singular_name'      => _x( 'Miembro', 'Genesis' ),
+		'add_new'            => __( 'Añadir nuevo','Genesis'),
+		'add_new_item'       => __( 'Nuevo Miembro','Genesis'),
+		'edit_item'          => __( 'Editar Miembro','Genesis' ),
+		'new_item'           => __( 'Nuevo Miembro','Genesis' ),
+		'all_items'          => __( 'Todos los Miembros','Genesis' ),
+		'view_item'          => __( 'Ver Miembro','Genesis'),
+		'search_items'       => __( 'Buscar Miembro','Genesis'),
+		'not_found'          => __( 'No encontrado!','Genesis' ),
+		'not_found_in_trash' => __( 'No encontrado en la papelera','Genesis' ),
+		'parent_item_colon'  => '',
+        'menu_name'          => __('Miembros','Genesis')
+    );
+
+    $args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'show_ui'            => true,
+		'publicly_queryable' => true,
+		'rewrite'            => array( 'slug' => 'departamento' ),
+		'has_archive'        => true,
+		'capability_type'    => 'post',
+		'menu_icon'          => 'dashicons-groups',
+		'can_export'         => true,
+		'menu_position'      =>2,
+		'supports'           => array('title','editor','author','thumbnail','excerpt','custom-fields','revisions')
+	);
+	register_post_type( 'miembros', $args );
+}
+add_action( 'init', 'register_miembros_type' );

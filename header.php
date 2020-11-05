@@ -40,7 +40,7 @@
             ?>
 
             <div class="social-links">
-                <a href="busqueda-avanzada/" class="item">
+                <a href="<?php echo home_url().'/busqueda-avanzada/'; ?>" class="item">
                     <img src="<?php  echo get_template_directory_uri().'/img/icon-search.png'?>" alt="">
                     <img class="img-alt" src="<?php  echo get_template_directory_uri().'/img/icon-search-alt.png'?>" alt="">
                 </a>

@@ -2,6 +2,16 @@ $ = jQuery;
 var d_search_form_cont = $('#GNS_search');
 var d_search_form = $('#GNS_search').find("form");
 var data_global;
+var class_ = 'Departamento';
+
+// Departamento Casa
+$('.search_tab-option').click(function (e) {
+    e.preventDefault();
+    $('.search_tab-option').removeClass('active');
+    $(this).addClass('active');
+    class_ = $(this).attr('data-value');
+    writeResultsScreen(data_global, class_);
+});
 
 // Boton que despliega los botone spara ordenar
 $('#order-filter').on('click', function (e) {
@@ -25,7 +35,7 @@ d_search_form.submit(function (e) {
 
                 if (response != '') {
 
-                    $('#order-filter').show();
+                    // $('#order-filter').show();
                     // Retornando 'response' como un arraya asiosiativo
                     //Ya configurado como un cluster de desarrollos (Proyectos)
                     let desarrollos_data = clustering_depts(response);
@@ -123,6 +133,7 @@ function clustering_depts(depts) {
                         clustered_data[aux]['image'] = element_depts.desarrollo_image;
                         clustered_data[aux]['name'] = element_depts.desarrollo_name;
                         clustered_data[aux]['slug'] = element_depts.desarrollo_slug;
+                        clustered_data[aux]['clase'] = element_depts.clase;
 
                         // // Asignacion del minimo precio de departamentos
                         if (clustered_data[aux]['min_price'] == 0 || clustered_data[aux]['min_price'] > element_depts.precio) {
@@ -144,15 +155,17 @@ function clustering_depts(depts) {
     return clustered_data;
 }
 
-function writeResultsScreen(departments) {
+function writeResultsScreen(departments, class_ = 'Departamento') {
 
     // Limpia de la pantalla de resultados
     $("#column-results").empty();
 
     // Bucle de DESARROLLOS
-
+    var class_objts = 0;
     for (var departament in departments) {
-        if (departments.hasOwnProperty(departament)) {
+        let d_clase = departments[departament]['clase'];
+        if (departments.hasOwnProperty(departament) && d_clase == class_) {
+            class_objts = class_objts + 1;
 
             let d_nombre = departments[departament]['name'];
             let d_address = departments[departament]['address'];
@@ -196,6 +209,11 @@ function writeResultsScreen(departments) {
             $(item_html).hide().appendTo('#column-results').fadeIn(750);
         }
     }
+
+    if (class_objts == 0) {
+        var html = "<div><h1>Sin resultados</h1> <p>Ningún resultado para <strong>" + class_ + "s</strong> arrojado por la búsqueda, intenta con otras opciones.</p><div>";
+        $("#column-results").append(html);
+    }
 }
 
 function validate_fields() {
@@ -228,7 +246,7 @@ function formatNumber(num) {
 function Sort_to_Hight() {
     if (data_global) {
         const toSortHighest = [...data_global];
-        writeResultsScreen(toSortHighest.sort(sort_highest));
+        writeResultsScreen(toSortHighest.sort(sort_highest), class_);
     }
 
     $('.order-options').slideUp();
@@ -238,7 +256,7 @@ function Sort_to_Hight() {
 function Sort_to_Low() {
     if (data_global) {
         const toSortLowest = [...data_global];
-        writeResultsScreen(toSortLowest.sort(sort_lowest));
+        writeResultsScreen(toSortLowest.sort(sort_lowest), class_);
     }
 
     $('.order-options').slideUp();

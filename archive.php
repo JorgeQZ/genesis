@@ -74,7 +74,7 @@ path {
 </div>
 
 <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/1WTqnmMNKE8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <?php echo get_field('banner', $term); ?>
 </div>
 
 <div class="upper-container">
@@ -101,7 +101,11 @@ path {
 
                 <!-- 2nd column -->
                 <div class="column">
-                    <img src="<?php echo get_field('imagen', $term) ?>" alt="">
+                    <?php
+                    $image_id = get_field('imagen', $term);
+                    $image_carr = wp_get_attachment_image_src( $image_id, 'project-image'); ?>
+
+                    <img src="<?php echo $image_carr[0]  ?>" alt="">
                 </div>
 
                 <!-- 3rd column -->

@@ -1436,9 +1436,10 @@ if($des_carrusel != ''):
     <div class="owl-carousel owl-theme galeria-slider" data-slider-id="project">
         <?php
         foreach($des_carrusel as $item_id){
-            $image_carr = wp_get_attachment_image_src( $item_id, 'gallery-size');
-            $image_prev = wp_get_attachment_image_src( $item_id, 'full');
-            echo '<div class="item"><img data-thumb="'.$image_carr[0].'"  src="'.$image_prev[0].'" alt=""></div>';
+
+            $image_carr = wp_get_attachment_image_src( $item_id, 'full');
+            $image_prev = wp_get_attachment_image_src( $item_id, 'carrusel-size');
+            echo '<div class="item"><img data-thumb="'.$image_prev[0].'"  src="'.$image_carr[0].'" alt=""></div>';
         }
         ?>
 
@@ -1485,7 +1486,6 @@ $('.galeria-slider').owlCarousel({
     thumbsPrerendered: false,
     thumbContainerClass: 'owl-thumbs',
     thumbItemClass: 'owl-thumb-item'
-
 })
 
 $('.visit-slider').owlCarousel({

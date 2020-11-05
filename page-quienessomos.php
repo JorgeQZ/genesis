@@ -53,71 +53,41 @@ get_header(); ?>
     </div>
 
     <div class="grid">
-        <div class="item">
-            <div class="image">
-                <img src="<?php echo get_template_directory_uri().'/img/team-4.jpg' ?>" alt="">
-            </div>
-            <div class="desc">
-                <div class="name">Nombre Apellido</div>
-                <div class="phone">
-                    <img src="<?php echo get_template_directory_uri().'/img/phone-alternate.png' ?>" alt="">
-                    <span>
-                        <a href="tel:000-000-000" target="_top">
-                            123-456-789
-                        </a>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="image">
-                <img src="<?php echo get_template_directory_uri().'/img/team-1.jpg' ?>" alt="">
-            </div>
-            <div class="desc">
-                <div class="name">Nombre Apellido</div>
-                <div class="phone">
-                    <img src="<?php echo get_template_directory_uri().'/img/phone-alternate.png' ?>" alt="">
-                    <span>
-                        <a href="tel:000-000-000" target="_top">
-                            123-456-789
-                        </a>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="image">
-                <img src="<?php echo get_template_directory_uri().'/img/team-3.jpg' ?>" alt="">
-            </div>
-            <div class="desc">
-                <div class="name">Nombre Apellido</div>
-                <div class="phone">
-                    <img src="<?php echo get_template_directory_uri().'/img/phone-alternate.png' ?>" alt="">
-                    <span>
-                        <a href="tel:000-000-000" target="_top">
-                            123-456-789
-                        </a>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="image">
-                <img src="<?php echo get_template_directory_uri().'/img/team-2.jpg' ?>" alt="">
-            </div>
-            <div class="desc">
-                <div class="name">Nombre Apellido</div>
-                <div class="phone">
-                    <img src="<?php echo get_template_directory_uri().'/img/phone-alternate.png' ?>" alt="">
-                    <span>
-                        <a href="tel:000-000-000" target="_top">
-                            123-456-789
-                        </a>
-                    </span>
-                </div>
-            </div>
-        </div>
+        <?php
+        $args = array(
+            'posts_per_page' => -1,
+            'post_type'   => 'miembros',
+            'post_status' => 'publish'
+        );
 
+        $members = get_posts( $args );
+        if ( $members ) :
+            foreach ( $members as $post ) :
+                $image_id = get_field('foto', $post->ID);
+                $image = wp_get_attachment_image_src( $image_id, 'member-size');
+                ?>
+
+        <div class="item">
+            <div class="image">
+                <img src="<?php echo $image[0]; ?>" alt="">
+            </div>
+            <div class="desc">
+                <div class="name"><?php echo get_field('nombre', $post->ID) ?></div>
+                <div class="phone">
+                    <img src="<?php echo get_template_directory_uri().'/img/phone-alternate.png' ?>" alt="">
+                    <span>
+                        <a href="tel:<?php echo get_field('telefono', $post->ID) ?>" target="_top">
+                            <?php echo get_field('telefono', $post->ID) ?>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <?php
+            endforeach;
+            wp_reset_postdata();
+        endif;
+        ?>
     </div>
 </div>
 <?php get_footer(); ?>
