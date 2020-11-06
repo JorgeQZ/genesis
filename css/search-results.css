@@ -95,6 +95,20 @@
   max-width: 200px;
 }
 
+.advanced-search-container .filter-container .filters .col .filter-cont:before {
+  content: "";
+  background-image: url(../img/arrow-down.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 8px;
+  top: 12px;
+  width: 10px;
+  height: 9px;
+  z-index: 10000;
+}
+
 .advanced-search-container .filter-container .filters .col .filter-cont .value {
   cursor: pointer;
   font-weight: 100;
@@ -129,19 +143,6 @@
 
 .advanced-search-container .filter-container .filters .col .filter-cont .value:hover {
   background-color: #00596e;
-}
-
-.advanced-search-container .filter-container .filters .col .filter-cont .value:before {
-  content: "";
-  background-image: url(../img/arrow-down.png);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
-  right: 8px;
-  top: 12px;
-  width: 10px;
-  height: 9px;
 }
 
 .advanced-search-container .filter-container .filters .col .filter-cont ul {
@@ -731,22 +732,25 @@
 }
 
 @media screen and (max-width: 767px) {
+  .advanced-search-container {
+    height: 50vh;
+    padding-top: 0;
+    min-height: auto;
+  }
   .advanced-search-container .filter-container {
     padding: 60px 20px;
     overflow: hidden;
+    width: 100%;
   }
   .advanced-search-container .filter-container .filters {
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     width: 100%;
-  }
-  .advanced-search-container .filter-container .filters .col {
-    width: 85%;
   }
   .advanced-search-container .filter-container .filters .col .filter-cont {
     max-width: inherit;
@@ -758,23 +762,87 @@
     width: auto;
   }
   .advanced-search-container .filter-container .advanced-search-options {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
-    width: 50%;
-    margin: 0 auto;
+    margin: 5 auto;
   }
   .advanced-search-container .filter-container .advanced-search-options .form-checkbox {
     margin-left: 0;
+    margin-right: 10px;
   }
   .advanced-search-container .filter-container .advanced-search-options .form-checkbox:first-child {
     margin-left: 0;
   }
   .advanced-search-container .filter-container .filter-submit {
     margin-top: 15px;
+  }
+  .results-container .tabs-container {
+    margin: 30px 0;
+  }
+  .results-container .tabs-container .tab-option {
+    padding: 15px 10px;
+    width: 50%;
+  }
+  .results-container .container .order-filter-cont {
+    padding: 0 5px;
+  }
+  .results-container .container .order-filter-cont .filter-select {
+    position: relative;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background-color: #29bcb7;
+    border: none;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    padding-right: 35px;
+    border-radius: 8px;
+    display: inline;
+    cursor: pointer;
+  }
+  .results-container .container .order-filter-cont .filter-select:before {
+    content: "";
+    background-image: url(../img/arrow-down-white.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 10px;
+    top: 14px;
+    width: 12px;
+    height: 10px;
+  }
+  .results-container .container .order-filter-cont .order-options {
+    margin-left: 2%;
+    margin-top: 14px;
+    width: 96%;
+  }
+  .results-container .departaments-container {
+    padding: 30px 10px;
+    display: block;
+  }
+  .results-container .departaments-container .item {
+    width: 100%;
+    display: block;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+  .results-container .departaments-container .item .col {
+    text-align: center;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .results-container .departaments-container .item .col:nth-child(2) {
+    width: 100%;
+    text-align: left;
+  }
+  .results-container .departaments-container .item .col .dept-img {
+    max-width: 250px;
+    border: 1px solid #808080;
+    margin: 0;
   }
 }

@@ -2,7 +2,7 @@
 .about-container {
     background-image: url(../img/about-bg.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: center !important;
     height: auto;
     padding: 285px 60px 250px 60px;
     min-height: 100vh;
@@ -13,77 +13,12 @@
                     -moz-text-stroke-color: $main !important;
                     -webkit-text-stroke-color: $main !important;
                     opacity: 0.3;
+                    width: max-content !important;
                 }
             }
         }
         .text {
             margin-bottom: 0;
-        }
-    }
-}
-
-.meet-the-team {
-    min-height: 40px;
-    padding: 30px 50px;
-    background-image: url(../img/team-bg.jpg);
-    background-position: center;
-    background-size: cover;
-    .title {
-        color: $main;
-        font-weight: $book;
-        text-transform: uppercase;
-        text-indent: 30px;
-        font-size: 30px;
-        .bolder {
-            font-weight: $bold;
-            text-indent: 0 !important;
-            font-size: 50px;
-        }
-    }
-
-    .grid {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 60px 0;
-        .item {
-            width: 15%;
-            margin: 5px 3%;
-            .image {
-                width: 100%;
-                text-align: center;
-                img {
-                    width: 100%;
-                    max-width: 180px;
-                    border-radius: 12px;
-                }
-            }
-
-            .desc {
-                text-align: center;
-                color: $main;
-                .name {
-                    margin: 5px 0;
-                }
-                .phone {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 12px;
-                    font-weight: $book;
-                    img {
-                        width: 20px;
-                        margin-right: 5px;
-                    }
-                    a {
-                        color: $main;
-                        transition: all 0.3s;
-                        &:hover {
-                            opacity: 0.7;
-                        }
-                    }
-                }
-            }
         }
     }
 }
@@ -97,5 +32,142 @@
 @media screen and (max-width: 767px) {
     .about-container {
         padding: 255px 20px 150px 20px;
+    }
+
+    .meet-the-team {
+        min-height: 40px;
+        padding: 60px 50px;
+        background-image: url(../img/team-bg.jpg);
+        background-position: center;
+        background-size: cover;
+        .title {
+            color: $main;
+            font-weight: $book;
+            text-transform: uppercase;
+            text-indent: 30px;
+            font-size: 30px;
+            .bolder {
+                font-weight: $bold;
+                text-indent: 0 !important;
+                font-size: 50px;
+            }
+        }
+
+        .grid {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0px 0;
+            padding: 30px 0;
+            flex-wrap: wrap;
+            flex-direction: row;
+            .item {
+                flex: 0 0 48%;
+                margin: 10px 0;
+                .image {
+                    width: 100%;
+                    text-align: center;
+                    img {
+                        width: 100%;
+                        max-width: 180px;
+                        border-radius: 12px;
+                    }
+                }
+
+                .desc {
+                    text-align: center;
+                    color: $main;
+                    .name {
+                        margin: 5px 0;
+                    }
+                    .phone {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 14px;
+                        font-weight: $book;
+                        img {
+                            width: 20px;
+                            margin-right: 5px;
+                        }
+                        a {
+                            color: $main;
+                            transition: all 0.3s;
+                            &:hover {
+                                opacity: 0.7;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .meet-the-team {
+        min-height: 40px;
+        padding: 30px 50px;
+        background-image: url(../img/team-bg.jpg);
+        background-position: center;
+        background-size: cover;
+        .title {
+            color: $main;
+            font-weight: $book;
+            text-transform: uppercase;
+            text-indent: 30px;
+            font-size: 30px;
+            .bolder {
+                font-weight: $bold;
+                text-indent: 0 !important;
+                font-size: 50px;
+            }
+        }
+
+        .grid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 60px 0;
+            .item {
+                width: 15%;
+                margin: 5px 3%;
+                .image {
+                    width: 100%;
+                    text-align: center;
+                    img {
+                        width: 100%;
+                        max-width: 180px;
+                        border-radius: 12px;
+                    }
+                }
+
+                .desc {
+                    text-align: center;
+                    color: $main;
+                    .name {
+                        margin: 5px 0;
+                    }
+                    .phone {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 12px;
+                        font-weight: $book;
+                        img {
+                            width: 20px;
+                            margin-right: 5px;
+                        }
+                        a {
+                            color: $main;
+                            transition: all 0.3s;
+                            &:hover {
+                                opacity: 0.7;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
