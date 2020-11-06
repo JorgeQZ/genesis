@@ -6,7 +6,6 @@ get_header();
 $term = get_queried_object();
 $iconos = get_field('iconos', $term);
 $color = get_field('color_de_desarrollo', $term);
-
  if( $term->taxonomy == 'categorias-desarrollos'):
 ?>
 
@@ -73,9 +72,61 @@ path {
     </div>
 </div>
 
+
+
 <div class="video-container">
     <?php echo get_field('banner', $term); ?>
 </div>
+<?php
+ $args = array(
+    'posts_per_page' => -1,
+    'post_type' => 'departamento',
+    'post_status'   => 'publish',
+    'meta_key' => 'tipo',
+    'orderby' => 'meta_value',
+    'order' => 'ASC', //setting order direction
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'categorias-desarrollos',
+            'field'  => 'name',
+            'terms' => $term->name
+        )
+    )
+);
+
+$query = new WP_Query($args);
+$posts_queried = array();
+$types_queried = array();
+if($query->have_posts()):
+    while($query->have_posts()):
+        $query->the_post();
+
+        array_push(
+            $posts_queried,
+            array(
+                'ID' => get_the_ID(),
+                'tipo' => get_field('tipo')
+            )
+        );
+
+        array_push($types_queried,get_field('tipo'));
+
+    endwhile;
+    wp_reset_postdata();
+endif;
+
+$types_queried = array_unique($types_queried);
+foreach ($types_queried as $index => $tipo) {
+    echo $tipo.'<br>';
+    foreach ($posts_queried as $key => $value) {
+        if($tipo == $value['tipo']):
+            echo $key.$value['ID'].$value['tipo'].'<br>';
+        endif;
+    }
+    echo'<br>';
+}
+
+?>
 
 <div class="upper-container">
     <div class="container">
