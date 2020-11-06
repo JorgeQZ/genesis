@@ -132,57 +132,6 @@
     }
 }
 
-// SVG
-svg {
-    path {
-        fill: #bbbbbb;
-        cursor: pointer;
-        transform-origin: center center;
-        transform-box: fill-box;
-        stroke-width: 1;
-    }
-    g {
-        transform-origin: center center;
-        transform-box: fill-box;
-        &.selected {
-            transition: all 0.2s ease-in-out;
-
-            &:hover {
-                filter: url(#shadow);
-            }
-
-            #MX- {
-                &BCS,
-                &JAL,
-                &MOR,
-                &MEX,
-                &GUA {
-                    fill: $main;
-                    transition: all 0.3s ease-in-out;
-
-                    stroke: transparent;
-                    &:hover {
-                        stroke: white;
-                    }
-                }
-            }
-        }
-
-        &.active {
-            filter: url(#shadow);
-            #MX- {
-                &BCS,
-                &JAL,
-                &MOR,
-                &MEX,
-                &GUA {
-                    stroke: white;
-                }
-            }
-        }
-    }
-}
-
 #MX- {
     &BCN,
     &CHH,
@@ -203,4 +152,63 @@ svg {
     &GRO {
         fill: #d1d1d1;
     }
+}
+
+
+// SVG
+svg {
+    path {
+        fill: #bbbbbb;
+        cursor: pointer;
+        transform-origin: center center;
+        transform-box: fill-box;
+        stroke-width: 1;
+
+        &.selected {
+            transition: all 0.2s ease-in-out;
+            fill: $main !important;
+            transition: all 0.3s ease-in-out;
+            stroke: transparent;
+
+            &:hover {
+                filter: url(#shadow);
+                stroke: white;
+            }
+
+        }
+
+        &.active {
+            filter: url(#shadow);
+            stroke: white;
+        }
+    }
+    /*
+    g {
+        transform-origin: center center;
+        transform-box: fill-box;
+        &.selected {
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                filter: url(#shadow);
+            }
+
+            path{
+                fill: $main;
+                transition: all 0.3s ease-in-out;
+                stroke: transparent;
+                &:hover {
+                    stroke: white;
+                }
+            }
+        }
+
+        &.active {
+            filter: url(#shadow);
+            path{
+                stroke: white;
+            }
+        }
+    }
+    */
 }

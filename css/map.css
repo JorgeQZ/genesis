@@ -210,6 +210,46 @@
           transform: translateX(0.5em);
 }
 
+#MX-BCN, #MX-CHH, #MX-SIN, #MX-NEL, #MX-ZAC, #MX-MIC, #MX-OAX, #MX-YUC, #MX-TAB, #MX-HID {
+  fill: #959595;
+}
+
+#MX-DUR, #MX-VER, #MX-CAM, #MX-GRO {
+  fill: #d1d1d1;
+}
+
+svg {
+  /*
+    g {
+        transform-origin: center center;
+        transform-box: fill-box;
+        &.selected {
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                filter: url(#shadow);
+            }
+
+            path{
+                fill: $main;
+                transition: all 0.3s ease-in-out;
+                stroke: transparent;
+                &:hover {
+                    stroke: white;
+                }
+            }
+        }
+
+        &.active {
+            filter: url(#shadow);
+            path{
+                stroke: white;
+            }
+        }
+    }
+    */
+}
+
 svg path {
   fill: #bbbbbb;
   cursor: pointer;
@@ -219,46 +259,23 @@ svg path {
   stroke-width: 1;
 }
 
-svg g {
-  -webkit-transform-origin: center center;
-          transform-origin: center center;
-  transform-box: fill-box;
-}
-
-svg g.selected {
+svg path.selected {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-}
-
-svg g.selected:hover {
-  -webkit-filter: url(#shadow);
-          filter: url(#shadow);
-}
-
-svg g.selected #MX-BCS, svg g.selected #MX-JAL, svg g.selected #MX-MOR, svg g.selected #MX-MEX, svg g.selected #MX-GUA {
-  fill: #066881;
+  fill: #066881 !important;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   stroke: transparent;
 }
 
-svg g.selected #MX-BCS:hover, svg g.selected #MX-JAL:hover, svg g.selected #MX-MOR:hover, svg g.selected #MX-MEX:hover, svg g.selected #MX-GUA:hover {
-  stroke: white;
-}
-
-svg g.active {
+svg path.selected:hover {
   -webkit-filter: url(#shadow);
           filter: url(#shadow);
-}
-
-svg g.active #MX-BCS, svg g.active #MX-JAL, svg g.active #MX-MOR, svg g.active #MX-MEX, svg g.active #MX-GUA {
   stroke: white;
 }
 
-#MX-BCN, #MX-CHH, #MX-SIN, #MX-NEL, #MX-ZAC, #MX-MIC, #MX-OAX, #MX-YUC, #MX-TAB, #MX-HID {
-  fill: #959595;
-}
-
-#MX-DUR, #MX-VER, #MX-CAM, #MX-GRO {
-  fill: #d1d1d1;
+svg path.active {
+  -webkit-filter: url(#shadow);
+          filter: url(#shadow);
+  stroke: white;
 }

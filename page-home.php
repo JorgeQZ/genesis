@@ -5,7 +5,9 @@
  */
 
 
- get_header();
+    get_header();
+    $seccion_caracteristicas = get_field('seccion_caracteristicas');	
+
 ?>
 
 <!-- Banner -->
@@ -51,6 +53,22 @@
 </div><!-- Home Hero -->
 
 <!-- Mini Banner Ads -->
+<?php if(have_rows('banners')): ?>
+    <div class="owl-carousel owl-theme mini-banner-slider">
+        <?php while(have_rows('banners')): the_row(); 
+            $informacion = get_sub_field('informacion');
+            $imagen = get_sub_field('imagen');
+        ?>
+
+        <div class="item"  style="background-image: url(<?php the_sub_field('imagen'); ?>);">
+            <?php the_sub_field('informacion'); ?>
+        </div>
+
+        <?php endwhile; ?>
+    </div>
+<?php endif; ?>
+
+<!--
 <div class="owl-carousel owl-theme mini-banner-slider">
     <div class="item">
         <div class="bold-title">
@@ -76,7 +94,9 @@
             desde $2.5 millones
         </div>
     </div>
-</div><!-- Mini Banner Ads -->
+</div>
+-->
+<!-- Mini Banner Ads -->
 
 <!-- Grid Departments -->
 <div class="grid-dept-container">
@@ -242,6 +262,34 @@
 
         <div class="cont">
             <div class="grid">
+
+
+            <?php
+            if( have_rows('seccion_caracteristicas') ): while ( have_rows('seccion_caracteristicas') ) : the_row(); 
+                if( have_rows('caracteristicas') ): while ( have_rows('caracteristicas') ) : the_row(); 
+                    $imagen = get_sub_field('imagen');
+                    $titulo = get_sub_field('titulo');
+                    $descripcion = get_sub_field('descripcion');
+                ?>
+
+                    <div class="item">
+                        <img src="<?php the_sub_field('imagen'); ?>" alt="">
+                        <div class="content">
+                            <div class="min-title">
+                                <?php the_sub_field('titulo'); ?>
+                            </div>
+                            <div class="text">
+                                <?php the_sub_field('descripcion'); ?>
+                            </div>
+                        </div>
+                    </div>
+
+                <?php
+                endwhile; endif;
+            endwhile; endif;
+            ?>
+
+            <!--
                 <div class="item">
                     <img src="<?php echo get_template_directory_uri().'/img/icon-residencias.png' ?>" alt="">
                     <div class="content">
@@ -277,13 +325,15 @@
                             una excelente organización
                         </div>
                     </div>
-
-
                 </div>
+            -->
             </div>
 
             <div class="video">
+                <?php echo $seccion_caracteristicas['video']; ?>	
+            <!--
                 <iframe src="https://www.youtube.com/embed/1WTqnmMNKE8?start=0&modestbranding=1&showinfo=0&rel=0&cc_load_policy=1&iv_load_policy=3&theme=light&fs=0&color=white&autohide=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            -->
             </div>
 
         </div>
