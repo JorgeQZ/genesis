@@ -22,17 +22,23 @@
 .map-container {
     background-image: url(../img/map-bg.jpg);
     background-position: center;
-    height: 100vh;
-    max-height: 600px;
+    //height: 100vh;
+    //max-height: 600px;
     padding: 50px 60px;
     position: relative;
 
     .container {
-        max-width: 1280px;
+        //max-width: 1280px;
         margin: 0 auto;
         display: flex;
         .column {
-            flex: 1 0 40%;
+            //flex: 1 0 40%;
+            &:first-child{
+                width: 35%;
+            }
+            &:last-child{
+                width: 65%;
+            }
             .title {
                 color: $alt;
                 text-transform: uppercase;
@@ -211,4 +217,108 @@ svg {
         }
     }
     */
+}
+
+@media screen and (min-width: 768px) and (max-width: 1149px) {
+
+
+    .map-container{
+        padding: 50px 20px;
+        .container{
+            .column{
+                .data-points{
+                    .item{
+                        .state{
+                            margin-left: 2em;
+                            font-size: 20px;
+                        }
+                        ul {
+                            li {
+                                margin-left: 4em;
+                                font-size: 17px;
+                            }
+                        }
+                    }
+                    &.active {
+                        .item {
+                            ul {
+                                li {
+                                    transform: translateX(-200px);
+    
+                                    @for $i from 1 through 10 {
+                                        &:nth-child(#{$i}n) {
+                                            animation-delay: #{$i * 0.15}s;
+                                            margin-left: #{$i * 0.75 + 4}em;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 767px) {
+    
+    .map-container{
+        padding: 50px 20px;
+        .container{
+            flex-direction: column;
+            .column{
+                //flex: 1 0 100%;
+                &:first-child{
+                    width: 100%;
+                }
+                &:last-child{
+                    width: 100%;
+                }
+                .data-points{
+                    top: 30%;
+                    .item{
+                        .state{
+                            margin-left: 1em;
+                            font-size: 18px;
+                        }
+                        ul {
+                            li {
+                                margin-left: 2em;
+                                font-size: 15px;
+    
+                                &:before {
+                                    width: 100px;
+                                }
+                            }
+                        }
+                    }
+                    &.active {
+                        .item {
+                            ul {
+                                li {
+                                    transform: translateX(-100px);
+    
+                                    @for $i from 1 through 10 {
+                                        &:nth-child(#{$i}n) {
+                                            animation-delay: #{$i * 0.15}s;
+                                            margin-left: #{$i * 0.75 + 2}em;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &:last-child{
+                    margin-top: 300px;
+                }
+            }
+        }
+    }
+
 }
