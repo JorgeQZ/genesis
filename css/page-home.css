@@ -26,12 +26,15 @@
   text-transform: uppercase;
   font-size: 40px;
   color: #066881;
-  background-image: url(../img/mini-banner.jpg);
   background-size: cover;
   background-position: center;
 }
 
-.mini-banner-slider .item .bold-title {
+.mini-banner-slider .item p {
+  margin: 0;
+}
+
+.mini-banner-slider .item p strong {
   font-weight: 700;
 }
 

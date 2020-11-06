@@ -21,13 +21,13 @@
         text-transform: uppercase;
         font-size: 40px;
         color: $main;
-        background-image: url(../img/mini-banner.jpg);
         background-size: cover;
         background-position: center;
-        .bold-title {
-            font-weight: $bold;
-        }
-        .title {
+        p{
+            margin: 0;
+            strong{
+                font-weight: $bold;
+            }
         }
     }
     &.owl-theme {
