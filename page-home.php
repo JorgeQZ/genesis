@@ -8,6 +8,7 @@
     get_header();
     $seccion_principal = get_field('seccion_principal');	
     $seccion_caracteristicas = get_field('seccion_caracteristicas');	
+    $seccion_quienes_somos = get_field('seccion_quienes_somos');	
 ?>
 
 <!-- Banner -->
@@ -366,13 +367,15 @@
                         quiénes somos
                     </span>
                 </div>
-                <div class="focus" data-text="GÉNESIS CAPITAL">GÉNESIS CAPITAL</div>
+                <div class="focus" data-text="GÉNESIS CAPITAL"> <?php echo $seccion_quienes_somos['titulo']; ?> </div>
             </div>
             <div class="text">
-                Somos una desarrolladora que nace bajo la premisa de dar solidez a proyectos residenciales, corporativos y comerciales que se rigen bajo los más estrictos estándares de calidad. Por ello nuestro equipo está conformado por expertos del sector que cuentan con más de 15 años de experiencia, generando propuestas de vanguardia y reafirmando nuestro compromiso con la calidad, el diseño y la exclusividad.
+                <?php echo $seccion_quienes_somos['descripcion']; ?>
             </div>
             <div class="vermas">
-                Ver más
+                <a href="<?php echo $seccion_quienes_somos['enlace']; ?>">
+                    Ver más
+                </a>
             </div>
         </div>
     </div>

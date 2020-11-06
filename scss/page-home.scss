@@ -747,6 +747,13 @@
                     &:before {
                         left: 0;
                     }
+                    a{
+                        color: $main;
+                    }
+                }
+                a{
+                    color: white;
+                    transition: all .2s;
                 }
             }
         }

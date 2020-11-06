@@ -913,6 +913,16 @@
   left: 0;
 }
 
+.about-container .container .content .vermas:hover a {
+  color: #066881;
+}
+
+.about-container .container .content .vermas a {
+  color: white;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
 .video-container {
   background-image: url(../img/video-bg.jpg);
   background-size: contain;
