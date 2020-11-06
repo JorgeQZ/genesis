@@ -1,8 +1,51 @@
 @import "variables";
 
 .home-banner {
-    img {
-        width: 100%;
+    .cont-size{
+        position: relative;
+        display: flex;
+        align-items: center;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        img {
+            width: 100%;
+        }
+        .cont-info{
+            position: absolute;
+            width: 50%;
+            margin-bottom: 60px;
+            h1{
+                text-transform: uppercase;
+                font-size: 36px;
+                color: #066881;
+                margin: 0;
+                margin-left: 4%;
+                strong{
+                    font-size: 42px;
+                    font-weight: $bold;
+                }
+            }
+            ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                margin-top: 14%;
+                display: inline-block;
+                li{
+                    background-color: #00596e;
+                    color: white;
+                    padding: 7px 30px;
+                    text-transform: uppercase;
+                    text-align: center;
+                    font-size: 20px;
+                    margin-bottom: 23px;
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
     }
 }
 .hero-banner {
@@ -829,6 +872,28 @@
     }
 }
 
+@media screen and (min-width: 1600px) {
+
+    .home-banner {
+        .cont-size{
+            .cont-info{
+                h1{
+                    font-size: 50px;
+                    strong{
+                        font-size: 56px;
+                    }
+                }
+                ul{
+                    li{
+                        font-size: 26px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
 @media screen and (min-width: 768px) and (max-width: 1279px) {
     .about-container {
         background-size: cover !important;
@@ -869,6 +934,33 @@
 }
 
 @media screen and (max-width: 767px) {
+
+    .home-banner {
+        .cont-size{
+            height: 400px;
+            img {
+                visibility: hidden;
+            }
+            .cont-info{
+                width: 100%;
+                margin-bottom: 60px;
+                h1{
+                    font-size: 26px;
+                    margin-left: 4%;
+                    strong{
+                        font-size: 32px;
+                    }
+                }
+                ul{
+                    margin-top: 14%;
+                    li{
+                        font-size: 16px;
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
 
     .mini-banner-slider {
         .item {

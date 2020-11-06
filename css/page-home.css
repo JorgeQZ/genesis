@@ -1,5 +1,59 @@
-.home-banner img {
+.home-banner .cont-size {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-banner .cont-size img {
   width: 100%;
+}
+
+.home-banner .cont-size .cont-info {
+  position: absolute;
+  width: 50%;
+  margin-bottom: 60px;
+}
+
+.home-banner .cont-size .cont-info h1 {
+  text-transform: uppercase;
+  font-size: 36px;
+  color: #066881;
+  margin: 0;
+  margin-left: 4%;
+}
+
+.home-banner .cont-size .cont-info h1 strong {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.home-banner .cont-size .cont-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 14%;
+  display: inline-block;
+}
+
+.home-banner .cont-size .cont-info ul li {
+  background-color: #00596e;
+  color: white;
+  padding: 7px 30px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 23px;
+}
+
+.home-banner .cont-size .cont-info ul li:last-child {
+  margin-bottom: 0;
 }
 
 .hero-banner {
@@ -1000,6 +1054,18 @@
   font-size: 14px;
 }
 
+@media screen and (min-width: 1600px) {
+  .home-banner .cont-size .cont-info h1 {
+    font-size: 50px;
+  }
+  .home-banner .cont-size .cont-info h1 strong {
+    font-size: 56px;
+  }
+  .home-banner .cont-size .cont-info ul li {
+    font-size: 26px;
+  }
+}
+
 @media screen and (min-width: 768px) and (max-width: 1279px) {
   .about-container {
     background-size: cover !important;
@@ -1027,6 +1093,30 @@
 }
 
 @media screen and (max-width: 767px) {
+  .home-banner .cont-size {
+    height: 400px;
+  }
+  .home-banner .cont-size img {
+    visibility: hidden;
+  }
+  .home-banner .cont-size .cont-info {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .home-banner .cont-size .cont-info h1 {
+    font-size: 26px;
+    margin-left: 4%;
+  }
+  .home-banner .cont-size .cont-info h1 strong {
+    font-size: 32px;
+  }
+  .home-banner .cont-size .cont-info ul {
+    margin-top: 14%;
+  }
+  .home-banner .cont-size .cont-info ul li {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
   .mini-banner-slider .item {
     font-size: 21px;
     padding: 30px 20px;

@@ -6,8 +6,8 @@
 
 
     get_header();
+    $seccion_principal = get_field('seccion_principal');	
     $seccion_caracteristicas = get_field('seccion_caracteristicas');	
-
 ?>
 
 <!-- Banner -->
@@ -49,7 +49,22 @@
 
 <!-- Home Hero -->
 <div class="home-banner">
-    <img src="<?php echo get_template_directory_uri().'/img/home-banner.jpg' ?>" alt="">
+    <div class="cont-size" style="background-image: url('<?php echo $seccion_principal['imagen']; ?>')">
+        <img src="<?php echo $seccion_principal['imagen']; ?>" alt="">
+        <div class="cont-info">
+            <?php echo $seccion_principal['informacion']; ?>
+            <!--
+            <h1>Te damos más</h1>
+            <h1> <strong> por tu dinero. </strong></h1>
+            <ul>
+                <li>Estado de méxico</li>
+                <li>Los cabos, bcs</li>
+                <li>Guadalajara, Jal</li>
+                <li>Irapuato, gto</li>
+            </ul>
+            -->
+        </div>
+    </div>
 </div><!-- Home Hero -->
 
 <!-- Mini Banner Ads -->
