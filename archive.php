@@ -6,7 +6,53 @@ get_header();
 $term = get_queried_object();
 $iconos = get_field('iconos', $term);
 $color = get_field('color_de_desarrollo', $term);
- if( $term->taxonomy == 'categorias-desarrollos'):
+
+
+$args = array(
+    'posts_per_page' => -1,
+    'post_type' => 'departamento',
+    'post_status'   => 'publish',
+    'meta_key' => 'tipo',
+    'orderby' => 'meta_value',
+    'order' => 'ASC',
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'categorias-desarrollos',
+            'field'  => 'name',
+            'terms' => $term->name
+        )
+    )
+);
+
+$query = new WP_Query($args);
+$posts_queried = array();
+$types_queried = array();
+if($query->have_posts()):
+    while($query->have_posts()):
+        $query->the_post();
+
+        array_push(
+            $posts_queried,
+            array(
+                'ID' => get_the_ID(),
+                'tipo' => get_field('tipo'),
+                'recamaras' => get_field('recamaras')
+            )
+        );
+
+        array_push($types_queried,get_field('tipo'));
+
+    endwhile;
+    wp_reset_postdata();
+endif;
+
+$types_queried = array_unique($types_queried);
+
+usort($posts_queried, function($a, $b) {
+    return $a['recamaras'] <=> $b['recamaras'];
+});
+
+if( $term->taxonomy == 'categorias-desarrollos'):
 ?>
 
 <style>
@@ -71,63 +117,9 @@ path {
         <img src="<?php echo get_template_directory_uri().'/img/img-1.jpg';?>" alt="" id="img_light-box">
     </div>
 </div>
-
-
-
 <div class="video-container">
     <?php echo get_field('banner', $term); ?>
 </div>
-<?php
- $args = array(
-    'posts_per_page' => -1,
-    'post_type' => 'departamento',
-    'post_status'   => 'publish',
-    'meta_key' => 'tipo',
-    'orderby' => 'meta_value',
-    'order' => 'ASC', //setting order direction
-    'tax_query' => array(
-        array(
-            'taxonomy' => 'categorias-desarrollos',
-            'field'  => 'name',
-            'terms' => $term->name
-        )
-    )
-);
-
-$query = new WP_Query($args);
-$posts_queried = array();
-$types_queried = array();
-if($query->have_posts()):
-    while($query->have_posts()):
-        $query->the_post();
-
-        array_push(
-            $posts_queried,
-            array(
-                'ID' => get_the_ID(),
-                'tipo' => get_field('tipo')
-            )
-        );
-
-        array_push($types_queried,get_field('tipo'));
-
-    endwhile;
-    wp_reset_postdata();
-endif;
-
-$types_queried = array_unique($types_queried);
-foreach ($types_queried as $index => $tipo) {
-    echo $tipo.'<br>';
-    foreach ($posts_queried as $key => $value) {
-        if($tipo == $value['tipo']):
-            echo $key.$value['ID'].$value['tipo'].'<br>';
-        endif;
-    }
-    echo'<br>';
-}
-
-?>
-
 <div class="upper-container">
     <div class="container">
         <div class="middle-description">
@@ -155,7 +147,6 @@ foreach ($types_queried as $index => $tipo) {
                     <?php
                     $image_id = get_field('imagen', $term);
                     $image_carr = wp_get_attachment_image_src( $image_id, 'project-image'); ?>
-
                     <img src="<?php echo $image_carr[0]  ?>" alt="">
                 </div>
 
@@ -222,34 +213,61 @@ foreach ($types_queried as $index => $tipo) {
                 </div>
             </div>
 
-            <!-- Recamaras -->
+            <!-- Rooms -->
             <div class="rooms-container">
-                <!-- tabs -->
+
+                <!-- Tabs -->
                 <div class="tabs-left">
-                    <div class="title">
-                        prototitpos
-                    </div>
+                    <div class="title">prototipos</div>
                     <div class="tab-container">
-                        <div data-id="type-a" class="room-tab tab active">Tipo A</div>
-                        <div data-id="type-b" class="room-tab tab">Tipo B</div>
-                        <div data-id="type-c" class="room-tab tab">Tipo C</div>
-                        <div data-id="type-d" class="room-tab tab">Tipo D</div>
-                        <div data-id="type-e" class="room-tab tab">Tipo E</div>
+
+                        <?php $aux = 0; foreach ($types_queried as $index => $tipo) :?>
+                        <div data-id="type-<?php echo $tipo; ?>" class="room-tab tab <?php if($aux == 0) echo 'active' ?>">
+                            Tipo <?php echo $tipo; ?>
+                        </div>
+                        <?php $aux ++; endforeach; ?>
                     </div>
                 </div>
-                <!-- tabs content -->
+                <!-- Tabs -->
+
+
+                <!-- Tabs Content -->
                 <div class="tabs-content">
                     <div class="option-container">
-                        <!-- A -->
-                        <div id="type-a" class="room-type option active">
+                        <?php
+    $aux = 0;
 
+foreach ($types_queried as $index => $tipo) {
+    $aux_option_tab = 0;?>
+
+                        <!-- Type Content -->
+                        <div id="type-<?php echo $tipo?>" class="room-type option <?php if($aux == 0) echo 'active' ?>">
+
+                            <!-- Tabs departemtn -->
                             <div class="option-tabs-container">
-                                <div data-id="type-a-sub-1" class="option-tab active">1 Recámara</div>
-                                <div data-id="type-a-sub-2" class="option-tab">2 Recámaras</div>
-                                <div data-id="type-a-sub-3" class="option-tab">3 Recámaras</div>
+                                <?php
+            foreach ($posts_queried as $key => $value) {
+                if($tipo == $value['tipo']):
+                ?>
+                                <div data-id='type-<?php echo $value['tipo'] ?>-sub-<?php echo get_field('recamaras', $value['ID']) ?>' class="option-tab <?php echo $aux_option_tab.' ';  if($aux_option_tab == 0) echo 'active' ?>">
+                                    <?php echo get_field('recamaras', $value['ID']) ?> Recámara
+                                </div>
+                                <?php
+              $aux++;
+              $aux_option_tab++;
+            endif;
+    } ?>
+
                             </div>
 
-                            <div id="type-a-sub-1" class="sub-option active option-container">
+                            <?php
+    //Option Content
+    $aux = 0;
+    foreach ($posts_queried as $key => $value) {
+        if($tipo == $value['tipo']):
+
+        ?>
+                            <div id="type-<?php echo $value['tipo'] ?>-sub-<?php echo get_field('recamaras', $value['ID']) ?>" class="sub-option <?php if($aux == 0) echo 'active ' ?>option-container">
                                 <div class="column light">
                                     <div class="icon">
                                         <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
@@ -258,14 +276,14 @@ foreach ($types_queried as $index => $tipo) {
                                 </div>
                                 <div class="column">
                                     <div class="title">
-                                        Puerta Tlanepantla A 1
+                                        <?php echo get_the_title( $value['ID'] ); ?>
                                     </div>
                                     <div class="price">
                                         <div class="price-text">
                                             Precios desde:
                                         </div>
                                         <span>
-                                            $3.000.000
+                                            <?php echo get_field('precio', $value['ID'] ); ?>
                                         </span>
                                     </div>
 
@@ -274,8 +292,7 @@ foreach ($types_queried as $index => $tipo) {
                                             <?php get_template_part('template-parts/icons/pin'); ?>
                                         </div>
                                         <div class="desc">
-                                            Av. Sor Juna Inez de la Cruz 312, <br>
-                                            Tlanepantla Estado de Mexico
+                                            <?php echo get_field('direccion', $term); ?>
                                         </div>
                                     </div>
 
@@ -284,14 +301,14 @@ foreach ($types_queried as $index => $tipo) {
                                             <div class="img">
                                                 <?php get_template_part('template-parts/icons/area'); ?>
                                             </div>
-                                            <div class="caption">5,201 m<sup>2</sup></div>
+                                            <div class="caption"> <?php echo get_field('metros', $value['ID'] ); ?> m<sup>2</sup></div>
                                         </div>
                                         <div class="column">
                                             <div class="img">
                                                 <?php get_template_part('template-parts/icons/bath'); ?>
                                             </div>
                                             <div class="caption">
-                                                2.5 baños
+                                                <?php echo get_field('banos', $value['ID'] ); ?> baños
                                             </div>
 
                                         </div>
@@ -300,7 +317,7 @@ foreach ($types_queried as $index => $tipo) {
                                                 <?php get_template_part('template-parts/icons/bed'); ?>
                                             </div>
                                             <div class=" caption">
-                                                3 recamaras
+                                                <?php echo get_field('recamaras', $value['ID'] ); ?> recamaras
                                             </div>
 
                                         </div>
@@ -308,8 +325,7 @@ foreach ($types_queried as $index => $tipo) {
                                             <div class="img">
                                                 <?php get_template_part('template-parts/icons/car'); ?>
                                             </div>
-                                            <div class="caption">
-                                                2 Est.
+                                            <div class="caption"><?php echo get_field('caracteristicas_estacionamiento', $term); ?> Est.
                                             </div>
                                         </div>
                                     </div>
@@ -326,1128 +342,20 @@ foreach ($types_queried as $index => $tipo) {
                                     </div>
                                 </div>
                             </div>
-                            <div id="type-a-sub-2" class="sub-option option-container">
-                                <div class="column light">
-                                    <div class="icon">
-                                        <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
-                                    </div>
-                                    <img src="<?php echo get_template_directory_uri().'/img/result-img.png'; ?>" alt="" class="bed-img">
-                                </div>
-                                <div class="column">
-                                    <div class="title">
-                                        Puerta Tlanepantla A 2
-                                    </div>
-                                    <div class="price">
-                                        <div class="price-text">
-                                            Precios desde:
-                                        </div>
-                                        <span>
-                                            $3.000.000
-                                        </span>
-                                    </div>
-
-                                    <div class="address">
-                                        <div class="pin">
-                                            <img src="<?php echo get_template_directory_uri().'/img/pin-purple.png' ?>" alt="">
-                                        </div>
-                                        <div class="desc">
-                                            Av. Sor Juna Inez de la Cruz 312, <br>
-                                            Tlanepantla Estado de Mexico
-                                        </div>
-                                    </div>
-
-                                    <div class="amenities">
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/area-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">5,201 m<sup>2</sup></div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bath-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2.5 baños
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bed-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                3 recamaras
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/pickup-car-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2 Est.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-amenities">
-                                        <ul>
-                                            <li>juegos infantiles</li>
-                                            <li>palapas con asadores</li>
-                                            <li>áreas verdes</li>
-                                            <li>cancha multiusos</li>
-                                            <li>gym</li>
-                                            <li>salón de usos multiples</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="type-a-sub-3" class="sub-option option-container">
-                                <div class="column light">
-                                    <div class="icon">
-                                        <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
-                                    </div>
-                                    <img src="<?php echo get_template_directory_uri().'/img/result-img.png'; ?>" alt="" class="bed-img">
-                                </div>
-                                <div class="column">
-                                    <div class="title">
-                                        Puerta Tlanepantla A 3
-                                    </div>
-                                    <div class="price">
-                                        <div class="price-text">
-                                            Precios desde:
-                                        </div>
-                                        <span>
-                                            $3.000.000
-                                        </span>
-                                    </div>
-
-                                    <div class="address">
-                                        <div class="pin">
-                                            <img src="<?php echo get_template_directory_uri().'/img/pin-purple.png' ?>" alt="">
-                                        </div>
-                                        <div class="desc">
-                                            Av. Sor Juna Inez de la Cruz 312, <br>
-                                            Tlanepantla Estado de Mexico
-                                        </div>
-                                    </div>
-
-                                    <div class="amenities">
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/area-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">5,201 m<sup>2</sup></div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bath-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2.5 baños
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bed-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                3 recamaras
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/pickup-car-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2 Est.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-amenities">
-                                        <ul>
-                                            <li>juegos infantiles</li>
-                                            <li>palapas con asadores</li>
-                                            <li>áreas verdes</li>
-                                            <li>cancha multiusos</li>
-                                            <li>gym</li>
-                                            <li>salón de usos multiples</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php
+          $aux++;
+        endif;
+    } ?>
                         </div>
-
-                        <!-- B -->
-                        <div id="type-b" class="room-type option">
-                            <div class="option-tabs-container">
-                                <div data-id="type-b-sub-1" class="option-tab  active">1 Recámara</div>
-                                <div data-id="type-b-sub-2" class="option-tab ">2 Recámaras</div>
-                                <div data-id="type-b-sub-3" class="option-tab ">3 Recámaras</div>
-                            </div>
-
-                            <div id="type-b-sub-1" class="sub-option active option-container">
-                                <div class="column light">
-                                    <div class="icon">
-                                        <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
-                                    </div>
-                                    <img src="<?php echo get_template_directory_uri().'/img/result-img.png'; ?>" alt="" class="bed-img">
-                                </div>
-                                <div class="column">
-                                    <div class="title">
-                                        Puerta Tlanepantla B 1
-                                    </div>
-                                    <div class="price">
-                                        <div class="price-text">
-                                            Precios desde:
-                                        </div>
-                                        <span>
-                                            $3.000.000
-                                        </span>
-                                    </div>
-
-                                    <div class="address">
-                                        <div class="pin">
-                                            <img src="<?php echo get_template_directory_uri().'/img/pin-purple.png' ?>" alt="">
-                                        </div>
-                                        <div class="desc">
-                                            Av. Sor Juna Inez de la Cruz 312, <br>
-                                            Tlanepantla Estado de Mexico
-                                        </div>
-                                    </div>
-
-                                    <div class="amenities">
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/area-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">5,201 m<sup>2</sup></div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bath-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2.5 baños
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bed-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                3 recamaras
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/pickup-car-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2 Est.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-amenities">
-                                        <ul>
-                                            <li>juegos infantiles</li>
-                                            <li>palapas con asadores</li>
-                                            <li>áreas verdes</li>
-                                            <li>cancha multiusos</li>
-                                            <li>gym</li>
-                                            <li>salón de usos multiples</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="type-b-sub-2" class="sub-option option-container">
-                                <div class="column light">
-                                    <div class="icon">
-                                        <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
-                                    </div>
-                                    <img src="<?php echo get_template_directory_uri().'/img/result-img.png'; ?>" alt="" class="bed-img">
-                                </div>
-                                <div class="column">
-                                    <div class="title">
-                                        Puerta Tlanepantla B 2
-                                    </div>
-                                    <div class="price">
-                                        <div class="price-text">
-                                            Precios desde:
-                                        </div>
-                                        <span>
-                                            $3.000.000
-                                        </span>
-                                    </div>
-
-                                    <div class="address">
-                                        <div class="pin">
-                                            <img src="<?php echo get_template_directory_uri().'/img/pin-purple.png' ?>" alt="">
-                                        </div>
-                                        <div class="desc">
-                                            Av. Sor Juna Inez de la Cruz 312, <br>
-                                            Tlanepantla Estado de Mexico
-                                        </div>
-                                    </div>
-
-                                    <div class="amenities">
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/area-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">5,201 m<sup>2</sup></div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bath-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2.5 baños
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bed-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                3 recamaras
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/pickup-car-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2 Est.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-amenities">
-                                        <ul>
-                                            <li>juegos infantiles</li>
-                                            <li>palapas con asadores</li>
-                                            <li>áreas verdes</li>
-                                            <li>cancha multiusos</li>
-                                            <li>gym</li>
-                                            <li>salón de usos multiples</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="type-b-sub-3" class="sub-option option-container">
-                                <div class="column light">
-                                    <div class="icon">
-                                        <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
-                                    </div>
-                                    <img src="<?php echo get_template_directory_uri().'/img/result-img.png'; ?>" alt="" class="bed-img">
-                                </div>
-                                <div class="column">
-                                    <div class="title">
-                                        Puerta Tlanepantla B 3
-                                    </div>
-                                    <div class="price">
-                                        <div class="price-text">
-                                            Precios desde:
-                                        </div>
-                                        <span>
-                                            $3.000.000
-                                        </span>
-                                    </div>
-
-                                    <div class="address">
-                                        <div class="pin">
-                                            <img src="<?php echo get_template_directory_uri().'/img/pin-purple.png' ?>" alt="">
-                                        </div>
-                                        <div class="desc">
-                                            Av. Sor Juna Inez de la Cruz 312, <br>
-                                            Tlanepantla Estado de Mexico
-                                        </div>
-                                    </div>
-
-                                    <div class="amenities">
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/area-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">5,201 m<sup>2</sup></div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bath-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2.5 baños
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bed-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                3 recamaras
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/pickup-car-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2 Est.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-amenities">
-                                        <ul>
-                                            <li>juegos infantiles</li>
-                                            <li>palapas con asadores</li>
-                                            <li>áreas verdes</li>
-                                            <li>cancha multiusos</li>
-                                            <li>gym</li>
-                                            <li>salón de usos multiples</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- C -->
-                        <div id="type-c" class="room-type option">
-                            <div class="option-tabs-container">
-                                <div data-id="type-c-sub-1" class="option-tab active">1 Recámara</div>
-                                <div data-id="type-c-sub-2" class="option-tab">1 Recámara</div>
-                                <div data-id="type-c-sub-3" class="option-tab">1 Recámara</div>
-                            </div>
-
-                            <div id="type-c-sub-1" class="sub-option active option-container">
-                                <div class="column light">
-                                    <div class="icon">
-                                        <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
-                                    </div>
-                                    <img src="<?php echo get_template_directory_uri().'/img/result-img.png'; ?>" alt="" class="bed-img">
-                                </div>
-                                <div class="column">
-                                    <div class="title">
-                                        Puerta Tlanepantla C 1
-                                    </div>
-                                    <div class="price">
-                                        <div class="price-text">
-                                            Precios desde:
-                                        </div>
-                                        <span>
-                                            $3.000.000
-                                        </span>
-                                    </div>
-
-                                    <div class="address">
-                                        <div class="pin">
-                                            <img src="<?php echo get_template_directory_uri().'/img/pin-purple.png' ?>" alt="">
-                                        </div>
-                                        <div class="desc">
-                                            Av. Sor Juna Inez de la Cruz 312, <br>
-                                            Tlanepantla Estado de Mexico
-                                        </div>
-                                    </div>
-
-                                    <div class="amenities">
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/area-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">5,201 m<sup>2</sup></div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bath-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2.5 baños
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bed-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                3 recamaras
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/pickup-car-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2 Est.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-amenities">
-                                        <ul>
-                                            <li>juegos infantiles</li>
-                                            <li>palapas con asadores</li>
-                                            <li>áreas verdes</li>
-                                            <li>cancha multiusos</li>
-                                            <li>gym</li>
-                                            <li>salón de usos multiples</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="type-c-sub-2" class="sub-option option-container">
-                                <div class="column light">
-                                    <div class="icon">
-                                        <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
-                                    </div>
-                                    <img src="<?php echo get_template_directory_uri().'/img/result-img.png'; ?>" alt="" class="bed-img">
-                                </div>
-                                <div class="column">
-                                    <div class="title">
-                                        Puerta Tlanepantla C 2
-                                    </div>
-                                    <div class="price">
-                                        <div class="price-text">
-                                            Precios desde:
-                                        </div>
-                                        <span>
-                                            $3.000.000
-                                        </span>
-                                    </div>
-
-                                    <div class="address">
-                                        <div class="pin">
-                                            <img src="<?php echo get_template_directory_uri().'/img/pin-purple.png' ?>" alt="">
-                                        </div>
-                                        <div class="desc">
-                                            Av. Sor Juna Inez de la Cruz 312, <br>
-                                            Tlanepantla Estado de Mexico
-                                        </div>
-                                    </div>
-
-                                    <div class="amenities">
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/area-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">5,201 m<sup>2</sup></div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bath-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2.5 baños
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bed-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                3 recamaras
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/pickup-car-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2 Est.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-amenities">
-                                        <ul>
-                                            <li>juegos infantiles</li>
-                                            <li>palapas con asadores</li>
-                                            <li>áreas verdes</li>
-                                            <li>cancha multiusos</li>
-                                            <li>gym</li>
-                                            <li>salón de usos multiples</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="type-c-sub-3" class="sub-option option-container">
-                                <div class="column light">
-                                    <div class="icon">
-                                        <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
-                                    </div>
-                                    <img src="<?php echo get_template_directory_uri().'/img/result-img.png'; ?>" alt="" class="bed-img">
-                                </div>
-                                <div class="column">
-                                    <div class="title">
-                                        Puerta Tlanepantla C 3
-                                    </div>
-                                    <div class="price">
-                                        <div class="price-text">
-                                            Precios desde:
-                                        </div>
-                                        <span>
-                                            $3.000.000
-                                        </span>
-                                    </div>
-
-                                    <div class="address">
-                                        <div class="pin">
-                                            <img src="<?php echo get_template_directory_uri().'/img/pin-purple.png' ?>" alt="">
-                                        </div>
-                                        <div class="desc">
-                                            Av. Sor Juna Inez de la Cruz 312, <br>
-                                            Tlanepantla Estado de Mexico
-                                        </div>
-                                    </div>
-
-                                    <div class="amenities">
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/area-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">5,201 m<sup>2</sup></div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bath-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2.5 baños
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bed-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                3 recamaras
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/pickup-car-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2 Est.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-amenities">
-                                        <ul>
-                                            <li>juegos infantiles</li>
-                                            <li>palapas con asadores</li>
-                                            <li>áreas verdes</li>
-                                            <li>cancha multiusos</li>
-                                            <li>gym</li>
-                                            <li>salón de usos multiples</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- D -->
-                        <div id="type-d" class="room-type option">
-                            <div class="option-tabs-container">
-                                <div data-id="type-d-sub-1" class="option-tab active">1 Recámara</div>
-                                <div data-id="type-d-sub-2" class="option-tab">1 Recámara</div>
-                                <div data-id="type-d-sub-3" class="option-tab">1 Recámara</div>
-                            </div>
-
-                            <div id="type-d-sub-1" class="sub-option active option-container">
-                                <div class="column light">
-                                    <div class="icon">
-                                        <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
-                                    </div>
-                                    <img src="<?php echo get_template_directory_uri().'/img/result-img.png'; ?>" alt="" class="bed-img">
-                                </div>
-                                <div class="column">
-                                    <div class="title">
-                                        Puerta Tlanepantla D 1
-                                    </div>
-                                    <div class="price">
-                                        <div class="price-text">
-                                            Precios desde:
-                                        </div>
-                                        <span>
-                                            $3.000.000
-                                        </span>
-                                    </div>
-
-                                    <div class="address">
-                                        <div class="pin">
-                                            <img src="<?php echo get_template_directory_uri().'/img/pin-purple.png' ?>" alt="">
-                                        </div>
-                                        <div class="desc">
-                                            Av. Sor Juna Inez de la Cruz 312, <br>
-                                            Tlanepantla Estado de Mexico
-                                        </div>
-                                    </div>
-
-                                    <div class="amenities">
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/area-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">5,201 m<sup>2</sup></div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bath-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2.5 baños
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bed-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                3 recamaras
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/pickup-car-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2 Est.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-amenities">
-                                        <ul>
-                                            <li>juegos infantiles</li>
-                                            <li>palapas con asadores</li>
-                                            <li>áreas verdes</li>
-                                            <li>cancha multiusos</li>
-                                            <li>gym</li>
-                                            <li>salón de usos multiples</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="type-d-sub-2" class="sub-option option-container">
-                                <div class="column light">
-                                    <div class="icon">
-                                        <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
-                                    </div>
-                                    <img src="<?php echo get_template_directory_uri().'/img/result-img.png'; ?>" alt="" class="bed-img">
-                                </div>
-                                <div class="column">
-                                    <div class="title">
-                                        Puerta Tlanepantla D 2
-                                    </div>
-                                    <div class="price">
-                                        <div class="price-text">
-                                            Precios desde:
-                                        </div>
-                                        <span>
-                                            $3.000.000
-                                        </span>
-                                    </div>
-
-                                    <div class="address">
-                                        <div class="pin">
-                                            <img src="<?php echo get_template_directory_uri().'/img/pin-purple.png' ?>" alt="">
-                                        </div>
-                                        <div class="desc">
-                                            Av. Sor Juna Inez de la Cruz 312, <br>
-                                            Tlanepantla Estado de Mexico
-                                        </div>
-                                    </div>
-
-                                    <div class="amenities">
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/area-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">5,201 m<sup>2</sup></div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bath-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2.5 baños
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bed-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                3 recamaras
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/pickup-car-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2 Est.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-amenities">
-                                        <ul>
-                                            <li>juegos infantiles</li>
-                                            <li>palapas con asadores</li>
-                                            <li>áreas verdes</li>
-                                            <li>cancha multiusos</li>
-                                            <li>gym</li>
-                                            <li>salón de usos multiples</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="type-d-sub-3" class="sub-option option-container">
-                                <div class="column light">
-                                    <div class="icon">
-                                        <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
-                                    </div>
-                                    <img src="<?php echo get_template_directory_uri().'/img/result-img.png'; ?>" alt="" class="bed-img">
-                                </div>
-                                <div class="column">
-                                    <div class="title">
-                                        Puerta Tlanepantla D 3
-                                    </div>
-                                    <div class="price">
-                                        <div class="price-text">
-                                            Precios desde:
-                                        </div>
-                                        <span>
-                                            $3.000.000
-                                        </span>
-                                    </div>
-
-                                    <div class="address">
-                                        <div class="pin">
-                                            <img src="<?php echo get_template_directory_uri().'/img/pin-purple.png' ?>" alt="">
-                                        </div>
-                                        <div class="desc">
-                                            Av. Sor Juna Inez de la Cruz 312, <br>
-                                            Tlanepantla Estado de Mexico
-                                        </div>
-                                    </div>
-
-                                    <div class="amenities">
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/area-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">5,201 m<sup>2</sup></div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bath-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2.5 baños
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bed-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                3 recamaras
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/pickup-car-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2 Est.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-amenities">
-                                        <ul>
-                                            <li>juegos infantiles</li>
-                                            <li>palapas con asadores</li>
-                                            <li>áreas verdes</li>
-                                            <li>cancha multiusos</li>
-                                            <li>gym</li>
-                                            <li>salón de usos multiples</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- E -->
-                        <div id="type-e" class="room-type option">
-                            <div class="option-tabs-container">
-                                <div data-id="type-e-sub-1" class="option-tab active">1 Recámara</div>
-                                <div data-id="type-e-sub-2" class="option-tab">1 Recámara</div>
-                                <div data-id="type-e-sub-3" class="option-tab">1 Recámara</div>
-                            </div>
-
-                            <div id="type-e-sub-1" class="sub-option active option-container">
-                                <div class="column light">
-                                    <div class="icon">
-                                        <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
-                                    </div>
-                                    <img src="<?php echo get_template_directory_uri().'/img/result-img.png'; ?>" alt="" class="bed-img">
-                                </div>
-                                <div class="column">
-                                    <div class="title">
-                                        Puerta Tlanepantla E 1
-                                    </div>
-                                    <div class="price">
-                                        <div class="price-text">
-                                            Precios desde:
-                                        </div>
-                                        <span>
-                                            $3.000.000
-                                        </span>
-                                    </div>
-
-                                    <div class="address">
-                                        <div class="pin">
-                                            <img src="<?php echo get_template_directory_uri().'/img/pin-purple.png' ?>" alt="">
-                                        </div>
-                                        <div class="desc">
-                                            Av. Sor Juna Inez de la Cruz 312, <br>
-                                            Tlanepantla Estado de Mexico
-                                        </div>
-                                    </div>
-
-                                    <div class="amenities">
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/area-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">5,201 m<sup>2</sup></div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bath-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2.5 baños
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bed-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                3 recamaras
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/pickup-car-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2 Est.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-amenities">
-                                        <ul>
-                                            <li>juegos infantiles</li>
-                                            <li>palapas con asadores</li>
-                                            <li>áreas verdes</li>
-                                            <li>cancha multiusos</li>
-                                            <li>gym</li>
-                                            <li>salón de usos multiples</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="type-e-sub-2" class="sub-option option-container">
-                                <div class="column light">
-                                    <div class="icon">
-                                        <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
-                                    </div>
-                                    <img src="<?php echo get_template_directory_uri().'/img/result-img.png'; ?>" alt="" class="bed-img">
-                                </div>
-                                <div class="column">
-                                    <div class="title">
-                                        Puerta Tlanepantla E 2
-                                    </div>
-                                    <div class="price">
-                                        <div class="price-text">
-                                            Precios desde:
-                                        </div>
-                                        <span>
-                                            $3.000.000
-                                        </span>
-                                    </div>
-
-                                    <div class="address">
-                                        <div class="pin">
-                                            <img src="<?php echo get_template_directory_uri().'/img/pin-purple.png' ?>" alt="">
-                                        </div>
-                                        <div class="desc">
-                                            Av. Sor Juna Inez de la Cruz 312, <br>
-                                            Tlanepantla Estado de Mexico
-                                        </div>
-                                    </div>
-
-                                    <div class="amenities">
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/area-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">5,201 m<sup>2</sup></div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bath-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2.5 baños
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bed-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                3 recamaras
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/pickup-car-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2 Est.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-amenities">
-                                        <ul>
-                                            <li>juegos infantiles</li>
-                                            <li>palapas con asadores</li>
-                                            <li>áreas verdes</li>
-                                            <li>cancha multiusos</li>
-                                            <li>gym</li>
-                                            <li>salón de usos multiples</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="type-e-sub-3" class="sub-option option-container">
-                                <div class="column light">
-                                    <div class="icon">
-                                        <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
-                                    </div>
-                                    <img src="<?php echo get_template_directory_uri().'/img/result-img.png'; ?>" alt="" class="bed-img">
-                                </div>
-                                <div class="column">
-                                    <div class="title">
-                                        Puerta Tlanepantla E 3
-                                    </div>
-                                    <div class="price">
-                                        <div class="price-text">
-                                            Precios desde:
-                                        </div>
-                                        <span>
-                                            $3.000.000
-                                        </span>
-                                    </div>
-
-                                    <div class="address">
-                                        <div class="pin">
-                                            <img src="<?php echo get_template_directory_uri().'/img/pin-purple.png' ?>" alt="">
-                                        </div>
-                                        <div class="desc">
-                                            Av. Sor Juna Inez de la Cruz 312, <br>
-                                            Tlanepantla Estado de Mexico
-                                        </div>
-                                    </div>
-
-                                    <div class="amenities">
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/area-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">5,201 m<sup>2</sup></div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bath-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2.5 baños
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/bed-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                3 recamaras
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="img">
-                                                <img src="<?php echo get_template_directory_uri().'/img/pickup-car-purple.png'; ?>" alt="">
-                                            </div>
-                                            <div class="caption">
-                                                2 Est.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-amenities">
-                                        <ul>
-                                            <li>juegos infantiles</li>
-                                            <li>palapas con asadores</li>
-                                            <li>áreas verdes</li>
-                                            <li>cancha multiusos</li>
-                                            <li>gym</li>
-                                            <li>salón de usos multiples</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+}
+?>
                     </div>
                 </div>
+                <!-- Tabs Content -->
             </div>
+
+            <!-- Rooms -->
         </div>
     </div>
 </div>

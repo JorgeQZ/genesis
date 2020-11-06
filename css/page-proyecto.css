@@ -424,9 +424,9 @@
 }
 
 .middle-description .rooms-container .tabs-content .option-container .option .option-tabs-container .option-tab {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 33.33%;
-          flex: 1 0 33.33%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 33.33%;
+          flex: 0 33.33%;
   background-color: #b23778;
   color: white;
   height: 50px;
