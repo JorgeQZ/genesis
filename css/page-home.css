@@ -416,32 +416,6 @@
   bottom: -60px;
 }
 
-@-webkit-keyframes LiOption {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(-5px);
-            transform: translateX(-5px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-  }
-}
-
-@keyframes LiOption {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(-5px);
-            transform: translateX(-5px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-  }
-}
-
 .filter-container {
   background-image: url(../img/filter-search-bg.jpg);
   background-size: cover;
@@ -919,8 +893,8 @@
 
 .about-container .container .content .vermas a {
   color: white;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .video-container {

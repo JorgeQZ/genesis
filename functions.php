@@ -130,36 +130,36 @@ function wpb_widgets_init() {
     register_sidebar( array(
         'name' => __( 'Footer Columna 1', 'wpb' ),
         'id' => 'fcolumn-1',
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'before_widget' => '<div id="%1$s" class="widget %2$s footer-text">',
         'after_widget' => '</div>',
-        'before_title' => '<h3 class="widget-title">',
+        'before_title' => '<h3 class="footer-title">',
         'after_title' => '</h3>',
     ) );
 
     register_sidebar( array(
         'name' =>__( 'Footer Columna 2', 'wpb'),
         'id' => 'fcolumn-2',
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'before_widget' => '<div id="%1$s" class="widget %2$s footer-text">',
         'after_widget' => '</div>',
-        'before_title' => '<h3 class="widget-title">',
+        'before_title' => '<h3 class="footer-title">',
         'after_title' => '</h3>',
     ) );
 
     register_sidebar( array(
         'name' =>__( 'Footer Columna 3', 'wpb'),
         'id' => 'fcolumn-3',
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'before_widget' => '<div id="%1$s" class="widget %2$s footer-menu footer-text">',
         'after_widget' => '</div>',
-        'before_title' => '<h3 class="widget-title">',
+        'before_title' => '<h3 class="footer-title">',
         'after_title' => '</h3>',
     ) );
 
     register_sidebar( array(
         'name' =>__( 'Footer Columna 4', 'wpb'),
         'id' => 'fcolumn-4',
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'before_widget' => '<div id="%1$s" class="widget %2$s footer-text">',
         'after_widget' => '</div>',
-        'before_title' => '<h3 class="widget-title">',
+        'before_title' => '<h3 class="footer-title">',
         'after_title' => '</h3>',
     ) );
 
@@ -169,11 +169,19 @@ function wpb_widgets_init() {
         'id' => 'fcolumn-5',
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
-        'before_title' => '<h3 class="widget-title">',
+        'before_title' => '<h3 class="footer-title">',
         'after_title' => '</h3>',
     ) );
 
 
+    register_sidebar( array(
+        'name' =>__( 'Footer Bottom', 'wpb'),
+        'id' => 'fbottom',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
 
 }
 add_action( 'widgets_init', 'wpb_widgets_init' );

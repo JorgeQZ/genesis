@@ -1,42 +1,31 @@
 <footer>
     <div class="columns">
-
         <div class="column">
-            <a href="#" class="logo">
-                <img src="<?php echo get_template_directory_uri().'/img/logo.png'?>" alt="Genesis Capital">
-            </a>
+            <?php if ( is_active_sidebar( 'fcolumn-1' ) ) { ?>
+            <?php dynamic_sidebar('fcolumn-1'); ?>
+            <?php } ?>
         </div>
-        <div class="column"></div>
         <div class="column">
-            <div class="footer-title">
-                Mapa de sitio
-            </div>
-
+            <?php if ( is_active_sidebar( 'fcolumn-2' ) ) { ?>
+            <?php dynamic_sidebar('fcolumn-2'); ?>
+            <?php } ?></div>
+        <div class="column">
             <div class="footer-menu">
-                <?php
-                wp_nav_menu(
-                    array(
-                        'theme_location' => 'Footer',
-                    )
-                );
-            ?>
+                <?php if ( is_active_sidebar( 'fcolumn-3' ) ) { ?>
+                <?php dynamic_sidebar('fcolumn-3'); ?>
+                <?php } ?>
             </div>
-
         </div>
         <div class="column">
-            <div class="footer-title">
-                Genesis Capital
-            </div>
-            <div class="footer-text">
-                Ferrocarril De Cuernavaca 76, Piso 4, Col. Lomas De Chapultepec,
-                Delegación Miguel Hidalgo C.P. 11000, CDMX.
-
-            </div>
+            <?php if ( is_active_sidebar( 'fcolumn-4' ) ) { ?>
+            <?php dynamic_sidebar('fcolumn-4'); ?>
+            <?php } ?>
         </div>
-
     </div>
     <div class="bottom">
-        © 2020 Génesis Capital | Todos los derechos reservados | <a href="#">Aviso de Privacidad</a>
+        <?php if ( is_active_sidebar( 'fbottom' ) ) { ?>
+        <?php dynamic_sidebar('fbottom'); ?>
+        <?php } ?>
     </div>
 </footer>
 <?php wp_footer(); ?>

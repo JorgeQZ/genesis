@@ -283,7 +283,7 @@ foreach ($types_queried as $index => $tipo) {
                                             Precios desde:
                                         </div>
                                         <span>
-                                            <?php echo get_field('precio', $value['ID'] ); ?>
+                                            $<?php echo number_format(get_field('precio', $value['ID'] )); ?>
                                         </span>
                                     </div>
 

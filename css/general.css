@@ -584,11 +584,12 @@ footer .columns .column {
   max-width: 25%;
 }
 
-footer .columns .column a.logo {
+footer .columns .column a {
   max-width: 300px;
+  cursor: pointer;
 }
 
-footer .columns .column a.logo img {
+footer .columns .column a img {
   width: 100%;
   max-width: 250px;
 }
@@ -724,7 +725,40 @@ a {
   transition: all 0.2s ease;
 }
 
+.main-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-top: 81px;
+  padding: 10px 50px;
+  padding-bottom: 40px;
+}
+
 /* CONTACT */
+@-webkit-keyframes LiOption {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@keyframes LiOption {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
 .contact-container {
   background-image: url(../img/contact-bg.jpg);
   padding: 60px;
@@ -894,39 +928,13 @@ a {
   height: 0;
   opacity: 0;
   overflow: hidden;
-  -webkit-transition: background-color 0.2s ease, color 0.2s linear;
-  transition: background-color 0.2s ease, color 0.2s linear;
+  -webkit-transition: background-color 0.2s ease, color 0.2s linear, border-bottom 200ms linear;
+  transition: background-color 0.2s ease, color 0.2s linear, border-bottom 200ms linear;
   cursor: pointer;
 }
 
-.contact-container .container .col .form .form-row .form-group .select-cont ul li:after, .contact-container .container .col .form .form-row .form-group .select-cont ul li:before {
-  content: "";
-  width: 100%;
-  height: 1px;
-  background-color: white;
-  position: absolute;
-  -webkit-transition: left 0.2s ease-in-out;
-  transition: left 0.2s ease-in-out;
-  -webkit-transition-delay: 0.2s;
-          transition-delay: 0.2s;
-}
-
-.contact-container .container .col .form .form-row .form-group .select-cont ul li:after {
-  top: 0;
-  left: 100%;
-}
-
-.contact-container .container .col .form .form-row .form-group .select-cont ul li:before {
-  bottom: 0;
-  left: -100%;
-}
-
-.contact-container .container .col .form .form-row .form-group .select-cont ul li:hover:after, .contact-container .container .col .form .form-row .form-group .select-cont ul li:hover:before {
-  left: 0;
-}
-
-.contact-container .container .col .form .form-row .form-group .select-cont ul li:last-child {
-  border-bottom: none;
+.contact-container .container .col .form .form-row .form-group .select-cont ul li:hover {
+  border-bottom: 1px solid white;
 }
 
 .contact-container .container .col .form .form-row .form-group .select-cont ul.active {
@@ -1040,7 +1048,7 @@ a {
   background-color: #00596e;
   font-weight: 100;
   color: white;
-  border: none;
+  border: 1px solid white;
   font-size: 14px;
   text-transform: uppercase;
   -webkit-transition: background-color 0.3s linear;

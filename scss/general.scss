@@ -24,6 +24,14 @@ a {
     text-decoration: none;
     transition: all 0.2s ease;
 }
-/* CONTACT */
 
+.main-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 81px;
+    padding: 10px 50px;
+    padding-bottom: 40px;
+}
+
+/* CONTACT */
 @import "contact";

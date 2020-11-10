@@ -1,3 +1,13 @@
+@keyframes LiOption {
+    0% {
+        opacity: 0;
+        transform: translateX(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
 .contact-container {
     background-image: url(../img/contact-bg.jpg);
     padding: 60px;
@@ -121,37 +131,11 @@
                                     opacity: 0;
 
                                     overflow: hidden;
-                                    transition: background-color 0.2s ease, color 0.2s linear;
+                                    transition: background-color 0.2s ease, color 0.2s linear,
+                                        border-bottom 200ms linear;
                                     cursor: pointer;
-                                    &:after,
-                                    &:before {
-                                        content: "";
-                                        width: 100%;
-                                        height: 1px;
-                                        background-color: white;
-                                        position: absolute;
-                                        transition: left 0.2s ease-in-out;
-                                        transition-delay: 0.2s;
-                                    }
-
-                                    &:after {
-                                        top: 0;
-                                        left: 100%;
-                                    }
-                                    &:before {
-                                        bottom: 0;
-                                        left: -100%;
-                                    }
-
                                     &:hover {
-                                        &:after,
-                                        &:before {
-                                            left: 0;
-                                        }
-                                    }
-
-                                    &:last-child {
-                                        border-bottom: none;
+                                        border-bottom: 1px solid rgba(white, 1);
                                     }
                                 }
                                 &.active {
@@ -221,7 +205,7 @@
                             background-color: $alt;
                             font-weight: 100;
                             color: white;
-                            border: none;
+                            border: 1px solid white;
                             font-size: 14px;
                             text-transform: uppercase;
                             transition: background-color 0.3s linear;
@@ -298,55 +282,49 @@
     }
 }
 
-
-@media screen and (min-width: 768px) and (max-width: 1023px){
-
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     .contact-container {
         .container {
             .col {
-                .form{
+                .form {
                     width: 425px;
                 }
             }
         }
     }
-
 }
 
-
-@media screen and (max-width: 767px){
-
+@media screen and (max-width: 767px) {
     .contact-container {
         padding: 60px 20px;
         .container {
             flex-direction: column;
             .col {
-                .title{
-                    &::before{
+                .title {
+                    &::before {
                         font-size: 37px;
                         top: -15px;
                         left: -18px;
                     }
                 }
-                .form{
+                .form {
                     width: 100%;
-                    .form-row{
+                    .form-row {
                         flex-direction: column;
                         margin: 0;
-                        .form-group{
+                        .form-group {
                             width: 100%;
                             margin-bottom: 10px;
                         }
-                        .submit-cont{
+                        .submit-cont {
                             margin-top: 10px;
                         }
                     }
                 }
-                &:last-child{
+                &:last-child {
                     margin-top: 30px;
                 }
             }
         }
     }
-
 }

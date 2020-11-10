@@ -207,6 +207,7 @@ function writeResultsScreen(departments, class_ = 'Departamento') {
             item_html += "</div>";
             // $("#column-results").append(item_html);
             $(item_html).hide().appendTo('#column-results').fadeIn(750);
+            $('#order-filter').show();
         }
     }
 

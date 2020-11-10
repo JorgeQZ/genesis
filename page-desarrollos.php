@@ -37,15 +37,23 @@ get_header(); ?>
                         </div>
                         <div>
                             <img src="<?php echo get_template_directory_uri().'/img/icon-bath.png'?>" alt="">
+                            <?php if($min_banos == $max_banos): ?>
+                            <p><span><?php echo $max_banos ?></span> Baños</p>
+                            <?php else: ?>
                             <p>Desde <span><?php echo $min_banos ?></span> a <span><?php echo $max_banos ?></span> Baños</p>
+                            <?php endif; ?>
                         </div>
                         <div>
                             <img src="<?php echo get_template_directory_uri().'/img/icon-bed.png'?>" alt="">
+                            <?php if($min_banos == $max_banos): ?>
+                            <p><span><?php echo $max_recamaras ?></span> Recámaras</p>
+                            <?php else: ?>
                             <p>Desde <span><?php echo $min_recamaras ?></span> a <span><?php echo $max_recamaras ?></span> Recámaras</p>
+                            <?php endif; ?>
                         </div>
                         <div>
                             <img src="<?php echo get_template_directory_uri().'/img/icon-car.png'?>" alt="">
-                            <p><?php echo $estacionamiento; ?> Est.</p>
+                            <p><span><?php echo $estacionamiento; ?></span> Est.</p>
                         </div>
                     </div>
                     <a id="link_<?php echo $id?>" class="link-desarrollo" href="<?php echo $term_link ?>">ver desarrollo</a>

@@ -75,13 +75,12 @@ function custom_search_shortcode(){
                         <div class="filter-cont">
                             <input type="text" class="value" placeholder="Rango de precios" readonly name="precios" id="precios">
                             <ul>
-                                <li>$1,000,000 - $1,499,999</li>
-                                <li>$1,500,000 - $1,999,999</li>
-                                <li>$2,000,000 - $2,499,000</li>
-                                <li>$2,500,000 - $2,999,000</li>
-                                <li>$3,000,000 - $3,499,000</li>
-                                <li>$3,500,000 - $4,999,000</li>
-
+                                <li>$0,000,000 - $1,999,999</li>
+                                <li>$2,000,000 - $3,999,999</li>
+                                <li>$4,000,000 - $5,999,999</li>
+                                <li>$7,000,000 - $9,999,999</li>
+                                <li>$10,000,000 - $11,999,999</li>
+                                <li>$12,000,000 - $14,999,999</li>
                             </ul>
                         </div>
                     </div> <!-- col -->
@@ -316,13 +315,14 @@ function departament_search_callback() {
             'relation' => 'AND',
              array(
                 'key'           => 'recamaras',
-                'value'         => array(1, $recamaras),
-                'compare'	    => 'BETWEEN',
+                'value'         => $recamaras,
+                'compare'	    => '=',
+
             ),
             array(
                 'key'           => 'banos',
-                'value'         => array(1, $banos),
-                'compare'	    => 'BETWEEN',
+                'value'         =>  $banos,
+                'compare'	    => '=',
             ),
 
             array(
