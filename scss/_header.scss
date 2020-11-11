@@ -242,7 +242,7 @@
     header {
         position: fixed;
         top: 0;
-        display: flex;
+        display: flex !important;
         justify-content: space-between;
         align-items: flex-start;
         padding: 13px 23px;
@@ -340,7 +340,7 @@
             }
         }
         .cont-menu {
-            display: flex;
+            display: flex !important;
             align-items: center;
             margin-top: 8px;
             transition: all 0.2s linear;

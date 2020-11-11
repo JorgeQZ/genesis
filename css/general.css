@@ -299,9 +299,9 @@
   header {
     position: fixed;
     top: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -398,9 +398,9 @@
     transition: all 0.3s;
   }
   header .cont-menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -734,9 +734,14 @@ a {
 .main-content {
   max-width: 1280px;
   margin: 0 auto;
-  margin-top: 81px;
   padding: 10px 50px;
   padding-bottom: 40px;
+}
+
+.w100 {
+  width: 100%;
+  max-width: unset;
+  padding: 0;
 }
 
 /* CONTACT */

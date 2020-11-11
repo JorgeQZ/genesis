@@ -2,8 +2,12 @@
 /**
  */
 get_header();
+
+
 // get the current taxonomy term
 $term = get_queried_object();
+if( $term->taxonomy == 'categorias-desarrollos'):
+
 $iconos = get_field('iconos', $term);
 $color = get_field('color_de_desarrollo', $term);
 
@@ -52,7 +56,6 @@ usort($posts_queried, function($a, $b) {
     return $a['recamaras'] <=> $b['recamaras'];
 });
 
-if( $term->taxonomy == 'categorias-desarrollos'):
 ?>
 
 <style>

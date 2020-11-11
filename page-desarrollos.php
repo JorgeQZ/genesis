@@ -28,7 +28,7 @@ get_header(); ?>
             <div class="cont-info">
                 <div class="info">
                     <h1> <?php echo get_field('nombre_desarrollo', $id); ?></h1>
-                    <p>Precios Desde: <span><?php  echo $precio; ?></span></p>
+                    <p>Precios Desde: <span>$<?php  echo number_format($precio); ?></span></p>
                     <p class="ubicacion"><?php echo get_field('direccion', $id); ?></p>
                     <div class="detalles">
                         <div>
@@ -38,7 +38,14 @@ get_header(); ?>
                         <div>
                             <img src="<?php echo get_template_directory_uri().'/img/icon-bath.png'?>" alt="">
                             <?php if($min_banos == $max_banos): ?>
-                            <p><span><?php echo $max_banos ?></span> Baños</p>
+                            <p>
+                                <span><?php echo $max_banos ?></span>
+                                <?php if($max_banos > 1): ?>
+                                Baños
+                                <?php else:  ?>
+                                Baño
+                                <?php endif; ?>
+                            </p>
                             <?php else: ?>
                             <p>Desde <span><?php echo $min_banos ?></span> a <span><?php echo $max_banos ?></span> Baños</p>
                             <?php endif; ?>
@@ -46,7 +53,14 @@ get_header(); ?>
                         <div>
                             <img src="<?php echo get_template_directory_uri().'/img/icon-bed.png'?>" alt="">
                             <?php if($min_banos == $max_banos): ?>
-                            <p><span><?php echo $max_recamaras ?></span> Recámaras</p>
+                            <p>
+                                <span><?php echo $max_recamaras ?></span>
+                                <?php if($max_recamaras > 1):?>
+                                Recámaras
+                                <?php else: ?>
+                                Recámara
+                                <?php endif; ?>
+                            </p>
                             <?php else: ?>
                             <p>Desde <span><?php echo $min_recamaras ?></span> a <span><?php echo $max_recamaras ?></span> Recámaras</p>
                             <?php endif; ?>

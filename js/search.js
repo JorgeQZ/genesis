@@ -50,6 +50,8 @@ d_search_form.submit(function (e) {
 
                     var html = "<div><h1>Sin resultados</h1> <p>Ningún resultado arrojado por la búsqueda, intenta con otras opciones.</p><div>";
                     $("#column-results").append(html);
+                    $("#column-results").show();
+                    $('.results-container').fadeIn(750);
                 }
             }
         });

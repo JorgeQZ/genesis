@@ -1,60 +1,59 @@
-.contenedor-general-desarrollos{
-    margin-top: 75px;
-    .contenedor-general-desarrollo{
+.contenedor-general-desarrollos {
+    .contenedor-general-desarrollo {
         background-size: cover;
         background-position: center;
         padding: 16px 33px 30px 23px;
 
-        &:nth-child(1){
+        &:nth-child(1) {
             background-image: url("../img/fondo-ancora.jpg");
-            a.link-desarrollo{
+            a.link-desarrollo {
                 color: #8c2c5a;
             }
         }
-        &:nth-child(2){
+        &:nth-child(2) {
             background-image: url("../img/fondo-montalva.jpg");
-            a.link-desarrollo{
+            a.link-desarrollo {
                 color: #dfaa03;
             }
         }
-        &:nth-child(3){
+        &:nth-child(3) {
             background-image: url("../img/fondo-tlanepantla.jpg");
-            a.link-desarrollo{
+            a.link-desarrollo {
                 color: #153f71;
             }
         }
-        &:nth-child(4){
+        &:nth-child(4) {
             background-image: url("../img/fondo-bolognia.jpg");
-            a.link-desarrollo{
+            a.link-desarrollo {
                 color: #dabe7e;
             }
         }
 
-        .contenedor-desarrollo{
+        .contenedor-desarrollo {
             display: flex;
             align-items: center;
             position: relative;
             padding-top: 33px;
-            .logo-esq{
+            .logo-esq {
                 position: absolute;
                 top: 0;
                 left: 0;
                 height: 56px;
                 width: auto;
             }
-            .cont-info{
+            .cont-info {
                 width: 52%;
                 color: white;
-                .info{
+                .info {
                     padding-left: 50px;
                     width: 84%;
-                    h1{
+                    h1 {
                         font-size: 34px;
                         font-weight: bold;
                         margin: 0;
                         margin-bottom: 25px;
                         position: relative;
-                        &:before{
+                        &:before {
                             position: absolute;
                             bottom: -10px;
                             content: "";
@@ -64,37 +63,37 @@
                             left: -73px;
                         }
                     }
-                    p{
+                    p {
                         margin: 0;
                         margin-bottom: 20px;
                         font-size: 16px;
 
-                        span{
+                        span {
                             font-size: 18px;
                         }
 
-                        &.ubicacion{
+                        &.ubicacion {
                             font-size: 13px;
                             font-weight: 100;
                         }
                     }
 
-                    .detalles{
+                    .detalles {
                         display: flex;
                         justify-content: space-between;
                         margin-bottom: 20px;
-                        div{
-                            img{
+                        div {
+                            img {
                                 height: 27px;
                                 width: auto;
                                 display: block;
                             }
-                            p{
+                            p {
                                 font-size: 16px;
                                 font-weight: 100;
                                 margin: 0;
                                 margin-top: 10px;
-                                span{
+                                span {
                                     font-weight: bold;
                                     font-size: 16px;
                                 }
@@ -102,7 +101,7 @@
                         }
                     }
 
-                    a.link-desarrollo{
+                    a.link-desarrollo {
                         display: inline-block;
                         font-size: 14px;
                         padding: 8px 28px;
@@ -111,37 +110,37 @@
                         border: 1px solid white;
                         text-transform: uppercase;
                         font-weight: bold;
-                        transition: all .3s;
-                        &:hover{
+                        transition: all 0.3s;
+                        &:hover {
                             background: transparent;
                             border: 1px solid white;
                             color: white;
                         }
                     }
                 }
-                img{
+                img {
                     height: 60px;
                     width: auto;
                 }
             }
-            .cont-media{
+            .cont-media {
                 width: 48%;
-                .desarrollo-slider{
-                    .owl-stage-outer{
+                .desarrollo-slider {
+                    .owl-stage-outer {
                         border: 8px solid white;
                     }
-                    .owl-dots{
-                        button{
+                    .owl-dots {
+                        button {
                             outline: none;
-                            span{
+                            span {
                                 width: 12px;
                                 height: 12px;
                                 border: 1px solid white;
                                 background: transparent;
                                 margin: 5px;
                             }
-                            &.active{
-                                span{
+                            &.active {
+                                span {
                                     background: white;
                                 }
                             }
@@ -153,13 +152,12 @@
     }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1279px){
-
-    .contenedor-general-desarrollos{
-        .contenedor-general-desarrollo{
-            .contenedor-desarrollo{
-                .cont-info{
-                    .info{
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .contenedor-general-desarrollos {
+        .contenedor-general-desarrollo {
+            .contenedor-desarrollo {
+                .cont-info {
+                    .info {
                         width: 95%;
                         padding-left: 0;
                     }
@@ -167,41 +165,38 @@
             }
         }
     }
-
 }
 
-
-@media screen and (max-width: 1023px){
-
-    .contenedor-general-desarrollos{
-        .contenedor-general-desarrollo{
-            .contenedor-desarrollo{
+@media screen and (max-width: 1023px) {
+    .contenedor-general-desarrollos {
+        .contenedor-general-desarrollo {
+            .contenedor-desarrollo {
                 padding-top: 90px;
                 flex-direction: column;
-                .cont-info{
+                .cont-info {
                     width: 100%;
                     margin-bottom: 30px;
-                    .info{
+                    .info {
                         width: 100%;
                         padding-left: 0;
-                        .detalles{
+                        .detalles {
                             flex-wrap: wrap;
-                            div{
+                            div {
                                 margin-bottom: 20px;
                                 img {
                                     margin: 0 auto;
                                 }
                             }
                         }
-                        a.link-desarrollo{
+                        a.link-desarrollo {
                             display: table;
                             margin: 0 auto;
                         }
                     }
                 }
-                .cont-media{
+                .cont-media {
                     width: 100%;
-                    .desarrollo-slider{
+                    .desarrollo-slider {
                         max-width: 550px;
                         margin: 0 auto;
                     }
@@ -209,5 +204,10 @@
             }
         }
     }
+}
 
+@media screen and (min-width: 991px) {
+    .contenedor-general-desarrollos {
+        margin-top: 75px;
+    }
 }
