@@ -3,8 +3,10 @@
     <div class="container">
         <div class="col">
             <div class="title" data-text="Contáctanos">Contáctanos</div>
-            <div class="text">Si requiere ponerse en contacto con nosotros, le ofrecemos diferentes medios para que pueda hacerlo, utilice el que más le convenga y con mucho gusto le atenderemos.</div>
+        
+		<?php echo do_shortcode('[contact-form-7 id="74" title="Contacto"]'); ?>
 
+        <!--
             <div class="form">
                 <div class="form-row">
                     <div class="form-group">
@@ -40,7 +42,9 @@
                     </div>
                 </div>
             </div>
+        -->
         </div>
+
         <div class="col">
             <div class="content">
                 <div class="row">

@@ -8,6 +8,27 @@
         transform: translateX(0px);
     }
 }
+
+.wpcf7-form-control-wrap{
+    width: 100%;
+}
+
+.wpcf7-not-valid-tip{
+    color: white;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.wpcf7-response-output{
+    border: 0 !important;
+    color: white;
+    font-weight: 100;
+    padding: 0 !important;
+    text-align: center;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
 .contact-container {
     background-image: url(../img/contact-bg.jpg);
     padding: 60px;
@@ -53,13 +74,31 @@
                 color: $main;
                 .form-row {
                     display: flex;
-                    align-items: center;
+                    align-items: flex-start;
                     justify-content: space-between;
                     margin: 10px 0;
-
+                    p{
+                        display: none;
+                    }
                     .form-group {
-                        width: 49%;
+                        width: 50%;
                         input {
+                            width: 100%;
+                            border: none;
+                            padding: 10px;
+                            font-size: 14px;
+                            color: $main;
+                            font-weight: 100;
+                            height: 40px;
+                            &:focus {
+                                outline: none;
+                            }
+                            &::placeholder {
+                                color: $main;
+                            }
+                        }
+
+                        select {
                             width: 100%;
                             border: none;
                             padding: 10px;
@@ -158,6 +197,10 @@
                                 }
                             }
                         }
+
+                        &:first-child{
+                            margin-right: 10px;
+                        }
                     }
 
                     textarea {
@@ -213,8 +256,12 @@
                             &:focus {
                                 outline: none;
                             }
+                            &:hover{
+                                background: white;
+                                color: $main;
+                            }
                         }
-
+                        /*
                         &:hover {
                             input[type="submit"] {
                                 background-color: transparent;
@@ -224,6 +271,7 @@
                                 left: 0;
                             }
                         }
+                        */
                     }
                 }
             }
