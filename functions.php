@@ -100,6 +100,10 @@ function add_theme_scripts() {
         wp_enqueue_style( 'page-contacto', get_template_directory_uri() . '/css/page-contacto.css', array(), filemtime( get_stylesheet_directory() . '/css/page-contacto.css' ), 'all');
     endif;
 
+    if( is_user_logged_in()):
+        // echo"<style>@media screen and (min-width: 991px) {header {top: 31px !important;}}@media screen and (min-width: 1280px) {header {top: 31px !important;}}</style>";
+    endif;
+
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 

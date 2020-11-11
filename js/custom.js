@@ -1,4 +1,6 @@
 $(document).ready(function (e) {
+
+
     // Header Menu
     $('#menu-button').on('click', function (e) {
         $("header .cont-menu").slideToggle('slow');
@@ -171,6 +173,37 @@ $(document).ready(function (e) {
         }
     });
 
+
+    // PROTOTIPOS
+    $('.burguer-types').on('click', function (e) {
+        e.preventDefault();
+        let w_width = $(window).width();
+        if (w_width <= 899) {
+            $('.tabs-left').slideToggle(800);
+        }
+        return false;
+    });
+
+    // Add clases to tabs on mobile screens
+    Set_mobile_clasess();
+
+    $('.mobile-tab').on('click', function (e) {
+        e.preventDefault();
+        $('.tabs-left').slideToggle(800);
+        return false;
+    });
+
+
+    $('.burguer-bed').on('click', function (e) {
+        e.preventDefault();
+        // $('.tabs-left').slideToggle(800);
+        let w_width = $(window).width();
+        if (w_width <= 899) {
+            let bed_type = $(this).attr('data-bed-type');
+            $('#' + bed_type).slideToggle(400);
+        }
+        return false;
+    });
 });
 
 $(document).keyup(function (e) {
@@ -180,3 +213,18 @@ $(document).keyup(function (e) {
         $('.light-box').fadeOut();
     }
 });
+
+$(window).resize(function () {
+    Set_mobile_clasess();
+});
+
+function Set_mobile_clasess() {
+    let w_width = $(window).width();
+    if (w_width <= 899) {
+        $('.tabs-left .tab-container .tab').addClass('mobile-tab');
+    }
+    else {
+        $('.tabs-left .tab-container .tab').removeClass('mobile-tab');
+
+    }
+}

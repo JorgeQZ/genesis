@@ -100,8 +100,10 @@ footer {
                 width: 100%;
                 max-width: unset;
                 text-align: center;
-                margin: 10px 0;
-
+                margin: 10px auto;
+                .footer-text {
+                    max-width: unset;
+                }
                 .footer-menu {
                     ul {
                         li {
@@ -119,6 +121,9 @@ footer {
         .bottom {
             padding: 10px 0;
             text-align: center;
+            p {
+                line-height: 1.5 !important;
+            }
         }
     }
 }
