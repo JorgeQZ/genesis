@@ -162,15 +162,28 @@ $(document).ready(function (e) {
     var room_sub_tabs = document.getElementsByClassName('option-tab');
     $(room_sub_tabs).on('click', function (e) {
         e.preventDefault();
-
+        let w_width = $(window).width();
         if (!$(this).hasClass('active')) {
             let sub_data_id = $(this).attr('data-id');
+
             $(this).addClass('active')
                 .siblings().removeClass('active');
 
             $(this).parent().siblings('.sub-option').hide();
             document.getElementById(sub_data_id).style.display = 'flex';
+
+
         }
+
+        if (w_width <= 899) {
+            let text_data_id = $(this).attr('data-text');
+            let text_beds = $(this).text();
+            let bed_type = $(this).attr('data-bed-type');
+            console.log(bed_type);
+            $('#' + bed_type).slideToggle(400);
+            $('#' + text_data_id).text(text_beds);
+        }
+
     });
 
 
@@ -189,7 +202,10 @@ $(document).ready(function (e) {
 
     $('.mobile-tab').on('click', function (e) {
         e.preventDefault();
-        $('.tabs-left').slideToggle(800);
+        let w_width = $(window).width();
+        if (w_width <= 899) {
+            $('.tabs-left').slideToggle(800);
+        }
         return false;
     });
 
@@ -204,6 +220,8 @@ $(document).ready(function (e) {
         }
         return false;
     });
+
+
 });
 
 $(document).keyup(function (e) {

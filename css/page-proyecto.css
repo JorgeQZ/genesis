@@ -309,23 +309,25 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    width: 100%;
+    position: relative;
   }
   .middle-description .meet-us-container .column:nth-child(2) img {
     width: 100%;
     border-radius: 45px;
   }
-  .middle-description .meet-us-container .column:nth-child(2) .owl-dots {
+  .middle-description .meet-us-container .column:nth-child(2) .visit-slider´ .owl-dots {
     position: absolute;
     bottom: 0;
     width: 100%;
   }
-  .middle-description .meet-us-container .column:nth-child(2) .owl-dots .owl-dot span {
+  .middle-description .meet-us-container .column:nth-child(2) .visit-slider´ .owl-dots .owl-dot span {
     background-color: transparent;
     border: 1px solid white;
     width: 12px;
     height: 12px;
   }
-  .middle-description .meet-us-container .column:nth-child(2) .owl-dots .owl-dot.active span {
+  .middle-description .meet-us-container .column:nth-child(2) .visit-slider´ .owl-dots .owl-dot.active span {
     background-color: #fff;
   }
   .middle-description .rooms-container {
@@ -646,7 +648,7 @@
         flex-wrap: wrap;
   }
   .middle-description .rooms-container .tabs-content .option-container .option .option-container .column .amenities .column {
-    width: 25%;
+    width: auto;
     padding: 5px;
     padding: 0;
     text-align: left;
@@ -1257,9 +1259,9 @@
     display: block;
   }
   .middle-description .rooms-container .tabs-content .option-container .option .option-tabs-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
   }
   .middle-description .rooms-container .tabs-content .option-container .option .option-tabs-container .option-tab {
     -webkit-box-flex: 0;

@@ -80,7 +80,8 @@ if( $term->taxonomy == 'categorias-desarrollos'):
 .middle-description .rooms-container .tabs-left .tab-container,
 .call-center .image,
 header.scrolled,
-.middle-description .rooms-container .burguer-container {
+.middle-description .rooms-container .burguer-container,
+.light-box .cont .button {
     background-color: <?php echo $color;
     ?>;
 }
@@ -262,7 +263,7 @@ path {
                                     <span></span>
                                 </div>
 
-                                <div class="text">
+                                <div class="text" id="text-bedrooms-<?php echo $tipo?>">
                                     <?php
                                         $aux_bed = 0;
                                         foreach ($posts_queried as $key => $value) {
@@ -287,7 +288,7 @@ path {
                                 foreach ($posts_queried as $key => $value) {
                                     if($tipo == $value['tipo']):
                                     ?>
-                                <div data-id='type-<?php echo $value['tipo'] ?>-sub-<?php echo get_field('recamaras', $value['ID']) ?>' class="option-tab <?php echo $aux_option_tab.' ';  if($aux_option_tab == 0) echo 'active' ?>">
+                                <div data-bed-type="bedrooms-<?php echo $tipo?>" data-text="text-bedrooms-<?php echo $tipo?>" data-id='type-<?php echo $value['tipo'] ?>-sub-<?php echo get_field('recamaras', $value['ID']) ?>' class="option-tab <?php if($aux_option_tab == 0) echo 'active' ?>">
                                     <?php
                                     if(get_field('recamaras', $value['ID']) > 1){
                                         echo get_field('recamaras', $value['ID']).' Recámaras';
