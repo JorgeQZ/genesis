@@ -33,7 +33,7 @@ d_search_form.submit(function (e) {
             success: function (response) {
                 if (response != '') {
                     $("#column-results").empty();
-                    // $('#order-filter').show();
+                    resetTabs_DEP_CASA();
                     // Retornando 'response' como un arraya asiosiativo
                     //Ya configurado como un cluster de desarrollos (Proyectos)
                     let desarrollos_data = clustering_depts(response);
@@ -43,7 +43,7 @@ d_search_form.submit(function (e) {
                     // Imprimir resultados en pantalla
                     writeResultsScreen(desarrollos_data);
 
-                    resetTabs_DEP_CASA();
+
 
                 } else {
                     resetTabs_DEP_CASA();
@@ -98,14 +98,17 @@ function GetData() {
     return data;
 }
 
+// Orden del menor al mayor
 function sort_highest(a, b) {
     return b.max_price - a.max_price
 }
 
+// orden del mayor al menor
 function sort_lowest(a, b) {
     return a.min_price - b.min_price
 }
 
+//Creando un array de informacion con los departamentos
 function clustering_depts(depts) {
     // Cluster donde se almacenarán los departamentos ya divididos por desarrollo
     clustered_data = [];
@@ -166,6 +169,7 @@ function clustering_depts(depts) {
     return clustered_data;
 }
 
+// Imprimir resultados en pantalla por Desarrollo
 function writeResultsScreen(departments, class_ = 'Departamento') {
 
     // Limpia de la pantalla de resultados
@@ -214,6 +218,7 @@ function writeResultsScreen(departments, class_ = 'Departamento') {
     }
 }
 
+// Imprimir precios de deprtamentos
 function print_number_price_depts(departments, departament, item_html, d_clase) {
     if (departments[departament]['departamentos'].length > 1) {
 
