@@ -43,7 +43,11 @@ d_search_form.submit(function (e) {
                     // Imprimir resultados en pantalla
                     writeResultsScreen(desarrollos_data);
 
+                    resetTabs_DEP_CASA();
+
                 } else {
+                    resetTabs_DEP_CASA();
+
                     $('#order-filter').hide();
                     $("#column-results").empty();
 
@@ -58,6 +62,11 @@ d_search_form.submit(function (e) {
 
     return false;
 });
+
+function resetTabs_DEP_CASA() {
+    $('#id-Casa').removeClass('active');
+    $('#id-Departamento').addClass('active');
+}
 
 // obtener datos
 function GetData() {

@@ -158,10 +158,10 @@ function custom_search_shortcode(){
 
 <div class="results-container">
     <div class="tabs-container">
-        <div class="tab-option search_tab-option active" data-value="Departamento">
+        <div class="tab-option search_tab-option active" data-value="Departamento" id="id-Departamento">
             departamentos
         </div>
-        <div class="tab-option search_tab-option" data-value="Casa">
+        <div class="tab-option search_tab-option" data-value="Casa" id="id-Casa">
             casa
         </div>
     </div>
