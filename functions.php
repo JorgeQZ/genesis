@@ -15,6 +15,7 @@ if ( ! function_exists( 'Genesis_setup' ) ) :
         add_image_size( 'gallery-size', 370, 278, true );
         add_image_size( 'carrusel-size', 995, 746, true );
         add_image_size( 'member-size', 180, 180, true );
+        add_image_size( 'visitalo-size', 660, 290, true );
     }
 endif;
 add_action( 'after_setup_theme', 'Genesis_setup' );
@@ -98,6 +99,10 @@ function add_theme_scripts() {
     // contacto
     if(is_page_template('page-contacto.php')):
         wp_enqueue_style( 'page-contacto', get_template_directory_uri() . '/css/page-contacto.css', array(), filemtime( get_stylesheet_directory() . '/css/page-contacto.css' ), 'all');
+    endif;
+
+    if(is_404()):
+        wp_enqueue_style( '404', get_template_directory_uri() . '/css/404.css', array(), filemtime( get_stylesheet_directory() . '/css/404.css' ), 'all');
     endif;
 
     if( is_user_logged_in()):

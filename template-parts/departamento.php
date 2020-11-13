@@ -1,5 +1,4 @@
 <?php
-
 // get current type department
 $page_id = get_the_ID();
 $current_type = get_field('tipo', $page_id);
@@ -324,7 +323,7 @@ path {
                             <div id="type-<?php echo $value['tipo'] ?>-sub-<?php echo get_field('recamaras', $value['ID']) ?>" class="sub-option <?php if($tipo == $current_type){if($current_recam == $recam){echo 'active ';}}else{if ($aux == 0) {echo 'active ';}} ?>option-container">
                                 <div class="column light">
                                     <div class="icon">
-                                        <img src="<?php echo get_template_directory_uri() . '/img/fullscreen-icon.png' ?>" alt="">
+                                        <img src="<?php echo get_template_directory_uri() . '/img/ZOOM-LUPA.png' ?>" alt="">
                                     </div>
                                     <img src="<?php echo get_template_directory_uri() . '/img/result-img.png'; ?>" alt="" class="bed-img">
                                 </div>
@@ -385,14 +384,7 @@ path {
                                     </div>
 
                                     <div class="list-amenities">
-                                        <ul>
-                                            <li>juegos infantiles</li>
-                                            <li>palapas con asadores</li>
-                                            <li>áreas verdes</li>
-                                            <li>cancha multiusos</li>
-                                            <li>gym</li>
-                                            <li>salón de usos multiples</li>
-                                        </ul>
+                                        <?php echo get_field('amenidades', $tax_name . '_' . $term[0]->term_id); ?>
                                     </div>
                                 </div>
                             </div>

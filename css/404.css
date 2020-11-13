@@ -1,0 +1,32 @@
+.content-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.content-area .content_404 {
+  width: 100%;
+  padding: 180px 60px;
+  min-height: calc(100vh - 343px);
+  background-image: url(../img/search-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+}
+
+.content-area .content_404 a {
+  color: #066881;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.content-area .content_404 h1, .content-area .content_404 h2, .content-area .content_404 h3, .content-area .content_404 h4, .content-area .content_404 h5, .content-area .content_404 h6 {
+  font-weight: bolder;
+  color: #066881;
+}

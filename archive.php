@@ -177,6 +177,9 @@ path {
             <!-- Meet Us -->
 
             <!-- Conocelo -->
+            <?php
+            $conocelo_link = get_field('conocelo_link', $term);
+            if($conocelo_link != ''): ?>
             <div class="meet-us-container">
                 <div class="column">
                     <div>
@@ -185,14 +188,20 @@ path {
                     </div>
                 </div>
                 <div class="column">
-                    <a href="#" target="_blank">
+                    <a href="<?php echo $conocelo_link;?>" target="_blank">
                         <div class="overlay"></div>
                         <img src="<?php echo get_template_directory_uri().'/img/paseo-virtual.jpg';?>" alt="">
                     </a>
                 </div>
             </div>
+            <?php
+            endif;
+            ?>
 
             <!-- Visitalo -->
+            <?php
+            $visitalo_slider = get_field('visitalo_slider', $term);
+            if($visitalo_slider != ''): ?>
             <div class="meet-us-container">
                 <div class="column">
                     <div>
@@ -201,24 +210,18 @@ path {
                 </div>
                 <div class="column">
                     <div class="visit-slider owl-carousel owl-theme ">
-                        <div class="item">
-                            <div class="overlay"></div>
-                            <img src="<?php echo get_template_directory_uri().'/img/paseo-virtual.jpg';?>" alt="">
-                        </div>
-
-                        <div class="item">
-                            <div class="overlay"></div>
-                            <img src="<?php echo get_template_directory_uri().'/img/paseo-virtual.jpg';?>" alt="">
-                        </div>
-
-                        <div class="item">
-                            <div class="overlay"></div>
-                            <img src="<?php echo get_template_directory_uri().'/img/paseo-virtual.jpg';?>" alt="">
-                        </div>
-
+                        <?php
+                            foreach($visitalo_slider as $item_id){
+                                $image_prev = wp_get_attachment_image_src( $item_id, 'visitalo-size');
+                                echo '<div class="item"><div class="overlay"></div><div class="item"><img src="'.$image_prev[0].'" alt=""></div></div>';
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
+            <?php
+            endif;
+            ?>
 
             <!-- Rooms -->
             <div class="rooms-container">
@@ -317,7 +320,7 @@ path {
                             <div id="type-<?php echo $value['tipo'] ?>-sub-<?php echo get_field('recamaras', $value['ID']) ?>" class="sub-option <?php if($aux == 0) echo 'active ' ?>option-container">
                                 <div class="column light">
                                     <div class="icon">
-                                        <img src="<?php echo get_template_directory_uri().'/img/fullscreen-icon.png'?>" alt="">
+                                        <img src="<?php echo get_template_directory_uri().'/img/ZOOM-LUPA.png'?>" alt="">
                                     </div>
                                     <img src="<?php echo get_template_directory_uri().'/img/result-img.png'; ?>" alt="" class="bed-img">
                                 </div>
@@ -378,14 +381,7 @@ path {
                                     </div>
 
                                     <div class="list-amenities">
-                                        <ul>
-                                            <li>juegos infantiles</li>
-                                            <li>palapas con asadores</li>
-                                            <li>áreas verdes</li>
-                                            <li>cancha multiusos</li>
-                                            <li>gym</li>
-                                            <li>salón de usos multiples</li>
-                                        </ul>
+                                        <?php echo get_field('amenidades',  $term); ?>
                                     </div>
                                 </div>
                             </div>
@@ -418,7 +414,8 @@ path {
             </div>
         </div>
         <div class="column">
-            <form class="contact">
+            <?php echo do_shortcode('[contact-form-7 id="353" title="Formulario de Departamentos"]');?>
+            <!-- <form class="contact">
                 <div class="col">
                     <input type="text" name="" id="" placeholder="NOMBRE">
                     <input type="text" name="" id="" placeholder="TELÉFONO">
@@ -436,7 +433,7 @@ path {
                 <div class="col">
                     <input type="submit" value="enviar">
                 </div>
-            </form>
+            </form> -->
         </div>
     </div>
 </div>

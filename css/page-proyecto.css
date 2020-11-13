@@ -737,13 +737,20 @@
   .contact-form .container .column .contact {
     display: block;
   }
+  .contact-form .container .column .contact .col .wpcf7-not-valid-tip {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
   .contact-form .container .column .contact .col input[type="email"],
-  .contact-form .container .column .contact .col input[type="text"] {
+  .contact-form .container .column .contact .col input[type="text"],
+  .contact-form .container .column .contact .col input[type="tel"] {
     height: 45px;
     display: block;
   }
   .contact-form .container .column .contact .col input[type="text"],
   .contact-form .container .column .contact .col input[type="email"],
+  .contact-form .container .column .contact .col input[type="tel"],
   .contact-form .container .column .contact .col select,
   .contact-form .container .column .contact .col textarea {
     width: 100%;
@@ -1296,7 +1303,7 @@
     border-radius: 0px 0px 20px 20px;
     -webkit-box-shadow: 7px 10px 9px 0px #d3d3d3;
             box-shadow: 7px 10px 9px 0px #d3d3d3;
-    padding: 50px;
+    padding: 70px 50px;
     display: none;
     -webkit-box-align: start;
         -ms-flex-align: start;
@@ -1494,12 +1501,19 @@
             flex: 1 0 25%;
     padding: 5px;
   }
+  .contact-form .container .column .contact .col .wpcf7-not-valid-tip {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
   .contact-form .container .column .contact .col input[type="email"],
-  .contact-form .container .column .contact .col input[type="text"] {
+  .contact-form .container .column .contact .col input[type="text"],
+  .contact-form .container .column .contact .col input[type="tel"] {
     height: 25px;
   }
   .contact-form .container .column .contact .col input[type="text"],
   .contact-form .container .column .contact .col input[type="email"],
+  .contact-form .container .column .contact .col input[type="tel"],
   .contact-form .container .column .contact .col select,
   .contact-form .container .column .contact .col textarea {
     width: 100%;
