@@ -180,6 +180,11 @@ path {
             <!-- Meet Us -->
 
             <!-- Conocelo -->
+            <?php
+             $conocelo_link = get_field('conocelo_link', $tax_name . '_' . $term[0]->term_id);
+             if($conocelo_link != ''): ?>
+
+
             <div class="meet-us-container">
                 <div class="column">
                     <div>
@@ -188,14 +193,20 @@ path {
                     </div>
                 </div>
                 <div class="column">
-                    <a href="#" target="_blank">
+                    <a href="<?php echo $conocelo_link;?>" target="_blank">
                         <div class="overlay"></div>
                         <img src="<?php echo get_template_directory_uri() . '/img/paseo-virtual.jpg'; ?>" alt="">
                     </a>
                 </div>
             </div>
+            <?php
+            endif;
+            ?>
 
             <!-- Visitalo -->
+            <?php
+            $visitalo_slider = get_field('visitalo_slider',$tax_name . '_' . $term[0]->term_id);
+            if($visitalo_slider != ''): ?>
             <div class="meet-us-container">
                 <div class="column">
                     <div>
@@ -206,25 +217,18 @@ path {
                 </div>
                 <div class="column">
                     <div class="visit-slider owl-carousel owl-theme ">
-                        <div class="item">
-                            <div class="overlay"></div>
-                            <img src="<?php echo get_template_directory_uri() . '/img/paseo-virtual.jpg'; ?>" alt="">
-                        </div>
-
-                        <div class="item">
-                            <div class="overlay"></div>
-                            <img src="<?php echo get_template_directory_uri() . '/img/paseo-virtual.jpg'; ?>" alt="">
-                        </div>
-
-                        <div class="item">
-                            <div class="overlay"></div>
-                            <img src="<?php echo get_template_directory_uri() . '/img/paseo-virtual.jpg'; ?>" alt="">
-                        </div>
-
+                        <?php
+                            foreach($visitalo_slider as $item_id){
+                                $image_prev = wp_get_attachment_image_src( $item_id, 'visitalo-size');
+                                echo '<div class="item"><div class="overlay"></div><div class="item"><img src="'.$image_prev[0].'" alt=""></div></div>';
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
-
+            <?php
+            endif;
+            ?>
             <!-- Recamaras -->
             <div class="rooms-container">
                 <div class="burguer-container">
@@ -413,25 +417,7 @@ path {
             </div>
         </div>
         <div class="column">
-            <form class="contact">
-                <div class="col">
-                    <input type="text" name="" id="" placeholder="NOMBRE">
-                    <input type="text" name="" id="" placeholder="TELÉFONO">
-                </div>
-                <div class="col">
-                    <input type="email" name="" id="" placeholder="EMAIL">
-                    <select name="" id="">
-                        <option value="test">MOTIVO</option>
-                        <option value="test">MOTIVO1</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="MENSAJE"></textarea>
-                </div>
-                <div class="col">
-                    <input type="submit" value="enviar">
-                </div>
-            </form>
+            <?php echo do_shortcode('[contact-form-7 id="353" title="Formulario de Departamentos"]');?>
         </div>
     </div>
 </div>

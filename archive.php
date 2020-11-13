@@ -415,25 +415,6 @@ path {
         </div>
         <div class="column">
             <?php echo do_shortcode('[contact-form-7 id="353" title="Formulario de Departamentos"]');?>
-            <!-- <form class="contact">
-                <div class="col">
-                    <input type="text" name="" id="" placeholder="NOMBRE">
-                    <input type="text" name="" id="" placeholder="TELÉFONO">
-                </div>
-                <div class="col">
-                    <input type="email" name="" id="" placeholder="EMAIL">
-                    <select name="" id="">
-                        <option value="test">MOTIVO</option>
-                        <option value="test">MOTIVO1</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="MENSAJE"></textarea>
-                </div>
-                <div class="col">
-                    <input type="submit" value="enviar">
-                </div>
-            </form> -->
         </div>
     </div>
 </div>
