@@ -194,6 +194,28 @@
   position: relative;
 }
 
+.map-container .container .column .data-points .item ul li a {
+  /*
+                                color: $main;
+                                border-bottom: 2px solid $main;
+                                */
+  background-color: #00596e;
+  color: white;
+  padding: 3px 15px;
+  border: 2px solid #066881;
+  border-radius: 20px;
+  display: block;
+  margin-top: 3px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.map-container .container .column .data-points .item ul li a:hover {
+  /*opacity: .7;*/
+  background-color: transparent;
+  color: #066881;
+}
+
 .map-container .container .column .data-points .item ul li:before {
   content: "";
   position: absolute;
