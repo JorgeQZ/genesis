@@ -22,7 +22,7 @@ function register_departmentos_type(){
 		'public'             => true,
 		'show_ui'            => true,
 		'publicly_queryable' => true,
-		'rewrite'            => array( 'slug' => 'departamento' ),
+		'rewrite'            => array( 'slug' => 'departamentos' ),
 		'has_archive'        => true,
 		'capability_type'    => 'post',
 		'menu_icon'          => 'dashicons-building',
@@ -31,6 +31,7 @@ function register_departmentos_type(){
 		'supports'           => array('title','editor','author','thumbnail','excerpt','custom-fields','revisions')
 	);
 	register_post_type( 'departamento', $args );
+	// flush_rewrite_rules();
 }
 
 

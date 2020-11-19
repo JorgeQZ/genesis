@@ -61,6 +61,52 @@ usort($posts_queried, function ($a, $b) {
 ?>
 
 <style>
+@media screen and (min-width: 991px) {
+    header {
+        color: white;
+        background-color: <?php echo $color;
+        ?>;
+    }
+
+    header .cont-menu ul li a:hover:before,
+    header .cont-menu ul li a:hover:after {
+        background-color: #fff;
+    }
+
+    header a.brand-logo img {
+        opacity: 0;
+    }
+
+    header .cont-menu .social-links a.item img.img-alt {
+        opacity: 0;
+    }
+
+    header a.brand-logo img.scrolled {
+        opacity: 1;
+    }
+
+    header .cont-menu .social-links a.item img {
+        opacity: 1;
+    }
+
+    header .cont-menu ul li a {
+        color: white;
+    }
+
+    header .cont-menu .social-links a.item:hover:before,
+    header .cont-menu .social-links a.item:hover:after {
+        border-color: white;
+    }
+
+    header .cont-menu .social-links a.item-txt {
+        color: white;
+    }
+
+    .video-container {
+        margin-top: 80px;
+    }
+}
+
 .middle-description,
 .middle-description .text,
 .middle-description .location-container .column:nth-child(3) .text .title,
@@ -329,7 +375,9 @@ path {
                                     <div class="icon">
                                         <img src="<?php echo get_template_directory_uri() . '/img/ZOOM-LUPA.png' ?>" alt="">
                                     </div>
-                                    <img src="<?php echo get_template_directory_uri() . '/img/result-img.png'; ?>" alt="" class="bed-img">
+                                    <?php $image_dept = wp_get_attachment_image_src( $value['ID'], 'gallery-size');
+                                    ?>
+                                    <img src="<?php echo $image_dept[0];?>" alt="" class="bed-img">
                                 </div>
                                 <div class="column">
                                     <div class="title">

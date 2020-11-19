@@ -859,7 +859,7 @@
         display: block;
         margin: 0;
         padding: 0;
-        max-height: 705px;
+        max-height: unset;
         overflow: hidden;
         img {
             margin: 0;
@@ -870,8 +870,8 @@
         video,
         iframe {
             width: 100%;
-            height: auto;
-            min-height: 600px;
+            height: calc(100vh - 80px);
+            max-height: 900px;
         }
     }
 
