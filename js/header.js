@@ -10,7 +10,7 @@ $(window).on('scroll', function () {
 
 function fixHeader() {
     let top = $(window).scrollTop();
-    (top >= 150) ? $('header').addClass('scrolled') : $('header').removeClass('scrolled');
+    (top >= 70) ? $('header').addClass('scrolled') : $('header').removeClass('scrolled');
 }
 
 function checkOffset() {
