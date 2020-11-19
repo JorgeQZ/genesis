@@ -6,9 +6,9 @@
 
 
     get_header();
-    $seccion_principal = get_field('seccion_principal');	
-    $seccion_caracteristicas = get_field('seccion_caracteristicas');	
-    $seccion_quienes_somos = get_field('seccion_quienes_somos');	
+    $seccion_principal = get_field('seccion_principal');
+    $seccion_caracteristicas = get_field('seccion_caracteristicas');
+    $seccion_quienes_somos = get_field('seccion_quienes_somos');
 ?>
 
 <!-- Banner -->
@@ -70,18 +70,18 @@
 
 <!-- Mini Banner Ads -->
 <?php if(have_rows('banners')): ?>
-    <div class="owl-carousel owl-theme mini-banner-slider">
-        <?php while(have_rows('banners')): the_row(); 
+<div class="owl-carousel owl-theme mini-banner-slider">
+    <?php while(have_rows('banners')): the_row();
             $informacion = get_sub_field('informacion');
             $imagen = get_sub_field('imagen');
         ?>
 
-        <div class="item"  style="background-image: url(<?php the_sub_field('imagen'); ?>);">
-            <?php the_sub_field('informacion'); ?>
-        </div>
-
-        <?php endwhile; ?>
+    <div class="item" style="background-image: url(<?php the_sub_field('imagen'); ?>);">
+        <?php the_sub_field('informacion'); ?>
     </div>
+
+    <?php endwhile; ?>
+</div>
 <?php endif; ?>
 
 <!--
@@ -280,32 +280,32 @@
             <div class="grid">
 
 
-            <?php
-            if( have_rows('seccion_caracteristicas') ): while ( have_rows('seccion_caracteristicas') ) : the_row(); 
-                if( have_rows('caracteristicas') ): while ( have_rows('caracteristicas') ) : the_row(); 
+                <?php
+            if( have_rows('seccion_caracteristicas') ): while ( have_rows('seccion_caracteristicas') ) : the_row();
+                if( have_rows('caracteristicas') ): while ( have_rows('caracteristicas') ) : the_row();
                     $imagen = get_sub_field('imagen');
                     $titulo = get_sub_field('titulo');
                     $descripcion = get_sub_field('descripcion');
                 ?>
 
-                    <div class="item">
-                        <img src="<?php the_sub_field('imagen'); ?>" alt="">
-                        <div class="content">
-                            <div class="min-title">
-                                <?php the_sub_field('titulo'); ?>
-                            </div>
-                            <div class="text">
-                                <?php the_sub_field('descripcion'); ?>
-                            </div>
+                <div class="item">
+                    <img src="<?php the_sub_field('imagen'); ?>" alt="">
+                    <div class="content">
+                        <div class="min-title">
+                            <?php the_sub_field('titulo'); ?>
+                        </div>
+                        <div class="text">
+                            <?php the_sub_field('descripcion'); ?>
                         </div>
                     </div>
+                </div>
 
                 <?php
                 endwhile; endif;
             endwhile; endif;
             ?>
 
-            <!--
+                <!--
                 <div class="item">
                     <img src="<?php echo get_template_directory_uri().'/img/icon-residencias.png' ?>" alt="">
                     <div class="content">
@@ -346,8 +346,8 @@
             </div>
 
             <div class="video">
-                <?php echo $seccion_caracteristicas['video']; ?>	
-            <!--
+                <?php echo $seccion_caracteristicas['video']; ?>
+                <!--
                 <iframe src="https://www.youtube.com/embed/1WTqnmMNKE8?start=0&modestbranding=1&showinfo=0&rel=0&cc_load_policy=1&iv_load_policy=3&theme=light&fs=0&color=white&autohide=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             -->
             </div>
@@ -403,8 +403,8 @@ $(document).ready(function() {
 });
 </script>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
 
 <style>
 .contenedor-general-items .contenedor-items,
