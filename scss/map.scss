@@ -117,6 +117,26 @@
                             margin-bottom: 10px;
                             position: relative;
 
+                            a{
+                                /*
+                                color: $main;
+                                border-bottom: 2px solid $main;
+                                */
+                                background-color: $alt;
+                                color: white;
+                                padding: 3px 15px;
+                                border: 2px solid $main;
+                                border-radius: 20px;
+                                display: block;
+                                margin-top: 3px;
+                                transition: all .3s;
+                                &:hover{
+                                    /*opacity: .7;*/
+                                    background-color: transparent;
+                                    color: $main;   
+                                }
+                            }
+
                             &:before {
                                 content: "";
                                 position: absolute;
