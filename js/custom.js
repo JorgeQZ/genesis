@@ -107,17 +107,19 @@ $(document).ready(function (e) {
     // LightBox
 
     $('.light').on('click', function (e) {
+        let screen_w = $(window).width();
+        let screen_h = $(window).height();
+
         e.preventDefault();
-        let naturalW = $(this).find('.bed-img')[0].naturalWidth,
-            naturalH = $(this).find('.bed-img')[0].naturalHeight,
-            imgSrc = $(this).find('.bed-img').attr('src'),
+        // let naturalW = $(this).find('.bed-img')[0].naturalWidth,
+        //     naturalH = $(this).find('.bed-img')[0].naturalHeight,
+        let imgSrc = $(this).find('.bed-img').attr('src'),
             imgAlt = $(this).find('.bed-img').attr('alt');
 
-
-
         $('#img_light-box').attr('src', imgSrc).css({
-            'max-width': naturalW,
-            'max-height': naturalH,
+            'width': 'auto',
+            'height': 'auto',
+            'max-height': screen_h * .8,
         });
         $('#img_light-box').attr('alt', imgAlt);
         $('.light-box').fadeIn();

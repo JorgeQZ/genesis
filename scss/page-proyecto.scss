@@ -19,8 +19,8 @@
             justify-content: center;
             .button {
                 position: absolute;
-                right: 20px;
-                top: 120px;
+                right: 10px;
+                top: 10px;
                 cursor: pointer;
                 background-color: $purple;
                 display: flex;
@@ -444,6 +444,7 @@
                                 &:nth-child(1) {
                                     cursor: pointer;
                                     text-align: center;
+                                    overflow: hidden;
                                 }
                                 &:hover {
                                     .icon {
@@ -467,7 +468,7 @@
                                 }
                                 .bed-img {
                                     width: 100%;
-                                    margin: 0;
+                                    margin: 0 auto;
                                     margin-bottom: -3px;
                                     border-radius: 15px;
                                     max-width: 300px;
@@ -779,9 +780,9 @@
         position: fixed;
         width: 100%;
         height: 100%;
-
+        top: 0;
         background-color: rgba(black, 0.7);
-        z-index: 1000;
+        z-index: 9999;
         display: none;
         .cont {
             position: relative;
@@ -792,8 +793,8 @@
             justify-content: center;
             .button {
                 position: absolute;
-                right: 20px;
-                top: 120px;
+                right: 60px;
+                top: 60px;
                 cursor: pointer;
                 background-color: $purple;
                 display: flex;
@@ -808,6 +809,7 @@
                 margin: auto;
                 width: 80%;
                 max-width: 900px;
+                max-height: 500px;
             }
         }
     }
@@ -1135,7 +1137,7 @@
                         }
                         .option-container {
                             min-width: 770px;
-
+                            max-width: 800px;
                             background-color: #f5f5f5;
                             border-radius: 0px 0px 20px 20px;
                             box-shadow: 7px 10px 9px 0px #d3d3d3;
@@ -1148,6 +1150,28 @@
                             .column {
                                 position: relative;
                                 cursor: pointer;
+                                &:nth-child(1) {
+                                    width: 30%;
+                                    overflow: hidden;
+                                    position: relative;
+                                    .owl-carousel {
+                                        .owl-item {
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            position: relative;
+                                            .light {
+                                                .bed-img {
+                                                    width: 100%;
+                                                }
+                                            }
+                                        }
+
+                                        .owl-dots {
+                                            z-index: 9999;
+                                        }
+                                    }
+                                }
                                 &:hover {
                                     .icon {
                                         opacity: 1;
@@ -1170,7 +1194,7 @@
                                 }
                                 .bed-img {
                                     width: 290px;
-                                    margin: 0;
+                                    margin: 0 auto;
                                     margin-bottom: -3px;
                                     border-radius: 15px;
                                 }

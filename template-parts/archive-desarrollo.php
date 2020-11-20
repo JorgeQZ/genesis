@@ -369,13 +369,39 @@ path {
                                 if($tipo == $value['tipo']):
                                 ?>
                             <div id="type-<?php echo $value['tipo'] ?>-sub-<?php echo get_field('recamaras', $value['ID']) ?>" class="sub-option <?php if($aux == 0) echo 'active ' ?>option-container">
-                                <div class="column light">
-                                    <div class="icon">
+                                <div class="column">
+                                    <!-- <div class="icon">
                                         <img src="<?php echo get_template_directory_uri().'/img/ZOOM-LUPA.png'?>" alt="">
                                     </div>
                                     <?php $image_dept = wp_get_attachment_image_src( $value['ID'], 'gallery-size');
                                     ?>
-                                    <img src="<?php echo $image_dept[0];?>" alt="" class="bed-img">
+                                    <img src="<?php echo $image_dept[0];?>" alt="" class="bed-img"> -->
+
+                                    <?php
+                                    // $image_dept = wp_get_attachment_image_src( $value['ID'], 'gallery-size');
+                                    $images_of_dept = get_field('imagenes_de_prototipos',  $value['ID']);
+                                    ?>
+                                    <div class="owl-carousel owl-theme" id="slider-<?php echo $value['ID']?>">
+                                        <?php
+                                        foreach($images_of_dept as $img_id){
+                                            $image = wp_get_attachment_image_src( $img_id, 'full-size');
+                                            echo '
+                                            <div class="light"><div class="icon"><img src="'.get_template_directory_uri().'/img/ZOOM-LUPA.png'.'" alt=""></div><img src="'.$image[0].'" alt="" class="bed-img"></div>';
+                                        }
+                                        ?>
+                                    </div>
+
+                                    <?php
+                                    echo " <script>
+                                    $('#slider-".$value['ID']."').owlCarousel({
+                                        nav: false,
+                                        dots: true,
+                                        items: 1,
+                                        margin: 20
+                                    })
+                                    </script>"
+                                    ?>
+
                                 </div>
                                 <div class="column">
                                     <div class="title">
