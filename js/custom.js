@@ -122,6 +122,7 @@ $(document).ready(function (e) {
             'max-height': screen_h * .8,
         });
         $('#img_light-box').attr('alt', imgAlt);
+        $('#light-alt').text(imgAlt);
         $('.light-box').fadeIn();
     });
 
